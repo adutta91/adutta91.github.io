@@ -61,6 +61,13 @@ a:focus {
     font-weight: 400;
 }
 
+.profilePic {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);

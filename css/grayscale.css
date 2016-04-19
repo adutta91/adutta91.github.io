@@ -62,18 +62,26 @@ a:focus {
 }
 
 .projectImg {
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
   border: 1px solid black;
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+  opacity: 1;
 }
 
 .projectImg:hover {
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, .75);
   box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, .75);
+}
+
+.projects {
+  background-color: black;
+  padding: 15px;
+  padding-bottom: 25px;
+  border-radius: 5px;
 }
 
 .projectsWrapper {
@@ -90,6 +98,7 @@ a:focus {
   align-items: center;
   justify-content: space-around;
   width: 40%;
+  margin-top: 50px;
 }
 
 .profilePic {

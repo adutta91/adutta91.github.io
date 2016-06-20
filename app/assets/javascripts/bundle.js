@@ -20872,24 +20872,50 @@
 	var animatedText = React.createClass({
 	  displayName: 'animatedText',
 	
+	
+	  getInitialState: function () {
+	    return {
+	      nextLine: false
+	    };
+	  },
+	
+	  nextLine: function () {
+	    this.setState({ nextLine: true });
+	  },
+	
+	  getNextLine: function () {
+	    if (this.state.nextLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'animatedText', avgTypingSpeed: 50, startDelay: 750 },
+	        'My name is Arjun, and I\'m a web developer. Nice to meet you!'
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
 	  render: function () {
+	    var nextLineCallback = this.nextLine;
 	    return React.createElement(
 	      'div',
 	      null,
 	      React.createElement(
 	        Typist,
-	        { className: 'animatedText', avgTypingSpeed: 60, startDelay: 1000, cursor: { hideWhenDone: true, hideWhenDoneDelay: 300 } },
+	        { className: 'animatedText',
+	          avgTypingSpeed: 60,
+	          startDelay: 1000,
+	          onTypingDone: function () {
+	            window.setTimeout(nextLineCallback, 750);
+	          },
+	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
 	        React.createElement(
 	          'span',
 	          { className: 'greeting' },
 	          'Hello!'
 	        )
 	      ),
-	      React.createElement(
-	        Typist,
-	        { className: 'animatedText', avgTypingSpeed: 50, startDelay: 2200 },
-	        'My name is Arjun Dutta, and I\'m a web developer!'
-	      )
+	      this.getNextLine()
 	    );
 	  }
 	});

@@ -17,4 +17,11 @@
 .icon {
   width: 48px;
   margin: 0 20px;
+  transition: .5s;
+}
+
+.icon:hover {
+  cursor: pointer;
+  width: 54px;
+  transition: .8s;
 }

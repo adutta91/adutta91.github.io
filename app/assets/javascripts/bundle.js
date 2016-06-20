@@ -20956,13 +20956,22 @@
 	var React = __webpack_require__(1);
 	
 	var GithubLink = React.createClass({
-	  displayName: "GithubLink",
+	  displayName: 'GithubLink',
+	
+	
+	  _onClick: function () {
+	    window.open('https://github.com/adutta91', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
-	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png" })
+	      React.createElement('img', {
+	        className: 'icon',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
+	        onClick: this._onClick
+	      })
 	    );
 	  }
 	});
@@ -20976,13 +20985,22 @@
 	var React = __webpack_require__(1);
 	
 	var LinkedinLink = React.createClass({
-	  displayName: "LinkedinLink",
+	  displayName: 'LinkedinLink',
+	
+	
+	  _onClick: function () {
+	    window.open('https://linkedin.com/in/arjundutta91', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
-	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/linkedin.png" })
+	      React.createElement('img', {
+	        className: 'icon',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/linkedin.png',
+	        onClick: this._onClick
+	      })
 	    );
 	  }
 	});
@@ -20996,13 +21014,22 @@
 	var React = __webpack_require__(1);
 	
 	var ResumeLink = React.createClass({
-	  displayName: "ResumeLink",
+	  displayName: 'ResumeLink',
+	
+	
+	  _onClick: function () {
+	    window.open('app/assets/ArjunDuttaResume2016.pdf', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
-	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/resume.jpg" })
+	      React.createElement('img', {
+	        className: 'icon',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/resume.jpg',
+	        onClick: this._onClick
+	      })
 	    );
 	  }
 	});

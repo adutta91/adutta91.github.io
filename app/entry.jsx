@@ -2,11 +2,14 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+//COMPONENTS
+var AnimatedText = require('./animatedText');
+
 var App = React.createClass({
   render: function() {
     return (
       <div>
-        <h2>Hallo!</h2>
+        <AnimatedText/>
       </div>
     )
   }
@@ -14,5 +17,5 @@ var App = React.createClass({
 
 document.addEventListener("DOMContentLoaded", function() {
   var root = document.querySelector("#root");
-  ReactDOM.render(<App />, root); 
+  ReactDOM.render(<App />, root);
 });

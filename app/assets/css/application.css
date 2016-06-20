@@ -16,12 +16,12 @@
 
 .icon {
   width: 48px;
-  margin: 0 20px;
+  margin: 20px;
   transition: .5s;
 }
 
 .icon:hover {
   cursor: pointer;
-  width: 54px;
+  transform: scale(1.2);
   transition: .8s;
 }

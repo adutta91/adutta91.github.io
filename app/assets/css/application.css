@@ -1,6 +1,20 @@
 .container {
+  text-align: left;
+  width: 100%;
+  margin: auto;
+}
+
+.linksFooter {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  right: 50%;
+}
+
+.icon {
+  width: 48px;
+  margin: 0 20px;
 }

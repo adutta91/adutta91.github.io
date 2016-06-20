@@ -49,7 +49,8 @@
 	var ReactDOM = __webpack_require__(38);
 	
 	//COMPONENTS
-	var AnimatedText = __webpack_require__(168);
+	var AnimatedText = __webpack_require__(170);
+	var LinksFooter = __webpack_require__(171);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -58,7 +59,8 @@
 	    return React.createElement(
 	      'div',
 	      { className: 'container' },
-	      React.createElement(AnimatedText, null)
+	      React.createElement(AnimatedText, null),
+	      React.createElement(LinksFooter, null)
 	    );
 	  }
 	});
@@ -20362,32 +20364,7 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	var Typist = __webpack_require__(169);
-	
-	var animatedText = React.createClass({
-	  displayName: 'animatedText',
-	
-	  render: function () {
-	    return React.createElement(
-	      Typist,
-	      { className: 'animatedText', avgTypingSpeed: 50, startDelay: 1000 },
-	      React.createElement(
-	        'h1',
-	        { className: 'greeting' },
-	        'Hello!'
-	      ),
-	      'My name is Arjun Dutta, and I\'m a web developer!'
-	    );
-	  }
-	});
-	
-	module.exports = animatedText;
-
-/***/ },
+/* 168 */,
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -20884,6 +20861,127 @@
 	
 	/***/ }
 	/******/ ]);
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Typist = __webpack_require__(169);
+	
+	var animatedText = React.createClass({
+	  displayName: 'animatedText',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        Typist,
+	        { className: 'animatedText', avgTypingSpeed: 60, startDelay: 1000, cursor: { hideWhenDone: true, hideWhenDoneDelay: 300 } },
+	        React.createElement(
+	          'span',
+	          { className: 'greeting' },
+	          'Hello!'
+	        )
+	      ),
+	      React.createElement(
+	        Typist,
+	        { className: 'animatedText', avgTypingSpeed: 50, startDelay: 2200 },
+	        'My name is Arjun Dutta, and I\'m a web developer!'
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = animatedText;
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	// COMPONENTS
+	var GithubLink = __webpack_require__(172);
+	var LinkedinLink = __webpack_require__(173);
+	var ResumeLink = __webpack_require__(174);
+	
+	var LinksFooter = React.createClass({
+	  displayName: 'LinksFooter',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'linksFooter' },
+	      React.createElement(GithubLink, null),
+	      React.createElement(LinkedinLink, null),
+	      React.createElement(ResumeLink, null)
+	    );
+	  }
+	});
+	
+	module.exports = LinksFooter;
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var GithubLink = React.createClass({
+	  displayName: "GithubLink",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png" })
+	    );
+	  }
+	});
+	
+	module.exports = GithubLink;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var LinkedinLink = React.createClass({
+	  displayName: "LinkedinLink",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/linkedin.png" })
+	    );
+	  }
+	});
+	
+	module.exports = LinkedinLink;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var ResumeLink = React.createClass({
+	  displayName: "ResumeLink",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement("img", { className: "icon", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/resume.jpg" })
+	    );
+	  }
+	});
+	
+	module.exports = ResumeLink;
 
 /***/ }
 /******/ ]);

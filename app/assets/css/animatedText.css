@@ -4,6 +4,8 @@ html {
 
 .animatedText {
   font-size: 50px;
+  margin: 100px auto;
+  width: 80%;
 }
 
 .greeting {

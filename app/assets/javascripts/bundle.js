@@ -57,7 +57,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'container' },
 	      React.createElement(AnimatedText, null)
 	    );
 	  }
@@ -20374,8 +20374,13 @@
 	  render: function () {
 	    return React.createElement(
 	      Typist,
-	      { className: 'animatedText', avgTypingSpeed: 40, startDelay: 2000 },
-	      'This is test stuff to animate.'
+	      { className: 'animatedText', avgTypingSpeed: 50, startDelay: 1000 },
+	      React.createElement(
+	        'h1',
+	        { className: 'greeting' },
+	        'Hello!'
+	      ),
+	      'My name is Arjun Dutta, and I\'m a web developer!'
 	    );
 	  }
 	});

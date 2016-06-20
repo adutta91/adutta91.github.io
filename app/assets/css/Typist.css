@@ -1,0 +1,23 @@
+
+.Typist .Cursor--blinking {
+  opacity: 1;
+  -webkit-animation: blink 1s linear infinite;
+          animation: blink 1s linear infinite; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: .1; }
+  100% {
+    opacity: .8; }
+}
+
+@keyframes blink {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: .1; }
+  100% {
+    opacity: .8; }
+}

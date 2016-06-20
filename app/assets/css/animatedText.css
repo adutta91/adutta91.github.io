@@ -1,3 +1,11 @@
 html {
   font-family: 'Lato', sans-serif;
 }
+
+.animatedText {
+  font-size: 50px;
+}
+
+.greeting {
+  font-size: 60px;
+}

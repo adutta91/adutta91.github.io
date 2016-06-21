@@ -20869,25 +20869,40 @@
 	var React = __webpack_require__(1);
 	var Typist = __webpack_require__(169);
 	
+	// COMPONENTS
+	var AboutMe = __webpack_require__(175);
+	var MyProjects = __webpack_require__(176);
+	
 	var animatedText = React.createClass({
 	  displayName: 'animatedText',
 	
 	
 	  getInitialState: function () {
 	    return {
-	      nextLine: false
+	      firstLine: false,
+	      secondLine: false
 	    };
 	  },
 	
-	  nextLine: function () {
-	    this.setState({ nextLine: true });
+	  firstLine: function () {
+	    this.setState({ firstLine: true, secondLine: false });
 	  },
 	
-	  getNextLine: function () {
-	    if (this.state.nextLine) {
+	  secondLine: function () {
+	    this.setState({ firstLine: false, secondLine: true });
+	  },
+	
+	  getFirstLine: function () {
+	    var secondLineCallback = this.secondLine;
+	    if (this.state.firstLine) {
 	      return React.createElement(
 	        Typist,
-	        { className: 'animatedText', avgTypingSpeed: 50, startDelay: 750 },
+	        { className: 'animatedText',
+	          avgTypingSpeed: 50,
+	          startDelay: 750,
+	          onTypingDone: function () {
+	            window.setTimeout(secondLineCallback, 1500);
+	          } },
 	        'My name is Arjun, and I\'m a web developer. Nice to meet you!'
 	      );
 	    } else {
@@ -20895,8 +20910,77 @@
 	    }
 	  },
 	
+	  getSecondLine: function () {
+	
+	    if (this.state.secondLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'animatedText2',
+	          avgTypingSpeed: 50,
+	          startDelay: 750
+	        },
+	        'What would you like to do?',
+	        React.createElement(
+	          'ul',
+	          null,
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              'div',
+	              null,
+	              'learn more ',
+	              React.createElement(
+	                'span',
+	                { className: 'link', onClick: function () {
+	                    alert("somethingClicked");
+	                  } },
+	                'about me'
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              'div',
+	              null,
+	              'check out ',
+	              React.createElement(
+	                'span',
+	                { className: 'link', onClick: function () {
+	                    alert("somethingClicked");
+	                  } },
+	                'my projects'
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              'div',
+	              null,
+	              'or just ',
+	              React.createElement(
+	                'span',
+	                { className: 'link', onClick: function () {
+	                    alert("somethingClicked");
+	                  } },
+	                'say hi!'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
 	  render: function () {
-	    var nextLineCallback = this.nextLine;
+	    var firstLineCallback = this.firstLine;
+	
 	    return React.createElement(
 	      'div',
 	      null,
@@ -20906,7 +20990,7 @@
 	          avgTypingSpeed: 60,
 	          startDelay: 1000,
 	          onTypingDone: function () {
-	            window.setTimeout(nextLineCallback, 750);
+	            window.setTimeout(firstLineCallback, 750);
 	          },
 	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
 	        React.createElement(
@@ -20915,7 +20999,8 @@
 	          'Hello!'
 	        )
 	      ),
-	      this.getNextLine()
+	      this.getFirstLine(),
+	      this.getSecondLine()
 	    );
 	  }
 	});
@@ -21035,6 +21120,66 @@
 	});
 	
 	module.exports = ResumeLink;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var AboutMe = React.createClass({
+	  displayName: 'AboutMe',
+	
+	
+	  _onClick: function () {
+	    alert('clicked about me!');
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'learn more ',
+	      React.createElement(
+	        'span',
+	        { onClick: this._onClick },
+	        'about me'
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = AboutMe;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var MyProjects = React.createClass({
+	  displayName: 'MyProjects',
+	
+	
+	  _onClick: function () {
+	    alert('clicked my projects!');
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'check out ',
+	      React.createElement(
+	        'span',
+	        { onClick: this._onClick },
+	        'my projects'
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = MyProjects;
 
 /***/ }
 /******/ ]);

@@ -12,6 +12,10 @@ var DetailStore = require('./stores/detailStore');
 // OBJECTS
 var detailOptions = require('./assets/objects/details');
 
+// TRANSITIONS
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
+
 var App = React.createClass({
 
   getInitialState: function() {
@@ -40,7 +44,9 @@ var App = React.createClass({
     return (
       <div className="container">
         <AnimatedText/>
-        {this.getDetail()}
+        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          {this.getDetail()}
+        </ReactCSSTransitionGroup>
         <LinksFooter />
       </div>
     )

@@ -6,8 +6,8 @@ var SayHi = require('../../components/detail/sayHi');
 
 
 module.exports = {
-  "ABOUTME": <AboutMe/>,
-  "MYPROJECTS": <MyProjects/>,
-  "SAYHI": <SayHi/>,
+  "ABOUTME": <AboutMe key="aboutMe"/>,
+  "MYPROJECTS": <MyProjects key="myProjects"/>,
+  "SAYHI": <SayHi key="sayHi"/>,
   "": <div/>
 }

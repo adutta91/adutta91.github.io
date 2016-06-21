@@ -1,0 +1,47 @@
+
+.detailPane {
+  width: 600px;
+  height: 500px;
+  border: 1px solid black;
+  position: fixed;
+  right: 100px;
+  top: 100px;
+}
+
+.detailTitle {
+  font-size: 40px;
+  text-align: center;
+}
+
+.aboutButtonIndex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 460px;
+}
+
+.aboutButton {
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+.example-enter {
+   opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+   opacity: 1;
+   transition: opacity 1s ease-in;
+}
+
+.example-leave {
+   opacity: 1;
+}
+
+.example-leave.example-leave-active {
+   opacity: 0.01;
+   transition: opacity 1s ease-in;
+}

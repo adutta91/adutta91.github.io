@@ -9,6 +9,9 @@ var LinksFooter = require('./components/linksFooter');
 // STORE
 var DetailStore = require('./stores/detailStore');
 
+// OBJECTS
+var detailOptions = require('./assets/objects/details');
+
 var App = React.createClass({
 
   getInitialState: function() {
@@ -29,10 +32,15 @@ var App = React.createClass({
     this.setState({ detail: DetailStore.detail() });
   },
 
+  getDetail: function() {
+    return detailOptions[this.state.detail];
+  },
+
   render: function() {
     return (
       <div className="container">
         <AnimatedText/>
+        {this.getDetail()}
         <LinksFooter />
       </div>
     )

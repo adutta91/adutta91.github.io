@@ -55,6 +55,9 @@
 	// STORE
 	var DetailStore = __webpack_require__(180);
 	
+	// OBJECTS
+	var detailOptions = __webpack_require__(198);
+	
 	var App = React.createClass({
 	  displayName: 'App',
 	
@@ -77,11 +80,16 @@
 	    this.setState({ detail: DetailStore.detail() });
 	  },
 	
+	  getDetail: function () {
+	    return detailOptions[this.state.detail];
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      { className: 'container' },
 	      React.createElement(AnimatedText, null),
+	      this.getDetail(),
 	      React.createElement(LinksFooter, null)
 	    );
 	  }
@@ -27953,6 +27961,84 @@
 	
 	module.exports = FluxMixinLegacy;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var AboutMe = __webpack_require__(199);
+	var MyProjects = __webpack_require__(202);
+	var SayHi = __webpack_require__(201);
+	
+	module.exports = {
+	  "ABOUTME": React.createElement(AboutMe, null),
+	  "MYPROJECTS": React.createElement(MyProjects, null),
+	  "SAYHI": React.createElement(SayHi, null),
+	  "": React.createElement('div', null)
+	};
+
+/***/ },
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var AboutMe = React.createClass({
+	  displayName: 'AboutMe',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'About Me'
+	    );
+	  }
+	});
+	
+	module.exports = AboutMe;
+
+/***/ },
+/* 200 */,
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var SayHi = React.createClass({
+	  displayName: 'SayHi',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'Say Hi'
+	    );
+	  }
+	});
+	
+	module.exports = SayHi;
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var MyProjects = React.createClass({
+	  displayName: 'MyProjects',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'My Projects'
+	    );
+	  }
+	});
+	
+	module.exports = MyProjects;
 
 /***/ }
 /******/ ]);

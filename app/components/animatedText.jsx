@@ -46,12 +46,14 @@ var animatedText = React.createClass({
                 avgTypingSpeed={50}
                 startDelay={750}
                 >
+                <span>
             What would you like to do?
             <ul>
               <li><div>learn more <span className="link" onClick={function() { alert("somethingClicked") }}>about me</span></div></li>
               <li><div>check out <span className="link" onClick={function() { alert("somethingClicked") }}>my projects</span></div></li>
               <li><div>or just <span className="link" onClick={function() { alert("somethingClicked") }}>say hi!</span></div></li>
             </ul>
+            </span>
         </Typist>
       );
     } else {

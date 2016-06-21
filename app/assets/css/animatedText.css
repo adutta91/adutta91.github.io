@@ -22,4 +22,12 @@
 
 .link {
   color: blue;
+  margin: 5px;
+  transition: .5s;
+}
+
+.link:hover {
+  margin: 15px;
+  transition: .8s;
+  cursor: pointer;
 }

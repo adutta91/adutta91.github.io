@@ -20919,55 +20919,59 @@
 	          avgTypingSpeed: 50,
 	          startDelay: 750
 	        },
-	        'What would you like to do?',
 	        React.createElement(
-	          'ul',
+	          'span',
 	          null,
+	          'What would you like to do?',
 	          React.createElement(
-	            'li',
+	            'ul',
 	            null,
 	            React.createElement(
-	              'div',
+	              'li',
 	              null,
-	              'learn more ',
 	              React.createElement(
-	                'span',
-	                { className: 'link', onClick: function () {
-	                    alert("somethingClicked");
-	                  } },
-	                'about me'
+	                'div',
+	                null,
+	                'learn more ',
+	                React.createElement(
+	                  'span',
+	                  { className: 'link', onClick: function () {
+	                      alert("somethingClicked");
+	                    } },
+	                  'about me'
+	                )
 	              )
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
+	            ),
 	            React.createElement(
-	              'div',
+	              'li',
 	              null,
-	              'check out ',
 	              React.createElement(
-	                'span',
-	                { className: 'link', onClick: function () {
-	                    alert("somethingClicked");
-	                  } },
-	                'my projects'
+	                'div',
+	                null,
+	                'check out ',
+	                React.createElement(
+	                  'span',
+	                  { className: 'link', onClick: function () {
+	                      alert("somethingClicked");
+	                    } },
+	                  'my projects'
+	                )
 	              )
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
+	            ),
 	            React.createElement(
-	              'div',
+	              'li',
 	              null,
-	              'or just ',
 	              React.createElement(
-	                'span',
-	                { className: 'link', onClick: function () {
-	                    alert("somethingClicked");
-	                  } },
-	                'say hi!'
+	                'div',
+	                null,
+	                'or just ',
+	                React.createElement(
+	                  'span',
+	                  { className: 'link', onClick: function () {
+	                      alert("somethingClicked");
+	                    } },
+	                  'say hi!'
+	                )
 	              )
 	            )
 	          )

@@ -5,7 +5,7 @@ var ResumeLink = React.createClass({
   _onClick: function() {
     window.open(
       'app/assets/ArjunDuttaResume2016.pdf',
-      '_blank' 
+      '_blank'
     );
   },
 
@@ -14,7 +14,7 @@ var ResumeLink = React.createClass({
       <div>
         <img
           className="icon"
-          src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/resume.jpg"
+          src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466490680/portfolio/resume.png"
           onClick={this._onClick}
         />
       </div>

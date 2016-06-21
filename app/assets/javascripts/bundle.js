@@ -20869,10 +20869,6 @@
 	var React = __webpack_require__(1);
 	var Typist = __webpack_require__(169);
 	
-	// COMPONENTS
-	var AboutMe = __webpack_require__(175);
-	var MyProjects = __webpack_require__(176);
-	
 	var animatedText = React.createClass({
 	  displayName: 'animatedText',
 	
@@ -20932,14 +20928,15 @@
 	              React.createElement(
 	                'div',
 	                null,
-	                'learn more ',
+	                ' > learn more ',
 	                React.createElement(
 	                  'span',
 	                  { className: 'link', onClick: function () {
-	                      alert("somethingClicked");
+	                      window.open('https://linkedin.com/in/arjundutta91', '_blank');
 	                    } },
 	                  'about me'
-	                )
+	                ),
+	                '?'
 	              )
 	            ),
 	            React.createElement(
@@ -20948,14 +20945,15 @@
 	              React.createElement(
 	                'div',
 	                null,
-	                'check out ',
+	                ' > check out ',
 	                React.createElement(
 	                  'span',
 	                  { className: 'link', onClick: function () {
-	                      alert("somethingClicked");
+	                      window.open('https://github.com/adutta91', '_blank');
 	                    } },
 	                  'my projects'
-	                )
+	                ),
+	                '?'
 	              )
 	            ),
 	            React.createElement(
@@ -20964,14 +20962,15 @@
 	              React.createElement(
 	                'div',
 	                null,
-	                'or just ',
+	                ' > or just ',
 	                React.createElement(
 	                  'span',
 	                  { className: 'link', onClick: function () {
-	                      alert("somethingClicked");
+	                      window.open('https://linkedin.com/in/arjundutta91', '_blank');
 	                    } },
-	                  'say hi!'
-	                )
+	                  'say hi'
+	                ),
+	                '?'
 	              )
 	            )
 	          )
@@ -21116,7 +21115,7 @@
 	      null,
 	      React.createElement('img', {
 	        className: 'icon',
-	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/resume.jpg',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466490680/portfolio/resume.png',
 	        onClick: this._onClick
 	      })
 	    );
@@ -21124,66 +21123,6 @@
 	});
 	
 	module.exports = ResumeLink;
-
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var AboutMe = React.createClass({
-	  displayName: 'AboutMe',
-	
-	
-	  _onClick: function () {
-	    alert('clicked about me!');
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      'learn more ',
-	      React.createElement(
-	        'span',
-	        { onClick: this._onClick },
-	        'about me'
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = AboutMe;
-
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var MyProjects = React.createClass({
-	  displayName: 'MyProjects',
-	
-	
-	  _onClick: function () {
-	    alert('clicked my projects!');
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      'check out ',
-	      React.createElement(
-	        'span',
-	        { onClick: this._onClick },
-	        'my projects'
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = MyProjects;
 
 /***/ }
 /******/ ]);

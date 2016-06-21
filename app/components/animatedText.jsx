@@ -1,10 +1,6 @@
 var React = require('react');
 var Typist = require('react-typist');
 
-// COMPONENTS
-var AboutMe = require('./aboutMe');
-var MyProjects = require('./myProjects');
-
 var animatedText = React.createClass({
 
   getInitialState: function() {
@@ -49,9 +45,9 @@ var animatedText = React.createClass({
                 <span>
             What would you like to do?
             <ul>
-              <li><div>learn more <span className="link" onClick={function() { alert("somethingClicked") }}>about me</span></div></li>
-              <li><div>check out <span className="link" onClick={function() { alert("somethingClicked") }}>my projects</span></div></li>
-              <li><div>or just <span className="link" onClick={function() { alert("somethingClicked") }}>say hi!</span></div></li>
+              <li><div> > learn more <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>about me</span>?</div></li>
+              <li><div> > check out <span className="link" onClick={function() { window.open( 'https://github.com/adutta91', '_blank' ); }}>my projects</span>?</div></li>
+              <li><div> > or just <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>say hi</span>?</div></li>
             </ul>
             </span>
         </Typist>

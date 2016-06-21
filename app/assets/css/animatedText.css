@@ -32,7 +32,8 @@
   transition: .5s;
   cursor: pointer;
   color: #ffffff;
-  text-shadow: 3px 3px 5px #076ab9;
+  text-shadow: 1px 1px 3px #076ab9;
+  font-weight: 300;
 }
 
 .option {

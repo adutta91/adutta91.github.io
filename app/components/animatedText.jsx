@@ -1,6 +1,9 @@
 var React = require('react');
 var Typist = require('react-typist');
 
+// UTIL
+var DetailUtil = require('../util/detailUtil');
+
 var animatedText = React.createClass({
 
   getInitialState: function() {
@@ -8,6 +11,11 @@ var animatedText = React.createClass({
       firstLine: false,
       secondLine: false
     });
+  },
+
+  setDetail: function(e) {
+    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
+    DetailUtil.setDetail(detail);
   },
 
   firstLine: function() {
@@ -46,11 +54,11 @@ var animatedText = React.createClass({
                 >
             <span>What would you like to do?</span>
             <br/> <br/>
-            <span className="option"> > learn more <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>about me</span>?</span>
+            <span className="option"> > learn more <span className="link" onClick={this.setDetail}>about me</span>?</span>
             <br/>
-            <span className="option"> > check out <span className="link" onClick={function() { window.open( 'https://github.com/adutta91', '_blank' ); }}>my projects</span>?</span>
+            <span className="option"> > check out <span className="link" onClick={this.setDetail}>my projects</span>?</span>
             <br/>
-            <span className="option"> > or just <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>say hi</span>?</span>
+            <span className="option"> > or just <span className="link" onClick={this.setDetail}>say hi</span>?</span>
         </Typist>
       );
     } else {

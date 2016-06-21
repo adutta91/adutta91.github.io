@@ -6,5 +6,12 @@ module.exports = {
       actionType: "RECEIVE_DETAIL",
       detail: detail
     });
+  },
+
+  setFocus: function(focus) {
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_FOCUS",
+      focus: focus
+    });
   }
 };

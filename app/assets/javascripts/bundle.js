@@ -21049,6 +21049,10 @@
 	module.exports = {
 	  setDetail: function (detail) {
 	    DetailActions.setDetail(detail);
+	  },
+	
+	  setFocus: function (focus) {
+	    DetailActions.setFocus(focus);
 	  }
 	};
 
@@ -21063,6 +21067,13 @@
 	    Dispatcher.dispatch({
 	      actionType: "RECEIVE_DETAIL",
 	      detail: detail
+	    });
+	  },
+	
+	  setFocus: function (focus) {
+	    Dispatcher.dispatch({
+	      actionType: "RECEIVE_FOCUS",
+	      focus: focus
 	    });
 	  }
 	};
@@ -21506,9 +21517,14 @@
 	var DetailStore = new Store(Dispatcher);
 	
 	var _detail = "";
+	var _focus = "";
 	
 	DetailStore.detail = function () {
 	  return _detail;
+	};
+	
+	DetailStore.focus = function () {
+	  return _focus;
 	};
 	
 	DetailStore.__onDispatch = function (payload) {
@@ -21517,11 +21533,19 @@
 	      resetDetail(payload.detail);
 	      DetailStore.__emitChange();
 	      break;
+	    case 'RECEIVE_FOCUS':
+	      resetFocus(payload.focus);
+	      DetailStore.__emitChange();
+	      break;
 	  };
 	};
 	
 	var resetDetail = function (detail) {
 	  _detail = detail;
+	};
+	
+	var resetFocus = function (focus) {
+	  _focus = focus;
 	};
 	
 	module.exports = DetailStore;
@@ -27992,11 +28016,40 @@
 
 	var React = __webpack_require__(1);
 	
+	// STORES
+	var DetailStore = __webpack_require__(180);
+	
 	// COMPONENTS
 	var AboutButtonsIndex = __webpack_require__(207);
 	
+	// OBJECTS
+	var focusOptions = __webpack_require__(210);
+	
 	var AboutMe = React.createClass({
 	  displayName: 'AboutMe',
+	
+	
+	  getInitialState: function () {
+	    return {
+	      focus: DetailStore.focus()
+	    };
+	  },
+	
+	  componentDidMount: function () {
+	    this.detailListener = DetailStore.addListener(this.update);
+	  },
+	
+	  componentWillUnmount: function () {
+	    this.detailListener.remove();
+	  },
+	
+	  update: function () {
+	    this.setState({ focus: DetailStore.focus() });
+	  },
+	
+	  getFocus: function () {
+	    return focusOptions[this.state.focus];
+	  },
 	
 	  render: function () {
 	    return React.createElement(
@@ -28007,7 +28060,8 @@
 	        { key: 'aboutTitle', className: 'detailTitle' },
 	        'About Me'
 	      ),
-	      React.createElement(AboutButtonsIndex, { key: 'aboutIndex' })
+	      React.createElement(AboutButtonsIndex, { key: 'aboutIndex' }),
+	      this.getFocus()
 	    );
 	  }
 	});
@@ -28806,12 +28860,15 @@
 
 	var React = __webpack_require__(1);
 	
+	var DetailUtil = __webpack_require__(170);
+	
 	var AboutButtonsIndex = React.createClass({
 	  displayName: 'AboutButtonsIndex',
 	
 	
-	  _onClick: function () {
-	    alert('hooray');
+	  _onClick: function (event) {
+	    var focus = event.currentTarget.innerHTML.toUpperCase();
+	    DetailUtil.setFocus(focus);
 	  },
 	
 	  render: function () {
@@ -28878,6 +28935,83 @@
 	});
 	
 	module.exports = SayHi;
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Values = __webpack_require__(211);
+	var History = __webpack_require__(212);
+	var Education = __webpack_require__(213);
+	
+	module.exports = {
+	  "VALUES": React.createElement(Values, { key: 'values' }),
+	  "HISTORY": React.createElement(History, { key: 'history' }),
+	  "EDUCATION": React.createElement(Education, { key: 'education' }),
+	  "": React.createElement('div', null)
+	};
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Values = React.createClass({
+	  displayName: "Values",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "aboutFocus" },
+	      "Values"
+	    );
+	  }
+	});
+	
+	module.exports = Values;
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var History = React.createClass({
+	  displayName: "History",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "aboutFocus" },
+	      "History"
+	    );
+	  }
+	});
+	
+	module.exports = History;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Education = React.createClass({
+	  displayName: "Education",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "aboutFocus" },
+	      "Education"
+	    );
+	  }
+	});
+	
+	module.exports = Education;
 
 /***/ }
 /******/ ]);

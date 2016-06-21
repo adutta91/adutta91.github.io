@@ -1,10 +1,12 @@
 var React = require('react');
 
+var DetailUtil = require('../../util/detailUtil');
 
 var AboutButtonsIndex = React.createClass({
 
-  _onClick: function() {
-      alert('hooray');
+  _onClick: function(event) {
+    var focus = event.currentTarget.innerHTML.toUpperCase();
+    DetailUtil.setFocus(focus);
   },
 
   render: function() {

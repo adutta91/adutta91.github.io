@@ -26,7 +26,9 @@ var animatedText = React.createClass({
                 avgTypingSpeed={50}
                 startDelay={750}
                 onTypingDone={function() { window.setTimeout(secondLineCallback, 1500); }}>
-          My name is Arjun, and I'm a web developer. Nice to meet you!
+          My name is Arjun, and I'm a web developer.
+          <br/><br/>
+          Nice to meet you!
         </Typist>
       );
     } else {
@@ -42,14 +44,13 @@ var animatedText = React.createClass({
                 avgTypingSpeed={50}
                 startDelay={750}
                 >
-                <span>
-            What would you like to do?
-            <ul>
-              <li><div> > learn more <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>about me</span>?</div></li>
-              <li><div> > check out <span className="link" onClick={function() { window.open( 'https://github.com/adutta91', '_blank' ); }}>my projects</span>?</div></li>
-              <li><div> > or just <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>say hi</span>?</div></li>
-            </ul>
-            </span>
+            <span>What would you like to do?</span>
+            <br/> <br/>
+            <span className="option"> > learn more <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>about me</span>?</span>
+            <br/>
+            <span className="option"> > check out <span className="link" onClick={function() { window.open( 'https://github.com/adutta91', '_blank' ); }}>my projects</span>?</span>
+            <br/>
+            <span className="option"> > or just <span className="link" onClick={function() { window.open( 'https://linkedin.com/in/arjundutta91', '_blank' ); }}>say hi</span>?</span>
         </Typist>
       );
     } else {

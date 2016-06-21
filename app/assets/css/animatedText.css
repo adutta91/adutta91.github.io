@@ -21,13 +21,21 @@
 }
 
 .link {
-  color: blue;
+  color: #ffffff;
   margin: 5px;
-  transition: .5s;
+  transition: .8s;
+  text-shadow: 1px 1px 3px #076ab9;
+  font-weight: 400;
 }
 
 .link:hover {
   margin: 15px;
-  transition: .8s;
+  transition: 1s;
   cursor: pointer;
+  text-shadow: 3px 3px 5px #076ab9;
+}
+
+.option {
+  margin-left: 40px;
+  line-height: 75px;
 }

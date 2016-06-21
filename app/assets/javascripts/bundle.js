@@ -20899,7 +20899,10 @@
 	          onTypingDone: function () {
 	            window.setTimeout(secondLineCallback, 1500);
 	          } },
-	        'My name is Arjun, and I\'m a web developer. Nice to meet you!'
+	        'My name is Arjun, and I\'m a web developer.',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        'Nice to meet you!'
 	      );
 	    } else {
 	      return React.createElement('div', null);
@@ -20918,62 +20921,51 @@
 	        React.createElement(
 	          'span',
 	          null,
-	          'What would you like to do?',
+	          'What would you like to do?'
+	        ),
+	        React.createElement('br', null),
+	        ' ',
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > learn more ',
 	          React.createElement(
-	            'ul',
-	            null,
-	            React.createElement(
-	              'li',
-	              null,
-	              React.createElement(
-	                'div',
-	                null,
-	                ' > learn more ',
-	                React.createElement(
-	                  'span',
-	                  { className: 'link', onClick: function () {
-	                      window.open('https://linkedin.com/in/arjundutta91', '_blank');
-	                    } },
-	                  'about me'
-	                ),
-	                '?'
-	              )
-	            ),
-	            React.createElement(
-	              'li',
-	              null,
-	              React.createElement(
-	                'div',
-	                null,
-	                ' > check out ',
-	                React.createElement(
-	                  'span',
-	                  { className: 'link', onClick: function () {
-	                      window.open('https://github.com/adutta91', '_blank');
-	                    } },
-	                  'my projects'
-	                ),
-	                '?'
-	              )
-	            ),
-	            React.createElement(
-	              'li',
-	              null,
-	              React.createElement(
-	                'div',
-	                null,
-	                ' > or just ',
-	                React.createElement(
-	                  'span',
-	                  { className: 'link', onClick: function () {
-	                      window.open('https://linkedin.com/in/arjundutta91', '_blank');
-	                    } },
-	                  'say hi'
-	                ),
-	                '?'
-	              )
-	            )
-	          )
+	            'span',
+	            { className: 'link', onClick: function () {
+	                window.open('https://linkedin.com/in/arjundutta91', '_blank');
+	              } },
+	            'about me'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > check out ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: function () {
+	                window.open('https://github.com/adutta91', '_blank');
+	              } },
+	            'my projects'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > or just ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: function () {
+	                window.open('https://linkedin.com/in/arjundutta91', '_blank');
+	              } },
+	            'say hi'
+	          ),
+	          '?'
 	        )
 	      );
 	    } else {

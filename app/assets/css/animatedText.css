@@ -21,17 +21,17 @@
 }
 
 .link {
-  color: #ffffff;
+  color: #076ab9;
   margin: 5px;
-  transition: .8s;
-  text-shadow: 1px 1px 3px #076ab9;
+  transition: .5s;
   font-weight: 400;
 }
 
 .link:hover {
   margin: 15px;
-  transition: 1s;
+  transition: .5s;
   cursor: pointer;
+  color: #ffffff;
   text-shadow: 3px 3px 5px #076ab9;
 }
 

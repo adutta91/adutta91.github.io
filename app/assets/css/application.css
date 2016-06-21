@@ -18,7 +18,7 @@ ul {
   align-items: center;
   justify-content: space-around;
   position: fixed;
-  bottom: 100px;
+  bottom: 20px;
   left: 50%;
   right: 50%;
 }
@@ -33,4 +33,13 @@ ul {
   cursor: pointer;
   transform: scale(1.2);
   transition: .8s;
+}
+
+.detailPane {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  position: fixed;
+  right: 150px;
+  top: 100px;
 }

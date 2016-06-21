@@ -27986,13 +27986,13 @@
 	var React = __webpack_require__(1);
 	
 	var AboutMe = React.createClass({
-	  displayName: 'AboutMe',
+	  displayName: "AboutMe",
 	
 	  render: function () {
 	    return React.createElement(
-	      'div',
-	      null,
-	      'About Me'
+	      "div",
+	      { className: "detailPane" },
+	      "About Me"
 	    );
 	  }
 	});
@@ -28007,13 +28007,13 @@
 	var React = __webpack_require__(1);
 	
 	var SayHi = React.createClass({
-	  displayName: 'SayHi',
+	  displayName: "SayHi",
 	
 	  render: function () {
 	    return React.createElement(
-	      'div',
-	      null,
-	      'Say Hi'
+	      "div",
+	      { className: "detailPane" },
+	      "Say Hi"
 	    );
 	  }
 	});
@@ -28027,13 +28027,13 @@
 	var React = __webpack_require__(1);
 	
 	var MyProjects = React.createClass({
-	  displayName: 'MyProjects',
+	  displayName: "MyProjects",
 	
 	  render: function () {
 	    return React.createElement(
-	      'div',
-	      null,
-	      'My Projects'
+	      "div",
+	      { className: "detailPane" },
+	      "My Projects"
 	    );
 	  }
 	});

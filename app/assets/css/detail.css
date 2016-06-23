@@ -2,7 +2,7 @@
 .detailPane {
   width: 600px;
   height: 500px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   position: fixed;
   right: 100px;
   top: 100px;
@@ -65,8 +65,12 @@
   align-items: center;
 }
 
-.intro {
+.contact {
+  margin: 15px;
+}
 
+.contactGreeting {
+  margin: 40px;
 }
 
 

@@ -28941,8 +28941,58 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "detailPane" },
-	      "Say Hi"
+	      { className: "detailPane flexColumn" },
+	      React.createElement(
+	        "div",
+	        { className: "contactGreeting" },
+	        "Hi there! Below are some ways that you can best contact me! (phone and email preferred).",
+	        React.createElement("br", null),
+	        React.createElement("br", null),
+	        "Looking forward to hearing from you!"
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "flexLeft" },
+	        React.createElement(
+	          "div",
+	          { className: "contact flexRow" },
+	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg" }),
+	          React.createElement(
+	            "span",
+	            null,
+	            "arjundutta91@gmail.com"
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "contact flexRow" },
+	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png" }),
+	          React.createElement(
+	            "span",
+	            null,
+	            "(408) 458-6077"
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "contact flexRow" },
+	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/mail.png" }),
+	          React.createElement(
+	            "div",
+	            { className: "flexColumn" },
+	            React.createElement(
+	              "div",
+	              null,
+	              "1413 Pitman Ave"
+	            ),
+	            React.createElement(
+	              "div",
+	              null,
+	              "Palo Alto, CA 94103"
+	            )
+	          )
+	        )
+	      )
 	    );
 	  }
 	});

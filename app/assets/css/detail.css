@@ -73,6 +73,17 @@
   margin: 40px;
 }
 
+.slider {
+  top: -50px;
+}
+
+.projectImage {
+  width: 600px;
+}
+
+.projectTitle {
+  text-align: center;
+}
 
 /* FADEIN TRANSITION */
 

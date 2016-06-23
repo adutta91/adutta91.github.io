@@ -29033,15 +29033,56 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var Typist = __webpack_require__(169);
 	
 	var Intro = React.createClass({
-	  displayName: "Intro",
+	  displayName: 'Intro',
 	
 	  render: function () {
+	
 	    return React.createElement(
-	      "div",
-	      { className: "aboutFocus" },
-	      "Intro"
+	      'div',
+	      { className: 'aboutFocus intro' },
+	      React.createElement(
+	        'div',
+	        { className: 'introGreeting' },
+	        React.createElement('img', { className: 'icon',
+	          src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466713899/portfolio/pixelavatar72.png' }),
+	        React.createElement(
+	          Typist,
+	          { className: 'handwriting',
+	            avgTypingSpeed: 50,
+	            startDelay: 750,
+	            cursor: { hideWhenDone: true, hideWhenDoneDelay: 500 } },
+	          React.createElement(
+	            'span',
+	            { className: 'handwriting' },
+	            "<- That's me!"
+	          )
+	        )
+	      ),
+	      'Thanks for visiting - I hope you\'re doing well! :)',
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      'A little about me:',
+	      React.createElement('br', null),
+	      'I\'m a reader, writer, skier, guitarist, gamer, hiker, etc, etc.',
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and see for yourself!',
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      'But I know that\'s not always feasible. So instead I\'ve just put stuff that I think is relevant on the tabs, for your viewing pleasure!',
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      'Anyhow, I really appreciate you dropping by, I hope to hear from you!',
+	      React.createElement('br', null),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'span',
+	        { className: 'handwriting signature' },
+	        '-Arjun Dutta'
+	      )
 	    );
 	  }
 	});

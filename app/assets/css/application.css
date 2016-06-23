@@ -7,6 +7,15 @@ ul {
   list-style-type: none;
 }
 
+.handwriting {
+  font-family: 'Indie Flower', cursive;
+}
+
+.signature {
+  position: absolute;
+  right: 0;
+}
+
 .container {
   text-align: left;
   width: 100%;
@@ -25,6 +34,7 @@ ul {
 
 .icon {
   width: 48px;
+  height: 48px;
   margin: 20px;
   transition: .5s;
 }

@@ -4,7 +4,7 @@ var Dispatcher = require('../dispatcher');
 var DetailStore = new Store(Dispatcher);
 
 var _detail = "";
-var _focus = "";
+var _focus = "INTRO";
 
 DetailStore.detail = function() {
   return _detail;

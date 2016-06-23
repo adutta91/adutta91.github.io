@@ -21517,7 +21517,7 @@
 	var DetailStore = new Store(Dispatcher);
 	
 	var _detail = "";
-	var _focus = "";
+	var _focus = "INTRO";
 	
 	DetailStore.detail = function () {
 	  return _detail;
@@ -28867,7 +28867,20 @@
 	
 	
 	  _onClick: function (event) {
+	    if (event.currentTarget.className === "aboutButton selected") {
+	      event.currentTarget.className = "aboutButton";
+	      DetailUtil.setFocus("INTRO");
+	    } else {
+	      this.selectButton(event);
+	    }
+	  },
+	
+	  selectButton: function (event) {
 	    var focus = event.currentTarget.innerHTML.toUpperCase();
+	    event.currentTarget.className += " selected";
+	    var sibs = $(event.currentTarget).siblings();
+	    sibs[0].className = "aboutButton";
+	    sibs[1].className = "aboutButton";
 	    DetailUtil.setFocus(focus);
 	  },
 	
@@ -28945,11 +28958,13 @@
 	var Values = __webpack_require__(211);
 	var History = __webpack_require__(212);
 	var Education = __webpack_require__(213);
+	var Intro = __webpack_require__(214);
 	
 	module.exports = {
 	  "VALUES": React.createElement(Values, { key: 'values' }),
 	  "HISTORY": React.createElement(History, { key: 'history' }),
 	  "EDUCATION": React.createElement(Education, { key: 'education' }),
+	  "INTRO": React.createElement(Intro, { key: 'intro' }),
 	  "": React.createElement('div', null)
 	};
 
@@ -29012,6 +29027,26 @@
 	});
 	
 	module.exports = Education;
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Intro = React.createClass({
+	  displayName: "Intro",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "aboutFocus" },
+	      "Intro"
+	    );
+	  }
+	});
+	
+	module.exports = Intro;
 
 /***/ }
 /******/ ]);

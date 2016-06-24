@@ -10,9 +10,7 @@ var SayHi = React.createClass({
           <br/><br/>
           Slightly less reliable methods could be to wander the streets of San Francisco,
           scan the slopes during the ski season, or search for the coffee shops
-          with the comfiest couches.
-          <br/><br/>
-          I look forward to hearing from you!
+          with the comfiest couches...
         </div>
         <div className="flexLeft">
           <div className="contact flexRow">

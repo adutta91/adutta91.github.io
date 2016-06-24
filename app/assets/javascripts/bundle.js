@@ -28968,10 +28968,7 @@
 	        "Hi there! Below are some ways that you can best contact me! (phone and email preferred).",
 	        React.createElement("br", null),
 	        React.createElement("br", null),
-	        "Slightly less reliable methods could be to wander the streets of San Francisco, scan the slopes during the ski season, or search for the coffee shops with the comfiest couches.",
-	        React.createElement("br", null),
-	        React.createElement("br", null),
-	        "I look forward to hearing from you!"
+	        "Slightly less reliable methods could be to wander the streets of San Francisco, scan the slopes during the ski season, or search for the coffee shops with the comfiest couches..."
 	      ),
 	      React.createElement(
 	        "div",

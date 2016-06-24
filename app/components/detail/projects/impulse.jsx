@@ -44,8 +44,8 @@ var Impulse = React.createClass({
           to keep re-entering your search, etc. It's also on the Chrome Web Store!
           <br/><br/>
           <div className="projectLinks">
-            <a onClick={this.liveLink}>live</a>
             <a onClick={this.githubLink}>github</a>
+            <a onClick={this.liveLink}>live</a>
           </div>
         </p>
         <p>

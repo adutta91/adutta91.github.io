@@ -5,7 +5,7 @@ var Intro = React.createClass({
   render: function() {
 
     return (
-      <div className="aboutFocus intro">
+      <div className="aboutFocus flexColumn">
         <div className="introGreeting">
          <img className="icon"
               src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466713899/portfolio/pixelavatar72.png"/>
@@ -20,7 +20,7 @@ var Intro = React.createClass({
         <br/><br/>
         A little about me:
         <br/>
-        I'm a reader, writer, skier, guitarist, gamer, hiker, etc, etc... 
+        I'm a reader, writer, skier, guitarist, gamer, hiker, etc, etc...
         <br/><br/>
         I'm guessing you came here to see what I'm up to, what I do, what I'm like...
         There are a bunch of things that interest me (see above), there are ways to

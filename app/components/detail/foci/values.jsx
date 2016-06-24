@@ -3,8 +3,8 @@ var React = require('react');
 var Values = React.createClass({
   render: function() {
     return (
-      <div className="aboutFocus intro">
-        <div className="valueTitle left">Be nice...</div>
+      <div className="aboutFocus">
+        <div className="valueTitle left">Be nice</div>
         <div className="valueText left">
           It seems like a straightforward thing, but there are times when it's
           easy to forget. I strive to always be friendly, conscientious, and
@@ -15,7 +15,7 @@ var Values = React.createClass({
           due.
         </div>
 
-        <div className="valueTitle right">...Work hard</div>
+        <div className="valueTitle right">Work hard</div>
         <div className="valueText right">
           I'm a big believer in loving what you do. I'm lucky enough to be
           able to do exactly that, so in my position, I very much am against calling
@@ -26,7 +26,7 @@ var Values = React.createClass({
           extremely high regard.
         </div>
 
-        <div className="valueTitle left">Have fun...</div>
+        <div className="valueTitle left">Have fun</div>
         <div className="valueText left">
           One of the things my Dad always used to say was "Attitude Determines
           Altitude", and as cheesy as that may sound to some, I find it incredibly

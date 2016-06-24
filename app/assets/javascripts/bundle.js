@@ -28965,10 +28965,10 @@
 	      React.createElement(
 	        "div",
 	        { className: "contactGreeting" },
-	        "Hi there! Below are some ways that you can best contact me! (phone and email preferred).",
+	        "Hi there! Below are some ways that you can best contact me! (phone and email preferred). Less reliable methods could be to wander the streets of San Francisco, or perhaps scan the slopes during the ski season.",
 	        React.createElement("br", null),
 	        React.createElement("br", null),
-	        "Looking forward to hearing from you!"
+	        "I look forward to hearing from you!"
 	      ),
 	      React.createElement(
 	        "div",
@@ -29050,11 +29050,11 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus intro" },
+	      { className: "aboutFocus" },
 	      React.createElement(
 	        "div",
 	        { className: "valueTitle left" },
-	        "Be nice..."
+	        "Be nice"
 	      ),
 	      React.createElement(
 	        "div",
@@ -29064,7 +29064,7 @@
 	      React.createElement(
 	        "div",
 	        { className: "valueTitle right" },
-	        "...Work hard"
+	        "Work hard"
 	      ),
 	      React.createElement(
 	        "div",
@@ -29074,7 +29074,7 @@
 	      React.createElement(
 	        "div",
 	        { className: "valueTitle left" },
-	        "Have fun..."
+	        "Have fun"
 	      ),
 	      React.createElement(
 	        "div",
@@ -29099,11 +29099,11 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus" },
+	      { className: "aboutFocus flexColumn" },
 	      React.createElement(
 	        "p",
 	        { className: "valueText" },
-	        "There's really not much to say, really. I've been blessed by a pretty awesome life so far - amazing family, the best of friends. I've lived and studied in some pretty cool places, got to travel a bit, and looking forward to some interesting times ahead. But that's not exactly what you want to know, I'll bet."
+	        "There's not much to say, really. I've been blessed by a pretty awesome life so far - amazing family, the best of friends. I've lived and studied in some pretty cool places, got to travel a bit, and looking forward to some interesting times ahead. But that's not exactly what you want to know, I'll bet."
 	      ),
 	      React.createElement(
 	        "p",
@@ -29113,7 +29113,11 @@
 	      React.createElement(
 	        "p",
 	        { className: "valueText" },
-	        "BUT THEN I DISCOVERED COMP SCI"
+	        React.createElement(
+	          "strong",
+	          null,
+	          "BUT THEN I DISCOVERED COMP SCI"
+	        )
 	      ),
 	      React.createElement(
 	        "p",
@@ -29166,8 +29170,59 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus" },
-	      "Education"
+	      { className: "aboutFocus flexColumn" },
+	      React.createElement(
+	        "div",
+	        { className: "flexRow" },
+	        React.createElement(
+	          "div",
+	          { className: "valueText education left" },
+	          React.createElement(
+	            "strong",
+	            null,
+	            "2010"
+	          ),
+	          React.createElement("br", null),
+	          "The Thacher School is a boarding school located in Southern California. Students complete a rigorous academic curriculum as well as learn responsibility, maturity and the value of lasting friendships and the great outdoors."
+	        ),
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/thacher.png" })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "flexRow" },
+	        React.createElement(
+	          "div",
+	          { className: "valueText education left" },
+	          React.createElement(
+	            "strong",
+	            null,
+	            "2015"
+	          ),
+	          React.createElement("br", null),
+	          "Tufts University, located in Medford, MA, was where I really explored more in depth the various interests I had been developing through high school. I ended up studying Psychology, only discovering my love for Computer Science during my last year there.",
+	          React.createElement("br", null),
+	          "(B.S. Cognitive & Brain Science, Cum Laude, GPA: 3.63)"
+	        ),
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/tufts.jpg" })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "flexRow" },
+	        React.createElement(
+	          "div",
+	          { className: "valueText education left" },
+	          React.createElement(
+	            "strong",
+	            null,
+	            "2016"
+	          ),
+	          React.createElement("br", null),
+	          "App Academy is a competitive Web Development bootcamp in San Francisco with a ",
+	          '<',
+	          " 5% acceptance rate. Graduates put in about 1000 hours of coding, and learn to navigate and build full stack web applications. It is an amazing space filled with brilliant, enthusiastic people, and I learned an incredible amount there, deepening my interest in Web Development."
+	        ),
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/app_academy.png" })
+	      )
 	    );
 	  }
 	});
@@ -29188,7 +29243,7 @@
 	
 	    return React.createElement(
 	      'div',
-	      { className: 'aboutFocus intro' },
+	      { className: 'aboutFocus flexColumn' },
 	      React.createElement(
 	        'div',
 	        { className: 'introGreeting' },

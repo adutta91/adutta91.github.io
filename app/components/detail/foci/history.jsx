@@ -3,9 +3,9 @@ var React = require('react');
 var History = React.createClass({
   render: function() {
     return (
-      <div className="aboutFocus">
+      <div className="aboutFocus flexColumn">
         <p className="valueText">
-          There's really not much to say, really. I've been blessed by a pretty
+          There's not much to say, really. I've been blessed by a pretty
           awesome life so far - amazing family, the best of friends. I've lived
           and studied in some pretty cool places, got to travel a bit, and looking
           forward to some interesting times ahead. But that's not exactly what
@@ -18,7 +18,7 @@ var History = React.createClass({
           interesting research for a bit.
         </p>
         <p className="valueText">
-          BUT THEN I DISCOVERED COMP SCI
+          <strong>BUT THEN I DISCOVERED COMP SCI</strong>
         </p>
         <p className="valueText">
           I fell in love (of a sort) - the world that opened up to me was like
@@ -33,7 +33,7 @@ var History = React.createClass({
           do you make something that's <strong>useful</strong>, <strong>intuitive</strong>,
           and <strong>beautiful</strong>, all at the same time? This is a question
           I love to address. What's more, each of those three are all equally
-          important, in my mind. Finding a way to maximize them is something 
+          important, in my mind. Finding a way to maximize them is something
           I find enthralling.
         </p>
         <p className="valueText">

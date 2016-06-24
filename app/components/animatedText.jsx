@@ -34,7 +34,7 @@ var animatedText = React.createClass({
                 avgTypingSpeed={50}
                 startDelay={750}
                 onTypingDone={function() { window.setTimeout(secondLineCallback, 1500); }}>
-          My name is Arjun, and I'm a web developer.
+          My name is Arjun and I'm a web developer.
           <br/><br/>
           Nice to meet you!
         </Typist>

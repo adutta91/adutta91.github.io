@@ -16,6 +16,16 @@ a:hover {
   cursor: pointer;
 }
 
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .handwriting {
   font-family: 'Indie Flower', cursive;
 }

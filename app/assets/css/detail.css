@@ -41,6 +41,8 @@
 .aboutButton.selected {
   transform: translateX(500px);
   transition: 1s;
+  background-color: #b8e3ff;
+  font-size: 18px;
 }
 /*
 .aboutButton.selected::after {
@@ -88,6 +90,10 @@
 
 .projectImage {
   width: 600px;
+}
+
+.projectImage:hover {
+  cursor: pointer;
 }
 
 .projectTitle {

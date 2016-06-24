@@ -36,7 +36,7 @@ var Intro = React.createClass({
         <Typist avgTypingSpeed={50}
                 startDelay={3750}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
-          <span className="handwriting signature">-Arjun Dutta</span>
+          <span className="handwriting signature">- Arjun Dutta</span>
         </Typist>
       </div>
     )

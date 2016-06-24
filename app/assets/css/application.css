@@ -7,6 +7,15 @@ ul {
   list-style-type: none;
 }
 
+a {
+  color: #076ab9;
+  font-weight: 400;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 .handwriting {
   font-family: 'Indie Flower', cursive;
 }
@@ -71,4 +80,12 @@ ul {
   cursor: pointer;
   transform: scale(1.2);
   transition: .8s;
+}
+
+.subHeader {
+  font-weight: 400;
+}
+
+.subText {
+  padding: 10px;
 }

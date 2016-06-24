@@ -2,8 +2,25 @@ var React = require('react');
 var Impulse = React.createClass({
 
   _onClick: function(event) {
+    event.preventDefault()
     window.open(
       'https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm',
+      '_blank'
+    );
+  },
+
+  mattLink: function(event) {
+    event.preventDefault()
+    window.open(
+      'https://github.com/mattyshen',
+      '_blank'
+    );
+  },
+
+  githubLink: function(event) {
+    event.preventDefault()
+    window.open(
+      'https://github.com/mattyshen/impulse',
       '_blank'
     );
   },
@@ -16,19 +33,20 @@ var Impulse = React.createClass({
              onClick={this._onClick}/>
         <h2 className="projectTitle">Impulse</h2>
         <p className="projectDesc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue
-          nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque
-          eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc
-          sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec
-          vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus.
-          Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse
-          elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus
-          ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc,
-          tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis
-          urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante.
-          Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor,
-          pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices
-          ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper.
+          Impulse was a collaborative project with my friend
+          <a onClick={this.mattLink}> Matt</a>. The basic idea is a new-tab
+          override on the Chrome browser. That means that everytime you open a
+          new tab, a customized page is displayed, as opposed to the default new
+          tab screen. We decided to give it a League of Legends twist - by
+          pinging Riot's open API, we gained access to a huge amount of game
+          statistics and data, which we've organized by searching for a specific
+          user. All widget settings and preferences are saved, so you won't have
+          to keep re-entering your search, etc.
+          <br/><br/>
+          It's also on the Chrome Web Store! (more details on the <a onClick={this.githubLink}>github</a>)
+        </p>
+        <p>
+          <span className="subHeader">Technologies: </span><span className="subText">ReactJS   AJAX   jQuery   CSS/HTML</span>
         </p>
       </div>
     )

@@ -12,7 +12,7 @@ var Intro = React.createClass({
          <Typist className="handwriting"
                  avgTypingSpeed={50}
                  startDelay={750}
-                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 500}}>
+                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
            <span className="handwriting">{"<- That's me!"}</span>
          </Typist>
         </div>
@@ -25,12 +25,14 @@ var Intro = React.createClass({
         I'm guessing you came here to see what I'm up to, what I do, what I'm like...
         There are a bunch of things that interest me (see above), there are ways to
         see what I'm up to (see my projects), but I'm really struggling with how to
-        convey my personality. Best I can do is ask you to call me and see for yourself!
+        convey my personality. Best I can do is ask you to call me and find out
+        for yourself!
         <br/><br/>
-        But I know that's not always feasible. So instead I've just put stuff that
-        I think is relevant on the tabs, for your viewing pleasure!
+        But I know that's not always feasible. So instead I've just provided some
+        info that I think is relevant, for your viewing pleasure!
         <br/><br/>
-        Anyhow, I really appreciate you dropping by, I hope to hear from you!
+        Anyhow, I really appreciate you dropping by, I hope you have an awesome
+        day, and I hope to hear from you!
         <br/>
         <br/>
         <Typist avgTypingSpeed={50}

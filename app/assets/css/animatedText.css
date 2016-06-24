@@ -21,19 +21,16 @@
 }
 
 .link {
-  color: #076ab9;
+  color: #007ab9;
   margin: 5px;
   transition: .5s;
   font-weight: 400;
 }
 
 .link:hover {
-  margin: 15px;
+  margin-left: 15px;
   transition: .5s;
   cursor: pointer;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px #076ab9;
-  font-weight: 300;
 }
 
 .option {

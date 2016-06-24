@@ -10,7 +10,7 @@ var Values = React.createClass({
           easy to forget. I strive to always be friendly, conscientious, and
           empathetic to all those around me. Especially in a work environment,
           it's important to me to foster an environment of cooperation and
-          enthusiasm. It's super important to me to recognize the abilities and
+          enthusiasm, and it's super important to me to recognize the abilities and
           achievements of your coworkers and assign them the full respect they're
           due.
         </div>

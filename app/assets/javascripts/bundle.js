@@ -29051,7 +29051,7 @@
 	      React.createElement(
 	        "div",
 	        { className: "valueText left" },
-	        "It seems like a straightforward thing, but there are times when it's easy to forget. I strive to always be friendly, conscientious, and empathetic to all those around me. Especially in a work environment, it's important to me to foster an environment of cooperation and enthusiasm. It's super important to me to recognize the abilities and achievements of your coworkers and assign them the full respect they're due."
+	        "It seems like a straightforward thing, but there are times when it's easy to forget. I strive to always be friendly, conscientious, and empathetic to all those around me. Especially in a work environment, it's important to me to foster an environment of cooperation and enthusiasm, and it's super important to me to recognize the abilities and achievements of your coworkers and assign them the full respect they're due."
 	      ),
 	      React.createElement(
 	        "div",
@@ -29144,7 +29144,7 @@
 	          { className: 'handwriting',
 	            avgTypingSpeed: 50,
 	            startDelay: 750,
-	            cursor: { hideWhenDone: true, hideWhenDoneDelay: 500 } },
+	            cursor: { hideWhenDone: true, hideWhenDoneDelay: 250 } },
 	          React.createElement(
 	            'span',
 	            { className: 'handwriting' },
@@ -29160,13 +29160,13 @@
 	      'I\'m a reader, writer, skier, guitarist, gamer, hiker, etc, etc.',
 	      React.createElement('br', null),
 	      React.createElement('br', null),
-	      'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and see for yourself!',
+	      'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and find out for yourself!',
 	      React.createElement('br', null),
 	      React.createElement('br', null),
-	      'But I know that\'s not always feasible. So instead I\'ve just put stuff that I think is relevant on the tabs, for your viewing pleasure!',
+	      'But I know that\'s not always feasible. So instead I\'ve just provided some info that I think is relevant, for your viewing pleasure!',
 	      React.createElement('br', null),
 	      React.createElement('br', null),
-	      'Anyhow, I really appreciate you dropping by, I hope to hear from you!',
+	      'Anyhow, I really appreciate you dropping by, I hope you have an awesome day, and I hope to hear from you!',
 	      React.createElement('br', null),
 	      React.createElement('br', null),
 	      React.createElement(

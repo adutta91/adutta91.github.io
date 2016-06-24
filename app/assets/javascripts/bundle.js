@@ -20424,6 +20424,9 @@
 	  setDetail: function (e) {
 	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
 	    DetailUtil.setDetail(detail);
+	    if (detail === "ABOUTME") {
+	      DetailUtil.setFocus("INTRO");
+	    }
 	  },
 	
 	  firstLine: function () {
@@ -28861,6 +28864,7 @@
 	var React = __webpack_require__(1);
 	
 	var DetailUtil = __webpack_require__(170);
+	var DetailStore = __webpack_require__(180);
 	
 	var AboutButtonsIndex = React.createClass({
 	  displayName: 'AboutButtonsIndex',
@@ -28884,23 +28888,27 @@
 	    DetailUtil.setFocus(focus);
 	  },
 	
+	  getClassName: function (focus) {
+	    return focus === DetailStore.focus() ? "aboutButton selected" : "aboutButton";
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      { className: 'aboutButtonIndex' },
 	      React.createElement(
 	        'div',
-	        { className: 'aboutButton', onClick: this._onClick },
+	        { className: this.getClassName("VALUES"), onClick: this._onClick },
 	        'Values'
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'aboutButton', onClick: this._onClick },
+	        { className: this.getClassName("HISTORY"), onClick: this._onClick },
 	        'History'
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'aboutButton', onClick: this._onClick },
+	        { className: this.getClassName("EDUCATION"), onClick: this._onClick },
 	        'Education'
 	      )
 	    );
@@ -29157,7 +29165,7 @@
 	      React.createElement('br', null),
 	      'A little about me:',
 	      React.createElement('br', null),
-	      'I\'m a reader, writer, skier, guitarist, gamer, hiker, etc, etc.',
+	      'I\'m a reader, writer, skier, guitarist, gamer, hiker, etc, etc...',
 	      React.createElement('br', null),
 	      React.createElement('br', null),
 	      'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and find out for yourself!',

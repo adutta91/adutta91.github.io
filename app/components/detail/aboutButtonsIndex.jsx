@@ -1,6 +1,7 @@
 var React = require('react');
 
 var DetailUtil = require('../../util/detailUtil');
+var DetailStore = require('../../stores/detailStore');
 
 var AboutButtonsIndex = React.createClass({
 
@@ -22,12 +23,16 @@ var AboutButtonsIndex = React.createClass({
     DetailUtil.setFocus(focus);
   },
 
+  getClassName: function(focus) {
+    return focus === DetailStore.focus() ? "aboutButton selected" : "aboutButton";
+  },
+
   render: function() {
     return (
       <div className="aboutButtonIndex">
-        <div className="aboutButton" onClick={this._onClick}>Values</div>
-        <div className="aboutButton" onClick={this._onClick}>History</div>
-        <div className="aboutButton" onClick={this._onClick}>Education</div>
+        <div className={this.getClassName("VALUES")} onClick={this._onClick}>Values</div>
+        <div className={this.getClassName("HISTORY")} onClick={this._onClick}>History</div>
+        <div className={this.getClassName("EDUCATION")} onClick={this._onClick}>Education</div>
       </div>
     )
   }

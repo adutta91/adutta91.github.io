@@ -16,6 +16,9 @@ var animatedText = React.createClass({
   setDetail: function(e) {
     var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
     DetailUtil.setDetail(detail);
+    if (detail === "ABOUTME") {
+      DetailUtil.setFocus("INTRO");
+    }
   },
 
   firstLine: function() {

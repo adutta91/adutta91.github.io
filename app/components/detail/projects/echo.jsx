@@ -1,10 +1,20 @@
 var React = require('react');
 
 var Echo = React.createClass({
+
+  _onClick: function(event) {
+    window.open(
+      'http://www.echomusic.tech',
+      '_blank'
+    );
+  },
+
   render: function() {
     return (
       <div className="projectInfo">
-        <img className="projectImage" src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png"/>
+        <img className="projectImage"
+             src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png"
+             onClick={this._onClick}/>
         <h2 className="projectTitle">Echo</h2>
         <p className="projectDesc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue

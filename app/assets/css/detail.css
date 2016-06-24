@@ -21,19 +21,26 @@
 }
 
 .aboutButton {
-  border: 1px solid black;
+  border-radius: 5px;
   width: 100px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
   padding: 10px;
   margin: 30px 5px;
+  transition: 1s;
 }
 
 .aboutButton:hover {
   cursor: pointer;
+  background-color: #b8e3ff;
+  transition: 1s;
+  font-size: 18px;
 }
 
 .aboutButton.selected {
-  color: blue
+  transform: translateX(500px);
+  transition: 1s;
 }
 /*
 .aboutButton.selected::after {
@@ -51,7 +58,9 @@
 
 .aboutFocus {
   width: 400px;
-  height: 400px;
+  height: 500px;
+  padding-left: 15px;
+  border-left: 1px solid black;
   position: fixed;
   right: 100px;
   top: 100px;

@@ -1,10 +1,19 @@
 var React = require('react');
-
 var Impulse = React.createClass({
+
+  _onClick: function(event) {
+    window.open(
+      'https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm',
+      '_blank'
+    );
+  },
+
   render: function() {
     return (
       <div className="projectInfo">
-        <img className="projectImage" src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723472/impulse.png"/>
+        <img className="projectImage"
+             src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png"
+             onClick={this._onClick}/>
         <h2 className="projectTitle">Impulse</h2>
         <p className="projectDesc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue

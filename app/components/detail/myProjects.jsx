@@ -9,13 +9,6 @@ var Cellular = require('./projects/cellular');
 var MyProjects = React.createClass({
   mixins: [Carousel.ControllerMixin],
   render: function() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
     return (
       <div className="detailPane">
           <Carousel>

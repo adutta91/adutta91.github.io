@@ -28925,13 +28925,6 @@
 	
 	  mixins: [Carousel.ControllerMixin],
 	  render: function () {
-	    var settings = {
-	      dots: true,
-	      infinite: true,
-	      speed: 500,
-	      slidesToShow: 1,
-	      slidesToScroll: 1
-	    };
 	    return React.createElement(
 	      'div',
 	      { className: 'detailPane' },
@@ -29148,9 +29141,15 @@
 	      React.createElement('br', null),
 	      React.createElement('br', null),
 	      React.createElement(
-	        'span',
-	        { className: 'handwriting signature' },
-	        '-Arjun Dutta'
+	        Typist,
+	        { avgTypingSpeed: 50,
+	          startDelay: 3750,
+	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 250 } },
+	        React.createElement(
+	          'span',
+	          { className: 'handwriting signature' },
+	          '-Arjun Dutta'
+	        )
 	      )
 	    );
 	  }
@@ -31076,24 +31075,30 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	
 	var Impulse = React.createClass({
-	  displayName: "Impulse",
+	  displayName: 'Impulse',
+	
+	
+	  _onClick: function (event) {
+	    window.open('https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
-	      { className: "projectInfo" },
-	      React.createElement("img", { className: "projectImage", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723472/impulse.png" }),
+	      'div',
+	      { className: 'projectInfo' },
+	      React.createElement('img', { className: 'projectImage',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png',
+	        onClick: this._onClick }),
 	      React.createElement(
-	        "h2",
-	        { className: "projectTitle" },
-	        "Impulse"
+	        'h2',
+	        { className: 'projectTitle' },
+	        'Impulse'
 	      ),
 	      React.createElement(
-	        "p",
-	        { className: "projectDesc" },
-	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper."
+	        'p',
+	        { className: 'projectDesc' },
+	        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper.'
 	      )
 	    );
 	  }
@@ -31108,22 +31113,29 @@
 	var React = __webpack_require__(1);
 	
 	var Echo = React.createClass({
-	  displayName: "Echo",
+	  displayName: 'Echo',
+	
+	
+	  _onClick: function (event) {
+	    window.open('http://www.echomusic.tech', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
-	      { className: "projectInfo" },
-	      React.createElement("img", { className: "projectImage", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png" }),
+	      'div',
+	      { className: 'projectInfo' },
+	      React.createElement('img', { className: 'projectImage',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png',
+	        onClick: this._onClick }),
 	      React.createElement(
-	        "h2",
-	        { className: "projectTitle" },
-	        "Echo"
+	        'h2',
+	        { className: 'projectTitle' },
+	        'Echo'
 	      ),
 	      React.createElement(
-	        "p",
-	        { className: "projectDesc" },
-	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper."
+	        'p',
+	        { className: 'projectDesc' },
+	        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper.'
 	      )
 	    );
 	  }
@@ -31138,22 +31150,29 @@
 	var React = __webpack_require__(1);
 	
 	var Cellular = React.createClass({
-	  displayName: "Cellular",
+	  displayName: 'Cellular',
+	
+	
+	  _onClick: function (event) {
+	    window.open('http://adutta91.github.io/Cellular-Game/', '_blank');
+	  },
 	
 	  render: function () {
 	    return React.createElement(
-	      "div",
-	      { className: "projectInfo" },
-	      React.createElement("img", { className: "projectImage", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723532/Cellular.png" }),
+	      'div',
+	      { className: 'projectInfo' },
+	      React.createElement('img', { className: 'projectImage',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723532/Cellular.png',
+	        onClick: this._onClick }),
 	      React.createElement(
-	        "h2",
-	        { className: "projectTitle" },
-	        "Cellular"
+	        'h2',
+	        { className: 'projectTitle' },
+	        'Cellular'
 	      ),
 	      React.createElement(
-	        "p",
-	        { className: "projectDesc" },
-	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper."
+	        'p',
+	        { className: 'projectDesc' },
+	        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper.'
 	      )
 	    );
 	  }

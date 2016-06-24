@@ -16,6 +16,10 @@ a:hover {
   cursor: pointer;
 }
 
+p {
+  margin: 0 0 10px 0;
+}
+
 .left {
   display: flex;
   justify-content: flex-start;

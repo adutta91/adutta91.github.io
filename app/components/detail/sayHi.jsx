@@ -6,8 +6,11 @@ var SayHi = React.createClass({
       <div className="detailPane flexColumn">
         <div className="contactGreeting">
           Hi there! Below are some ways that you can best contact me! (phone and
-          email preferred). Less reliable methods could be to wander the streets
-          of San Francisco, or perhaps scan the slopes during the ski season.
+          email preferred).
+          <br/><br/>
+          Slightly less reliable methods could be to wander the streets of San Francisco,
+          scan the slopes during the ski season, or search for the coffee shops
+          with the comfiest couches.
           <br/><br/>
           I look forward to hearing from you!
         </div>

@@ -1,7 +1,7 @@
 var React = require('react');
 var Impulse = React.createClass({
 
-  _onClick: function(event) {
+  liveLink: function(event) {
     event.preventDefault()
     window.open(
       'https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm',
@@ -30,7 +30,7 @@ var Impulse = React.createClass({
       <div className="projectInfo">
         <img className="projectImage"
              src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png"
-             onClick={this._onClick}/>
+             onClick={this.liveLink}/>
         <h2 className="projectTitle">Impulse</h2>
         <p className="projectDesc">
           Impulse was a collaborative project with my friend
@@ -41,12 +41,15 @@ var Impulse = React.createClass({
           pinging Riot's open API, we gained access to a huge amount of game
           statistics and data, which we've organized by searching for a specific
           user. All widget settings and preferences are saved, so you won't have
-          to keep re-entering your search, etc.
+          to keep re-entering your search, etc. It's also on the Chrome Web Store!
           <br/><br/>
-          It's also on the Chrome Web Store! (more details on the <a onClick={this.githubLink}>github</a>)
+          <div className="projectLinks">
+            <a onClick={this.liveLink}>live</a>
+            <a onClick={this.githubLink}>github</a>
+          </div>
         </p>
         <p>
-          <span className="subHeader">Technologies: </span><span className="subText">ReactJS   AJAX   jQuery   CSS/HTML</span>
+          <span className="subHeader">Technologies: </span><span className="subText">ReactJS - AJAX - jQuery - CSS/HTML</span>
         </p>
       </div>
     )

@@ -31079,7 +31079,7 @@
 	  displayName: 'Impulse',
 	
 	
-	  _onClick: function (event) {
+	  liveLink: function (event) {
 	    event.preventDefault();
 	    window.open('https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm', '_blank');
 	  },
@@ -31100,7 +31100,7 @@
 	      { className: 'projectInfo' },
 	      React.createElement('img', { className: 'projectImage',
 	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png',
-	        onClick: this._onClick }),
+	        onClick: this.liveLink }),
 	      React.createElement(
 	        'h2',
 	        { className: 'projectTitle' },
@@ -31115,16 +31115,23 @@
 	          { onClick: this.mattLink },
 	          ' Matt'
 	        ),
-	        '. The basic idea is a new-tab override on the Chrome browser. That means that everytime you open a new tab, a customized page is displayed, as opposed to the default new tab screen. We decided to give it a League of Legends twist - by pinging Riot\'s open API, we gained access to a huge amount of game statistics and data, which we\'ve organized by searching for a specific user. All widget settings and preferences are saved, so you won\'t have to keep re-entering your search, etc.',
+	        '. The basic idea is a new-tab override on the Chrome browser. That means that everytime you open a new tab, a customized page is displayed, as opposed to the default new tab screen. We decided to give it a League of Legends twist - by pinging Riot\'s open API, we gained access to a huge amount of game statistics and data, which we\'ve organized by searching for a specific user. All widget settings and preferences are saved, so you won\'t have to keep re-entering your search, etc. It\'s also on the Chrome Web Store!',
 	        React.createElement('br', null),
 	        React.createElement('br', null),
-	        'It\'s also on the Chrome Web Store! (more details on the ',
 	        React.createElement(
-	          'a',
-	          { onClick: this.githubLink },
-	          'github'
-	        ),
-	        ')'
+	          'div',
+	          { className: 'projectLinks' },
+	          React.createElement(
+	            'a',
+	            { onClick: this.liveLink },
+	            'live'
+	          ),
+	          React.createElement(
+	            'a',
+	            { onClick: this.githubLink },
+	            'github'
+	          )
+	        )
 	      ),
 	      React.createElement(
 	        'p',
@@ -31137,7 +31144,7 @@
 	        React.createElement(
 	          'span',
 	          { className: 'subText' },
-	          'ReactJS   AJAX   jQuery   CSS/HTML'
+	          'ReactJS - AJAX - jQuery - CSS/HTML'
 	        )
 	      )
 	    );
@@ -31156,8 +31163,12 @@
 	  displayName: 'Echo',
 	
 	
-	  _onClick: function (event) {
+	  liveLink: function (event) {
 	    window.open('http://www.echomusic.tech', '_blank');
+	  },
+	
+	  githubLink: function (event) {
+	    window.open('https://github.com/adutta91/EchoMusic', '_blank');
 	  },
 	
 	  render: function () {
@@ -31166,7 +31177,7 @@
 	      { className: 'projectInfo' },
 	      React.createElement('img', { className: 'projectImage',
 	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png',
-	        onClick: this._onClick }),
+	        onClick: this.liveLink }),
 	      React.createElement(
 	        'h2',
 	        { className: 'projectTitle' },
@@ -31175,7 +31186,37 @@
 	      React.createElement(
 	        'p',
 	        { className: 'projectDesc' },
-	        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue nulla, aliquet quis dui vel, dapibus dignissim ante. Maecenas scelerisque eget urna ac pellentesque. Etiam luctus, est et ullamcorper cursus, nunc sem congue augue, sit amet sollicitudin purus nisl quis neque. Donec vestibulum auctor convallis. Sed mollis aliquam erat, at tristique metus. Vivamus urna lorem, rutrum ac finibus ultricies, elementum ac mi. Suspendisse elit nibh, porta non tempus sit amet, faucibus id tellus. Phasellus luctus ex quis elementum mollis. Aliquam erat volutpat. Vestibulum erat nunc, tristique vitae ipsum et, pulvinar aliquam enim. Praesent rhoncus quis urna ut posuere. Phasellus et ligula sed purus vulputate cursus a nec ante. Sed pharetra arcu eget felis placerat, non fermentum urna tempus. Nam eros dolor, pellentesque elementum convallis vitae, gravida at ipsum. Pellentesque ultrices ullamcorper ex, sit amet varius diam rutrum at. Integer dapibus nec enim quis semper.'
+	        'Echo was a solo project that I built with Rails and React. It\'s a single page music sharing and exploration app, allowing users to: create accounts, upload music, save music to their profile, and listen to music that other people have uploaded. I had a lot of fun playing around with this project, and have thought through many improvements that I plan to implement down the line.',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'div',
+	          { className: 'projectLinks' },
+	          React.createElement(
+	            'a',
+	            { onClick: this.githubLink },
+	            'github'
+	          ),
+	          React.createElement(
+	            'a',
+	            { onClick: this.liveLink },
+	            'live'
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        React.createElement(
+	          'span',
+	          { className: 'subHeader' },
+	          'Technologies: '
+	        ),
+	        React.createElement(
+	          'span',
+	          { className: 'subText' },
+	          'ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku - '
+	        )
 	      )
 	    );
 	  }

@@ -28359,8 +28359,8 @@
 	      React.createElement(
 	        'div',
 	        { className: 'introGreeting' },
-	        React.createElement('img', { className: 'icon',
-	          src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466713899/portfolio/pixelavatar72.png' }),
+	        React.createElement('img', { className: 'icon large round',
+	          src: 'app/assets/images/me.jpg' }),
 	        React.createElement(
 	          Typist,
 	          { className: 'handwriting',

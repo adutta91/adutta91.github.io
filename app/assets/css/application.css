@@ -20,6 +20,10 @@ p {
   margin: 0 0 10px 0;
 }
 
+.round {
+  border-radius: 50%;
+}
+
 .left {
   display: flex;
   justify-content: flex-start;
@@ -95,6 +99,11 @@ p {
   cursor: pointer;
   transform: scale(1.2);
   transition: .8s;
+}
+
+.icon.large {
+  width: 64px;
+  height: 64px;
 }
 
 .subHeader {

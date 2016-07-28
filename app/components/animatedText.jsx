@@ -36,7 +36,7 @@ var AnimatedText = React.createClass({
     var secondLineCallback = this.secondLine;
     if(this.state.firstLine) {
       return (
-        <Typist className="animatedText"
+        <Typist className="text"
                 avgTypingSpeed={50}
                 startDelay={750}
                 onTypingDone={function() { window.setTimeout(secondLineCallback, 1500); }}>
@@ -54,7 +54,7 @@ var AnimatedText = React.createClass({
 
     if(this.state.secondLine) {
       return (
-        <Typist className="animatedText2"
+        <Typist className="text2"
                 avgTypingSpeed={50}
                 startDelay={750}
                 onTypingDone={this.endTyping}
@@ -92,7 +92,7 @@ var AnimatedText = React.createClass({
     return (
       <div>
         { this.getSkipButton() }
-        <Typist className="animatedText"
+        <Typist className="text"
                 avgTypingSpeed={60}
                 startDelay={1000}
                 onTypingDone={function (){ window.setTimeout(firstLine, 750) }}

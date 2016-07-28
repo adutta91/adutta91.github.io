@@ -20461,7 +20461,7 @@
 	    if (this.state.firstLine) {
 	      return React.createElement(
 	        Typist,
-	        { className: 'animatedText',
+	        { className: 'text',
 	          avgTypingSpeed: 50,
 	          startDelay: 750,
 	          onTypingDone: function () {
@@ -20482,7 +20482,7 @@
 	    if (this.state.secondLine) {
 	      return React.createElement(
 	        Typist,
-	        { className: 'animatedText2',
+	        { className: 'text2',
 	          avgTypingSpeed: 50,
 	          startDelay: 750,
 	          onTypingDone: this.endTyping
@@ -20556,7 +20556,7 @@
 	      this.getSkipButton(),
 	      React.createElement(
 	        Typist,
-	        { className: 'animatedText',
+	        { className: 'text',
 	          avgTypingSpeed: 60,
 	          startDelay: 1000,
 	          onTypingDone: function () {
@@ -31556,7 +31556,7 @@
 	      null,
 	      React.createElement(
 	        'div',
-	        { className: 'animatedText' },
+	        { className: 'text' },
 	        React.createElement(
 	          'span',
 	          { className: 'greeting' },
@@ -31565,7 +31565,7 @@
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'animatedText2' },
+	        { className: 'text2' },
 	        React.createElement(
 	          'span',
 	          null,

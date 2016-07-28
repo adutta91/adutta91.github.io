@@ -1,12 +1,12 @@
 
-.animatedText {
+.text {
   font-size: 50px;
   margin: 100px auto;
   width: 80%;
   transition: 1s;
 }
 
-.animatedText2 {
+.text2 {
   font-size: 40px;
   margin: 100px auto;
   width: 80%;

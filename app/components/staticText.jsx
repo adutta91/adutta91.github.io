@@ -15,10 +15,10 @@ var StaticText = React.createClass({
   render: function() {
     return (
       <div>
-        <div className="animatedText">
+        <div className="text">
           <span className="greeting">Hello!</span>
         </div>
-        <div className="animatedText2">
+        <div className="text2">
           <span>What would you like to do?</span>
           <br/> <br/>
           <span className="option"> > learn more <span className="link" onClick={this.setDetail}>about me</span>?</span>

@@ -3,9 +3,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 // COMPONENTS
-var AnimatedText = require('./components/animatedText');
-var StaticText = require('./components/staticText');
-var LinksFooter = require('./components/linksFooter');
+var AnimatedText = require('./components/text/animatedText');
+var StaticText = require('./components/text/staticText');
+var LinksFooter = require('./components/links/linksFooter');
 
 // STORE
 var DetailStore = require('./stores/detailStore');

@@ -49,9 +49,9 @@
 	var ReactDOM = __webpack_require__(38);
 	
 	// COMPONENTS
-	var AnimatedText = __webpack_require__(168);
-	var StaticText = __webpack_require__(227);
-	var LinksFooter = __webpack_require__(176);
+	var AnimatedText = __webpack_require__(228);
+	var StaticText = __webpack_require__(230);
+	var LinksFooter = __webpack_require__(231);
 	
 	// STORE
 	var DetailStore = __webpack_require__(180);
@@ -20417,167 +20417,7 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	var Typist = __webpack_require__(169);
-	
-	// UTIL
-	var DetailUtil = __webpack_require__(170);
-	
-	var SkipButton = __webpack_require__(223);
-	
-	var AnimatedText = React.createClass({
-	  displayName: 'AnimatedText',
-	
-	
-	  getInitialState: function () {
-	    return {
-	      firstLine: false,
-	      secondLine: false,
-	      skipButton: true
-	    };
-	  },
-	
-	  setDetail: function (e) {
-	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
-	    DetailUtil.setDetail(detail);
-	    if (detail === "ABOUTME") {
-	      DetailUtil.setFocus("INTRO");
-	    }
-	  },
-	
-	  firstLine: function () {
-	    this.setState({ firstLine: true, secondLine: false });
-	  },
-	
-	  secondLine: function () {
-	    this.setState({ firstLine: false, secondLine: true });
-	  },
-	
-	  getFirstLine: function () {
-	    var secondLineCallback = this.secondLine;
-	    if (this.state.firstLine) {
-	      return React.createElement(
-	        Typist,
-	        { className: 'text',
-	          avgTypingSpeed: 50,
-	          startDelay: 750,
-	          onTypingDone: function () {
-	            window.setTimeout(secondLineCallback, 1500);
-	          } },
-	        'My name is Arjun and I\'m a web developer.',
-	        React.createElement('br', null),
-	        React.createElement('br', null),
-	        'Nice to meet you!'
-	      );
-	    } else {
-	      return React.createElement('div', null);
-	    }
-	  },
-	
-	  getSecondLine: function () {
-	
-	    if (this.state.secondLine) {
-	      return React.createElement(
-	        Typist,
-	        { className: 'text2',
-	          avgTypingSpeed: 50,
-	          startDelay: 750,
-	          onTypingDone: this.endTyping
-	        },
-	        React.createElement(
-	          'span',
-	          null,
-	          'What would you like to do?'
-	        ),
-	        React.createElement('br', null),
-	        ' ',
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > learn more ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'about me'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > check out ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'my projects'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > or just ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'say hi'
-	          ),
-	          '?'
-	        )
-	      );
-	    } else {
-	      return React.createElement('div', null);
-	    }
-	  },
-	
-	  getSkipButton: function () {
-	    if (this.state.skipButton) {
-	      return React.createElement(SkipButton, null);
-	    } else {
-	      return;
-	    }
-	  },
-	
-	  endTyping: function () {
-	    this.setState({ skipButton: false });
-	  },
-	
-	  render: function () {
-	    var firstLine = this.firstLine;
-	    return React.createElement(
-	      'div',
-	      null,
-	      this.getSkipButton(),
-	      React.createElement(
-	        Typist,
-	        { className: 'text',
-	          avgTypingSpeed: 60,
-	          startDelay: 1000,
-	          onTypingDone: function () {
-	            window.setTimeout(firstLine, 750);
-	          },
-	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
-	        React.createElement(
-	          'span',
-	          { className: 'greeting' },
-	          'Hello!'
-	        )
-	      ),
-	      this.getFirstLine(),
-	      this.getSecondLine()
-	    );
-	  }
-	});
-	
-	module.exports = AnimatedText;
-
-/***/ },
+/* 168 */,
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -21429,33 +21269,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	// COMPONENTS
-	var GithubLink = __webpack_require__(177);
-	var LinkedinLink = __webpack_require__(178);
-	var ResumeLink = __webpack_require__(179);
-	
-	var LinksFooter = React.createClass({
-	  displayName: 'LinksFooter',
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'linksFooter' },
-	      React.createElement(GithubLink, null),
-	      React.createElement(LinkedinLink, null),
-	      React.createElement(ResumeLink, null)
-	    );
-	  }
-	});
-	
-	module.exports = LinksFooter;
-
-/***/ },
+/* 176 */,
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -31448,33 +31262,7 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 223 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var StateUtil = __webpack_require__(224);
-	
-	var SkipButton = React.createClass({
-	  displayName: 'SkipButton',
-	
-	
-	  buttonClicked: function () {
-	    StateUtil.skipAnimation();
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'skip button', onClick: this.buttonClicked },
-	      'skip'
-	    );
-	  }
-	});
-	
-	module.exports = SkipButton;
-
-/***/ },
+/* 223 */,
 /* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -31531,7 +31319,196 @@
 	module.exports = StateStore;
 
 /***/ },
-/* 227 */
+/* 227 */,
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Typist = __webpack_require__(169);
+	
+	// UTIL
+	var DetailUtil = __webpack_require__(170);
+	
+	var SkipButton = __webpack_require__(229);
+	
+	var AnimatedText = React.createClass({
+	  displayName: 'AnimatedText',
+	
+	
+	  getInitialState: function () {
+	    return {
+	      firstLine: false,
+	      secondLine: false,
+	      skipButton: true
+	    };
+	  },
+	
+	  setDetail: function (e) {
+	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
+	    DetailUtil.setDetail(detail);
+	    if (detail === "ABOUTME") {
+	      DetailUtil.setFocus("INTRO");
+	    }
+	  },
+	
+	  firstLine: function () {
+	    this.setState({ firstLine: true, secondLine: false });
+	  },
+	
+	  secondLine: function () {
+	    this.setState({ firstLine: false, secondLine: true });
+	  },
+	
+	  getFirstLine: function () {
+	    var secondLineCallback = this.secondLine;
+	    if (this.state.firstLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'text',
+	          avgTypingSpeed: 50,
+	          startDelay: 750,
+	          onTypingDone: function () {
+	            window.setTimeout(secondLineCallback, 1500);
+	          } },
+	        'My name is Arjun and I\'m a web developer.',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        'Nice to meet you!'
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
+	  getSecondLine: function () {
+	
+	    if (this.state.secondLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'text2',
+	          avgTypingSpeed: 50,
+	          startDelay: 750,
+	          onTypingDone: this.endTyping
+	        },
+	        React.createElement(
+	          'span',
+	          null,
+	          'What would you like to do?'
+	        ),
+	        React.createElement('br', null),
+	        ' ',
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > learn more ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'about me'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > check out ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'my projects'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > or just ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'say hi'
+	          ),
+	          '?'
+	        )
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
+	  getSkipButton: function () {
+	    if (this.state.skipButton) {
+	      return React.createElement(SkipButton, null);
+	    } else {
+	      return;
+	    }
+	  },
+	
+	  endTyping: function () {
+	    this.setState({ skipButton: false });
+	  },
+	
+	  render: function () {
+	    var firstLine = this.firstLine;
+	    return React.createElement(
+	      'div',
+	      null,
+	      this.getSkipButton(),
+	      React.createElement(
+	        Typist,
+	        { className: 'text',
+	          avgTypingSpeed: 60,
+	          startDelay: 1000,
+	          onTypingDone: function () {
+	            window.setTimeout(firstLine, 750);
+	          },
+	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
+	        React.createElement(
+	          'span',
+	          { className: 'greeting' },
+	          'Hello!'
+	        )
+	      ),
+	      this.getFirstLine(),
+	      this.getSecondLine()
+	    );
+	  }
+	});
+	
+	module.exports = AnimatedText;
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var StateUtil = __webpack_require__(224);
+	
+	var SkipButton = React.createClass({
+	  displayName: 'SkipButton',
+	
+	
+	  buttonClicked: function () {
+	    StateUtil.skipAnimation();
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'skip button', onClick: this.buttonClicked },
+	      'skip'
+	    );
+	  }
+	});
+	
+	module.exports = SkipButton;
+
+/***/ },
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -31615,6 +31592,33 @@
 	});
 	
 	module.exports = StaticText;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	// COMPONENTS
+	var GithubLink = __webpack_require__(177);
+	var LinkedinLink = __webpack_require__(178);
+	var ResumeLink = __webpack_require__(179);
+	
+	var LinksFooter = React.createClass({
+	  displayName: 'LinksFooter',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'linksFooter' },
+	      React.createElement(GithubLink, null),
+	      React.createElement(LinkedinLink, null),
+	      React.createElement(ResumeLink, null)
+	    );
+	  }
+	});
+	
+	module.exports = LinksFooter;
 
 /***/ }
 /******/ ]);

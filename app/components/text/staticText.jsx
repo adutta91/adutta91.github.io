@@ -1,6 +1,6 @@
 var React = require('react');
 
-var DetailUtil = require('../util/detailUtil');
+var DetailUtil = require('../../util/detailUtil');
 
 var StaticText = React.createClass({
 

@@ -1,6 +1,6 @@
 var React = require('react');
 
-var StateUtil = require('../util/stateUtil');
+var StateUtil = require('../../util/stateUtil');
 
 
 var SkipButton = React.createClass({

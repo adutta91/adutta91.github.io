@@ -2,7 +2,7 @@ var React = require('react');
 var Typist = require('react-typist');
 
 // UTIL
-var DetailUtil = require('../util/detailUtil');
+var DetailUtil = require('../../util/detailUtil');
 
 var SkipButton = require('./skipButton');
 

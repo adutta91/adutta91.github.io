@@ -50,10 +50,12 @@
 	
 	// COMPONENTS
 	var AnimatedText = __webpack_require__(168);
+	var StaticText = __webpack_require__(227);
 	var LinksFooter = __webpack_require__(176);
 	
 	// STORE
 	var DetailStore = __webpack_require__(180);
+	var StateStore = __webpack_require__(226);
 	
 	// OBJECTS
 	var detailOptions = __webpack_require__(198);
@@ -67,31 +69,45 @@
 	
 	  getInitialState: function () {
 	    return {
-	      detail: DetailStore.detail()
+	      detail: DetailStore.detail(),
+	      animationSkipped: StateStore.animationStatus()
 	    };
 	  },
 	
 	  componentDidMount: function () {
 	    this.detailListener = DetailStore.addListener(this.update);
+	    this.stateListener = StateStore.addListener(this.update);
 	  },
 	
 	  componentWillUnmount: function () {
 	    this.detailListener.remove();
+	    this.stateListener.remove();
 	  },
 	
 	  update: function () {
-	    this.setState({ detail: DetailStore.detail() });
+	    this.setState({
+	      detail: DetailStore.detail(),
+	      animationSkipped: StateStore.animationStatus()
+	    });
 	  },
 	
 	  getDetail: function () {
 	    return detailOptions[this.state.detail];
 	  },
 	
+	  getText: function () {
+	    if (this.state.animationSkipped) {
+	      return React.createElement(StaticText, null);
+	    } else {
+	      return React.createElement(AnimatedText, null);
+	    }
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      { className: 'container' },
-	      React.createElement(AnimatedText, null),
+	      this.getText(),
 	      React.createElement(
 	        ReactCSSTransitionGroup,
 	        { transitionName: 'example', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
@@ -20410,14 +20426,17 @@
 	// UTIL
 	var DetailUtil = __webpack_require__(170);
 	
-	var animatedText = React.createClass({
-	  displayName: 'animatedText',
+	var SkipButton = __webpack_require__(223);
+	
+	var AnimatedText = React.createClass({
+	  displayName: 'AnimatedText',
 	
 	
 	  getInitialState: function () {
 	    return {
 	      firstLine: false,
-	      secondLine: false
+	      secondLine: false,
+	      skipButton: true
 	    };
 	  },
 	
@@ -20465,7 +20484,8 @@
 	        Typist,
 	        { className: 'animatedText2',
 	          avgTypingSpeed: 50,
-	          startDelay: 750
+	          startDelay: 750,
+	          onTypingDone: this.endTyping
 	        },
 	        React.createElement(
 	          'span',
@@ -20516,19 +20536,31 @@
 	    }
 	  },
 	
-	  render: function () {
-	    var firstLineCallback = this.firstLine;
+	  getSkipButton: function () {
+	    if (this.state.skipButton) {
+	      return React.createElement(SkipButton, null);
+	    } else {
+	      return;
+	    }
+	  },
 	
+	  endTyping: function () {
+	    this.setState({ skipButton: false });
+	  },
+	
+	  render: function () {
+	    var firstLine = this.firstLine;
 	    return React.createElement(
 	      'div',
 	      null,
+	      this.getSkipButton(),
 	      React.createElement(
 	        Typist,
 	        { className: 'animatedText',
 	          avgTypingSpeed: 60,
 	          startDelay: 1000,
 	          onTypingDone: function () {
-	            window.setTimeout(firstLineCallback, 750);
+	            window.setTimeout(firstLine, 750);
 	          },
 	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
 	        React.createElement(
@@ -20543,7 +20575,7 @@
 	  }
 	});
 	
-	module.exports = animatedText;
+	module.exports = AnimatedText;
 
 /***/ },
 /* 169 */
@@ -31414,6 +31446,175 @@
 	};
 	
 	module.exports = ReactTransitionEvents;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var StateUtil = __webpack_require__(224);
+	
+	var SkipButton = React.createClass({
+	  displayName: 'SkipButton',
+	
+	
+	  buttonClicked: function () {
+	    StateUtil.skipAnimation();
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'skip button', onClick: this.buttonClicked },
+	      'skip'
+	    );
+	  }
+	});
+	
+	module.exports = SkipButton;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var StateActions = __webpack_require__(225);
+	
+	module.exports = {
+	  skipAnimation: function () {
+	    StateActions.skipAnimation();
+	  }
+	};
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Dispatcher = __webpack_require__(172);
+	
+	module.exports = {
+	  skipAnimation: function () {
+	    Dispatcher.dispatch({
+	      actionType: 'ANIMATION_SKIPPED'
+	    });
+	  }
+	};
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Store = __webpack_require__(181).Store;
+	var Dispatcher = __webpack_require__(172);
+	
+	var StateStore = new Store(Dispatcher);
+	
+	var _animationSkipped = false;
+	
+	StateStore.animationStatus = function () {
+	  return _animationSkipped;
+	};
+	
+	StateStore.__onDispatch = function (payload) {
+	  switch (payload.actionType) {
+	    case 'ANIMATION_SKIPPED':
+	      skipAnimation();
+	      this.__emitChange();
+	      break;
+	  }
+	};
+	
+	var skipAnimation = function () {
+	  _animationSkipped = true;
+	};
+	
+	module.exports = StateStore;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var DetailUtil = __webpack_require__(170);
+	
+	var StaticText = React.createClass({
+	  displayName: 'StaticText',
+	
+	
+	  setDetail: function (e) {
+	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
+	    DetailUtil.setDetail(detail);
+	    if (detail === "ABOUTME") {
+	      DetailUtil.setFocus("INTRO");
+	    }
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'animatedText' },
+	        React.createElement(
+	          'span',
+	          { className: 'greeting' },
+	          'Hello!'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'animatedText2' },
+	        React.createElement(
+	          'span',
+	          null,
+	          'What would you like to do?'
+	        ),
+	        React.createElement('br', null),
+	        ' ',
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > learn more ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'about me'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > check out ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'my projects'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > or just ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'say hi'
+	          ),
+	          '?'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = StaticText;
 
 /***/ }
 /******/ ]);

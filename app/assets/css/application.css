@@ -113,3 +113,13 @@ p {
 .subText {
   padding: 10px;
 }
+
+.button {
+  padding: 4px;
+}
+
+.button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+  transition: .5s;
+}

@@ -38,6 +38,15 @@
   line-height: 75px;
 }
 
+.skip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: .5s;
+}
+
 /* Cursor styling */
 
 .Typist .Cursor--blinking {

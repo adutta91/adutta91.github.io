@@ -4,12 +4,15 @@ var Typist = require('react-typist');
 // UTIL
 var DetailUtil = require('../util/detailUtil');
 
-var animatedText = React.createClass({
+var SkipButton = require('./skipButton');
+
+var AnimatedText = React.createClass({
 
   getInitialState: function() {
     return ({
       firstLine: false,
-      secondLine: false
+      secondLine: false,
+      skipButton: true
     });
   },
 
@@ -54,6 +57,7 @@ var animatedText = React.createClass({
         <Typist className="animatedText2"
                 avgTypingSpeed={50}
                 startDelay={750}
+                onTypingDone={this.endTyping}
                 >
             <span>What would you like to do?</span>
             <br/> <br/>
@@ -69,15 +73,29 @@ var animatedText = React.createClass({
     }
   },
 
-  render: function() {
-    var firstLineCallback = this.firstLine;
+  getSkipButton: function() {
+    if (this.state.skipButton) {
+      return (
+        <SkipButton />
+      )
+    } else {
+      return;
+    }
+  },
 
+  endTyping: function() {
+    this.setState({ skipButton: false });
+  },
+
+  render: function() {
+    var firstLine = this.firstLine;
     return (
       <div>
+        { this.getSkipButton() }
         <Typist className="animatedText"
                 avgTypingSpeed={60}
                 startDelay={1000}
-                onTypingDone={function() { window.setTimeout(firstLineCallback, 750)}}
+                onTypingDone={function (){ window.setTimeout(firstLine, 750) }}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 750}}>
           <span className="greeting">Hello!</span>
         </Typist>
@@ -88,4 +106,4 @@ var animatedText = React.createClass({
   }
 });
 
-module.exports = animatedText;
+module.exports = AnimatedText;

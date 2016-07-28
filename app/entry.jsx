@@ -4,10 +4,12 @@ var ReactDOM = require('react-dom');
 
 // COMPONENTS
 var AnimatedText = require('./components/animatedText');
+var StaticText = require('./components/staticText');
 var LinksFooter = require('./components/linksFooter');
 
 // STORE
 var DetailStore = require('./stores/detailStore');
+var StateStore = require('./stores/stateStore');
 
 // OBJECTS
 var detailOptions = require('./assets/objects/details');
@@ -20,30 +22,48 @@ var App = React.createClass({
 
   getInitialState: function() {
     return ({
-      detail: DetailStore.detail()
+      detail: DetailStore.detail(),
+      animationSkipped: StateStore.animationStatus()
     });
   },
 
   componentDidMount: function() {
     this.detailListener = DetailStore.addListener(this.update);
+    this.stateListener = StateStore.addListener(this.update);
   },
 
   componentWillUnmount: function() {
     this.detailListener.remove();
+    this.stateListener.remove();
   },
 
   update: function() {
-    this.setState({ detail: DetailStore.detail() });
+    this.setState({
+      detail: DetailStore.detail(),
+      animationSkipped: StateStore.animationStatus()
+    });
   },
 
   getDetail: function() {
     return detailOptions[this.state.detail];
   },
 
+  getText: function() {
+    if (this.state.animationSkipped) {
+      return (
+        <StaticText />
+      )
+    } else {
+      return (
+        <AnimatedText />
+      )
+    }
+  },
+
   render: function() {
     return (
       <div className="container">
-        <AnimatedText/>
+        { this.getText() }
         <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {this.getDetail()}
         </ReactCSSTransitionGroup>

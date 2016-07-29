@@ -49,19 +49,19 @@
 	var ReactDOM = __webpack_require__(38);
 	
 	// COMPONENTS
-	var AnimatedText = __webpack_require__(228);
-	var StaticText = __webpack_require__(230);
-	var LinksFooter = __webpack_require__(231);
+	var AnimatedText = __webpack_require__(168);
+	var StaticText = __webpack_require__(179);
+	var LinksFooter = __webpack_require__(180);
 	
 	// STORE
-	var DetailStore = __webpack_require__(180);
-	var StateStore = __webpack_require__(226);
+	var DetailStore = __webpack_require__(184);
+	var StateStore = __webpack_require__(202);
 	
 	// OBJECTS
-	var detailOptions = __webpack_require__(198);
+	var detailOptions = __webpack_require__(203);
 	
 	// TRANSITIONS
-	var ReactCSSTransitionGroup = __webpack_require__(216);
+	var ReactCSSTransitionGroup = __webpack_require__(221);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -20417,7 +20417,166 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 168 */,
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Typist = __webpack_require__(169);
+	
+	// UTIL
+	var DetailUtil = __webpack_require__(170);
+	
+	var SkipButton = __webpack_require__(176);
+	
+	var AnimatedText = React.createClass({
+	  displayName: 'AnimatedText',
+	
+	
+	  getInitialState: function () {
+	    return {
+	      firstLine: false,
+	      secondLine: false,
+	      skipButton: true
+	    };
+	  },
+	
+	  setDetail: function (e) {
+	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
+	    DetailUtil.setDetail(detail);
+	    if (detail === "ABOUTME") {
+	      DetailUtil.setFocus("INTRO");
+	    }
+	  },
+	
+	  firstLine: function () {
+	    this.setState({ firstLine: true, secondLine: false });
+	  },
+	
+	  secondLine: function () {
+	    this.setState({ firstLine: false, secondLine: true });
+	  },
+	
+	  getFirstLine: function () {
+	    var secondLineCallback = this.secondLine;
+	    if (this.state.firstLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'text',
+	          avgTypingSpeed: 50,
+	          startDelay: 750,
+	          onTypingDone: function () {
+	            window.setTimeout(secondLineCallback, 1500);
+	          } },
+	        'My name is Arjun and I\'m a web developer.',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        'Nice to meet you!'
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
+	  getSecondLine: function () {
+	    if (this.state.secondLine) {
+	      return React.createElement(
+	        Typist,
+	        { className: 'text2',
+	          avgTypingSpeed: 50,
+	          startDelay: 750,
+	          onTypingDone: this.endTyping
+	        },
+	        React.createElement(
+	          'span',
+	          null,
+	          'What would you like to do?'
+	        ),
+	        React.createElement('br', null),
+	        ' ',
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > learn more ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'about me'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > check out ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'my projects'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > or just ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'say hi'
+	          ),
+	          '?'
+	        )
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
+	  },
+	
+	  getSkipButton: function () {
+	    if (this.state.skipButton) {
+	      return React.createElement(SkipButton, null);
+	    } else {
+	      return;
+	    }
+	  },
+	
+	  endTyping: function () {
+	    this.setState({ skipButton: false });
+	  },
+	
+	  render: function () {
+	    var firstLine = this.firstLine;
+	    return React.createElement(
+	      'div',
+	      null,
+	      this.getSkipButton(),
+	      React.createElement(
+	        Typist,
+	        { className: 'text',
+	          avgTypingSpeed: 60,
+	          startDelay: 1000,
+	          onTypingDone: function () {
+	            window.setTimeout(firstLine, 750);
+	          },
+	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
+	        React.createElement(
+	          'span',
+	          { className: 'greeting' },
+	          'Hello!'
+	        )
+	      ),
+	      this.getFirstLine(),
+	      this.getSecondLine()
+	    );
+	  }
+	});
+	
+	module.exports = AnimatedText;
+
+/***/ },
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -21269,8 +21428,173 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 176 */,
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var StateUtil = __webpack_require__(177);
+	
+	var SkipButton = React.createClass({
+	  displayName: 'SkipButton',
+	
+	
+	  buttonClicked: function () {
+	    StateUtil.skipAnimation();
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'skip button', onClick: this.buttonClicked },
+	      'skip'
+	    );
+	  }
+	});
+	
+	module.exports = SkipButton;
+
+/***/ },
 /* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var StateActions = __webpack_require__(178);
+	
+	module.exports = {
+	  skipAnimation: function () {
+	    StateActions.skipAnimation();
+	  }
+	};
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Dispatcher = __webpack_require__(172);
+	
+	module.exports = {
+	  skipAnimation: function () {
+	    Dispatcher.dispatch({
+	      actionType: 'ANIMATION_SKIPPED'
+	    });
+	  }
+	};
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var DetailUtil = __webpack_require__(170);
+	
+	var StaticText = React.createClass({
+	  displayName: 'StaticText',
+	
+	
+	  setDetail: function (e) {
+	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
+	    DetailUtil.setDetail(detail);
+	    if (detail === "ABOUTME") {
+	      DetailUtil.setFocus("INTRO");
+	    }
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'text' },
+	        React.createElement(
+	          'span',
+	          { className: 'greeting' },
+	          'Hello!'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'text2' },
+	        React.createElement(
+	          'span',
+	          null,
+	          'What would you like to do?'
+	        ),
+	        React.createElement('br', null),
+	        ' ',
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > learn more ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'about me'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > check out ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'my projects'
+	          ),
+	          '?'
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'span',
+	          { className: 'option' },
+	          ' > or just ',
+	          React.createElement(
+	            'span',
+	            { className: 'link', onClick: this.setDetail },
+	            'say hi'
+	          ),
+	          '?'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = StaticText;
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	// COMPONENTS
+	var GithubLink = __webpack_require__(181);
+	var LinkedinLink = __webpack_require__(182);
+	var ResumeLink = __webpack_require__(183);
+	
+	var LinksFooter = React.createClass({
+	  displayName: 'LinksFooter',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'linksFooter' },
+	      React.createElement(GithubLink, null),
+	      React.createElement(LinkedinLink, null),
+	      React.createElement(ResumeLink, null)
+	    );
+	  }
+	});
+	
+	module.exports = LinksFooter;
+
+/***/ },
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -21299,7 +21623,7 @@
 	module.exports = GithubLink;
 
 /***/ },
-/* 178 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -21328,7 +21652,7 @@
 	module.exports = LinkedinLink;
 
 /***/ },
-/* 179 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -21357,10 +21681,10 @@
 	module.exports = ResumeLink;
 
 /***/ },
-/* 180 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Store = __webpack_require__(181).Store;
+	var Store = __webpack_require__(185).Store;
 	var Dispatcher = __webpack_require__(172);
 	
 	var DetailStore = new Store(Dispatcher);
@@ -21400,7 +21724,7 @@
 	module.exports = DetailStore;
 
 /***/ },
-/* 181 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21412,15 +21736,15 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
 	
-	module.exports.Container = __webpack_require__(182);
-	module.exports.MapStore = __webpack_require__(185);
-	module.exports.Mixin = __webpack_require__(197);
-	module.exports.ReduceStore = __webpack_require__(186);
-	module.exports.Store = __webpack_require__(187);
+	module.exports.Container = __webpack_require__(186);
+	module.exports.MapStore = __webpack_require__(189);
+	module.exports.Mixin = __webpack_require__(201);
+	module.exports.ReduceStore = __webpack_require__(190);
+	module.exports.Store = __webpack_require__(191);
 
 
 /***/ },
-/* 182 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21442,10 +21766,10 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var FluxStoreGroup = __webpack_require__(183);
+	var FluxStoreGroup = __webpack_require__(187);
 	
 	var invariant = __webpack_require__(175);
-	var shallowEqual = __webpack_require__(184);
+	var shallowEqual = __webpack_require__(188);
 	
 	var DEFAULT_OPTIONS = {
 	  pure: true,
@@ -21603,7 +21927,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 183 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21684,7 +22008,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 184 */
+/* 188 */
 /***/ function(module, exports) {
 
 	/**
@@ -21739,7 +22063,7 @@
 	module.exports = shallowEqual;
 
 /***/ },
-/* 185 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21760,8 +22084,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var FluxReduceStore = __webpack_require__(186);
-	var Immutable = __webpack_require__(196);
+	var FluxReduceStore = __webpack_require__(190);
+	var Immutable = __webpack_require__(200);
 	
 	var invariant = __webpack_require__(175);
 	
@@ -21889,7 +22213,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 186 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -21910,9 +22234,9 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var FluxStore = __webpack_require__(187);
+	var FluxStore = __webpack_require__(191);
 	
-	var abstractMethod = __webpack_require__(195);
+	var abstractMethod = __webpack_require__(199);
 	var invariant = __webpack_require__(175);
 	
 	var FluxReduceStore = (function (_FluxStore) {
@@ -21996,7 +22320,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 187 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22015,7 +22339,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _require = __webpack_require__(188);
+	var _require = __webpack_require__(192);
 	
 	var EventEmitter = _require.EventEmitter;
 	
@@ -22179,7 +22503,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 188 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22192,14 +22516,14 @@
 	 */
 	
 	var fbemitter = {
-	  EventEmitter: __webpack_require__(189)
+	  EventEmitter: __webpack_require__(193)
 	};
 	
 	module.exports = fbemitter;
 
 
 /***/ },
-/* 189 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22218,11 +22542,11 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var EmitterSubscription = __webpack_require__(190);
-	var EventSubscriptionVendor = __webpack_require__(192);
+	var EmitterSubscription = __webpack_require__(194);
+	var EventSubscriptionVendor = __webpack_require__(196);
 	
-	var emptyFunction = __webpack_require__(194);
-	var invariant = __webpack_require__(193);
+	var emptyFunction = __webpack_require__(198);
+	var invariant = __webpack_require__(197);
 	
 	/**
 	 * @class BaseEventEmitter
@@ -22396,7 +22720,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 190 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22417,7 +22741,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var EventSubscription = __webpack_require__(191);
+	var EventSubscription = __webpack_require__(195);
 	
 	/**
 	 * EmitterSubscription represents a subscription with listener and context data.
@@ -22449,7 +22773,7 @@
 	module.exports = EmitterSubscription;
 
 /***/ },
-/* 191 */
+/* 195 */
 /***/ function(module, exports) {
 
 	/**
@@ -22503,7 +22827,7 @@
 	module.exports = EventSubscription;
 
 /***/ },
-/* 192 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22522,7 +22846,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var invariant = __webpack_require__(193);
+	var invariant = __webpack_require__(197);
 	
 	/**
 	 * EventSubscriptionVendor stores a set of EventSubscriptions that are
@@ -22612,7 +22936,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 193 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22667,7 +22991,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 194 */
+/* 198 */
 /***/ function(module, exports) {
 
 	/**
@@ -22709,7 +23033,7 @@
 	module.exports = emptyFunction;
 
 /***/ },
-/* 195 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -22736,7 +23060,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 196 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27720,7 +28044,7 @@
 	}));
 
 /***/ },
-/* 197 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27737,7 +28061,7 @@
 	
 	'use strict';
 	
-	var FluxStoreGroup = __webpack_require__(183);
+	var FluxStoreGroup = __webpack_require__(187);
 	
 	var invariant = __webpack_require__(175);
 	
@@ -27843,14 +28167,44 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 198 */
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Store = __webpack_require__(185).Store;
+	var Dispatcher = __webpack_require__(172);
+	
+	var StateStore = new Store(Dispatcher);
+	
+	var _animationSkipped = false;
+	
+	StateStore.animationStatus = function () {
+	  return _animationSkipped;
+	};
+	
+	StateStore.__onDispatch = function (payload) {
+	  switch (payload.actionType) {
+	    case 'ANIMATION_SKIPPED':
+	      skipAnimation();
+	      this.__emitChange();
+	      break;
+	  }
+	};
+	
+	var skipAnimation = function () {
+	  _animationSkipped = true;
+	};
+	
+	module.exports = StateStore;
+
+/***/ },
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	
-	var AboutMe = __webpack_require__(199);
-	var MyProjects = __webpack_require__(206);
-	var SayHi = __webpack_require__(215);
+	var AboutMe = __webpack_require__(204);
+	var MyProjects = __webpack_require__(211);
+	var SayHi = __webpack_require__(220);
 	
 	module.exports = {
 	  "ABOUTME": React.createElement(AboutMe, { key: 'aboutMe' }),
@@ -27860,19 +28214,19 @@
 	};
 
 /***/ },
-/* 199 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	
 	// STORES
-	var DetailStore = __webpack_require__(180);
+	var DetailStore = __webpack_require__(184);
 	
 	// COMPONENTS
-	var AboutButtonsIndex = __webpack_require__(200);
+	var AboutButtonsIndex = __webpack_require__(205);
 	
 	// OBJECTS
-	var focusOptions = __webpack_require__(201);
+	var focusOptions = __webpack_require__(206);
 	
 	var AboutMe = React.createClass({
 	  displayName: 'AboutMe',
@@ -27918,13 +28272,13 @@
 	module.exports = AboutMe;
 
 /***/ },
-/* 200 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	
 	var DetailUtil = __webpack_require__(170);
-	var DetailStore = __webpack_require__(180);
+	var DetailStore = __webpack_require__(184);
 	
 	var AboutButtonsIndex = React.createClass({
 	  displayName: 'AboutButtonsIndex',
@@ -27978,15 +28332,15 @@
 	module.exports = AboutButtonsIndex;
 
 /***/ },
-/* 201 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	
-	var Values = __webpack_require__(202);
-	var History = __webpack_require__(203);
-	var Education = __webpack_require__(204);
-	var Intro = __webpack_require__(205);
+	var Values = __webpack_require__(207);
+	var History = __webpack_require__(208);
+	var Education = __webpack_require__(209);
+	var Intro = __webpack_require__(210);
 	
 	module.exports = {
 	  "VALUES": React.createElement(Values, { key: 'values' }),
@@ -27997,7 +28351,7 @@
 	};
 
 /***/ },
-/* 202 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -28046,7 +28400,7 @@
 	module.exports = Values;
 
 /***/ },
-/* 203 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -28117,7 +28471,7 @@
 	module.exports = History;
 
 /***/ },
-/* 204 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -28188,7 +28542,7 @@
 	module.exports = Education;
 
 /***/ },
-/* 205 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -28255,15 +28609,15 @@
 	module.exports = Intro;
 
 /***/ },
-/* 206 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Carousel = __webpack_require__(207);
+	var Carousel = __webpack_require__(212);
 	
-	var Impulse = __webpack_require__(212);
-	var Echo = __webpack_require__(213);
-	var Cellular = __webpack_require__(214);
+	var Impulse = __webpack_require__(217);
+	var Echo = __webpack_require__(218);
+	var Cellular = __webpack_require__(219);
 	
 	var MyProjects = React.createClass({
 	  displayName: 'MyProjects',
@@ -28287,18 +28641,18 @@
 	module.exports = MyProjects;
 
 /***/ },
-/* 207 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Carousel = __webpack_require__(208);
+	var Carousel = __webpack_require__(213);
 	
 	module.exports = Carousel;
 
 
 /***/ },
-/* 208 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28319,11 +28673,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _kwReactTweenState = __webpack_require__(209);
+	var _kwReactTweenState = __webpack_require__(214);
 	
 	var _kwReactTweenState2 = _interopRequireDefault(_kwReactTweenState);
 	
-	var _decorators = __webpack_require__(210);
+	var _decorators = __webpack_require__(215);
 	
 	var _decorators2 = _interopRequireDefault(_decorators);
 	
@@ -28331,7 +28685,7 @@
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
-	var _exenv = __webpack_require__(211);
+	var _exenv = __webpack_require__(216);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -29231,7 +29585,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 209 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -29994,7 +30348,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 210 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30135,7 +30489,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 211 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -30181,7 +30535,7 @@
 
 
 /***/ },
-/* 212 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30264,7 +30618,7 @@
 	module.exports = Impulse;
 
 /***/ },
-/* 213 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30335,7 +30689,7 @@
 	module.exports = Echo;
 
 /***/ },
-/* 214 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30406,7 +30760,7 @@
 	module.exports = Cellular;
 
 /***/ },
-/* 215 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30434,8 +30788,8 @@
 	          { className: "contact flexRow" },
 	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg" }),
 	          React.createElement(
-	            "span",
-	            null,
+	            "a",
+	            { href: "mailto:arjundutta91@gmail.com" },
 	            "arjundutta91@gmail.com"
 	          )
 	        ),
@@ -30476,13 +30830,13 @@
 	module.exports = SayHi;
 
 /***/ },
-/* 216 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(217);
+	module.exports = __webpack_require__(222);
 
 /***/ },
-/* 217 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30502,8 +30856,8 @@
 	
 	var React = __webpack_require__(2);
 	
-	var ReactTransitionGroup = __webpack_require__(218);
-	var ReactCSSTransitionGroupChild = __webpack_require__(220);
+	var ReactTransitionGroup = __webpack_require__(223);
+	var ReactCSSTransitionGroupChild = __webpack_require__(225);
 	
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -30574,7 +30928,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 218 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30593,7 +30947,7 @@
 	var _assign = __webpack_require__(4);
 	
 	var React = __webpack_require__(2);
-	var ReactTransitionChildMapping = __webpack_require__(219);
+	var ReactTransitionChildMapping = __webpack_require__(224);
 	
 	var emptyFunction = __webpack_require__(11);
 	
@@ -30790,7 +31144,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 219 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30892,7 +31246,7 @@
 	module.exports = ReactTransitionChildMapping;
 
 /***/ },
-/* 220 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30911,8 +31265,8 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(39);
 	
-	var CSSCore = __webpack_require__(221);
-	var ReactTransitionEvents = __webpack_require__(222);
+	var CSSCore = __webpack_require__(226);
+	var ReactTransitionEvents = __webpack_require__(227);
 	
 	var onlyChild = __webpack_require__(37);
 	
@@ -31057,7 +31411,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 221 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -31184,7 +31538,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 222 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31260,365 +31614,6 @@
 	};
 	
 	module.exports = ReactTransitionEvents;
-
-/***/ },
-/* 223 */,
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var StateActions = __webpack_require__(225);
-	
-	module.exports = {
-	  skipAnimation: function () {
-	    StateActions.skipAnimation();
-	  }
-	};
-
-/***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Dispatcher = __webpack_require__(172);
-	
-	module.exports = {
-	  skipAnimation: function () {
-	    Dispatcher.dispatch({
-	      actionType: 'ANIMATION_SKIPPED'
-	    });
-	  }
-	};
-
-/***/ },
-/* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Store = __webpack_require__(181).Store;
-	var Dispatcher = __webpack_require__(172);
-	
-	var StateStore = new Store(Dispatcher);
-	
-	var _animationSkipped = false;
-	
-	StateStore.animationStatus = function () {
-	  return _animationSkipped;
-	};
-	
-	StateStore.__onDispatch = function (payload) {
-	  switch (payload.actionType) {
-	    case 'ANIMATION_SKIPPED':
-	      skipAnimation();
-	      this.__emitChange();
-	      break;
-	  }
-	};
-	
-	var skipAnimation = function () {
-	  _animationSkipped = true;
-	};
-	
-	module.exports = StateStore;
-
-/***/ },
-/* 227 */,
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	var Typist = __webpack_require__(169);
-	
-	// UTIL
-	var DetailUtil = __webpack_require__(170);
-	
-	var SkipButton = __webpack_require__(229);
-	
-	var AnimatedText = React.createClass({
-	  displayName: 'AnimatedText',
-	
-	
-	  getInitialState: function () {
-	    return {
-	      firstLine: false,
-	      secondLine: false,
-	      skipButton: true
-	    };
-	  },
-	
-	  setDetail: function (e) {
-	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
-	    DetailUtil.setDetail(detail);
-	    if (detail === "ABOUTME") {
-	      DetailUtil.setFocus("INTRO");
-	    }
-	  },
-	
-	  firstLine: function () {
-	    this.setState({ firstLine: true, secondLine: false });
-	  },
-	
-	  secondLine: function () {
-	    this.setState({ firstLine: false, secondLine: true });
-	  },
-	
-	  getFirstLine: function () {
-	    var secondLineCallback = this.secondLine;
-	    if (this.state.firstLine) {
-	      return React.createElement(
-	        Typist,
-	        { className: 'text',
-	          avgTypingSpeed: 50,
-	          startDelay: 750,
-	          onTypingDone: function () {
-	            window.setTimeout(secondLineCallback, 1500);
-	          } },
-	        'My name is Arjun and I\'m a web developer.',
-	        React.createElement('br', null),
-	        React.createElement('br', null),
-	        'Nice to meet you!'
-	      );
-	    } else {
-	      return React.createElement('div', null);
-	    }
-	  },
-	
-	  getSecondLine: function () {
-	
-	    if (this.state.secondLine) {
-	      return React.createElement(
-	        Typist,
-	        { className: 'text2',
-	          avgTypingSpeed: 50,
-	          startDelay: 750,
-	          onTypingDone: this.endTyping
-	        },
-	        React.createElement(
-	          'span',
-	          null,
-	          'What would you like to do?'
-	        ),
-	        React.createElement('br', null),
-	        ' ',
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > learn more ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'about me'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > check out ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'my projects'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > or just ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'say hi'
-	          ),
-	          '?'
-	        )
-	      );
-	    } else {
-	      return React.createElement('div', null);
-	    }
-	  },
-	
-	  getSkipButton: function () {
-	    if (this.state.skipButton) {
-	      return React.createElement(SkipButton, null);
-	    } else {
-	      return;
-	    }
-	  },
-	
-	  endTyping: function () {
-	    this.setState({ skipButton: false });
-	  },
-	
-	  render: function () {
-	    var firstLine = this.firstLine;
-	    return React.createElement(
-	      'div',
-	      null,
-	      this.getSkipButton(),
-	      React.createElement(
-	        Typist,
-	        { className: 'text',
-	          avgTypingSpeed: 60,
-	          startDelay: 1000,
-	          onTypingDone: function () {
-	            window.setTimeout(firstLine, 750);
-	          },
-	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
-	        React.createElement(
-	          'span',
-	          { className: 'greeting' },
-	          'Hello!'
-	        )
-	      ),
-	      this.getFirstLine(),
-	      this.getSecondLine()
-	    );
-	  }
-	});
-	
-	module.exports = AnimatedText;
-
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var StateUtil = __webpack_require__(224);
-	
-	var SkipButton = React.createClass({
-	  displayName: 'SkipButton',
-	
-	
-	  buttonClicked: function () {
-	    StateUtil.skipAnimation();
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'skip button', onClick: this.buttonClicked },
-	      'skip'
-	    );
-	  }
-	});
-	
-	module.exports = SkipButton;
-
-/***/ },
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var DetailUtil = __webpack_require__(170);
-	
-	var StaticText = React.createClass({
-	  displayName: 'StaticText',
-	
-	
-	  setDetail: function (e) {
-	    var detail = e.currentTarget.innerHTML.split(" ").join("").toUpperCase();
-	    DetailUtil.setDetail(detail);
-	    if (detail === "ABOUTME") {
-	      DetailUtil.setFocus("INTRO");
-	    }
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'div',
-	        { className: 'text' },
-	        React.createElement(
-	          'span',
-	          { className: 'greeting' },
-	          'Hello!'
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'text2' },
-	        React.createElement(
-	          'span',
-	          null,
-	          'What would you like to do?'
-	        ),
-	        React.createElement('br', null),
-	        ' ',
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > learn more ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'about me'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > check out ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'my projects'
-	          ),
-	          '?'
-	        ),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'span',
-	          { className: 'option' },
-	          ' > or just ',
-	          React.createElement(
-	            'span',
-	            { className: 'link', onClick: this.setDetail },
-	            'say hi'
-	          ),
-	          '?'
-	        )
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = StaticText;
-
-/***/ },
-/* 231 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	// COMPONENTS
-	var GithubLink = __webpack_require__(177);
-	var LinkedinLink = __webpack_require__(178);
-	var ResumeLink = __webpack_require__(179);
-	
-	var LinksFooter = React.createClass({
-	  displayName: 'LinksFooter',
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'linksFooter' },
-	      React.createElement(GithubLink, null),
-	      React.createElement(LinkedinLink, null),
-	      React.createElement(ResumeLink, null)
-	    );
-	  }
-	});
-	
-	module.exports = LinksFooter;
 
 /***/ }
 /******/ ]);

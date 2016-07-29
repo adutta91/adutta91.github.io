@@ -51,7 +51,6 @@ var AnimatedText = React.createClass({
   },
 
   getSecondLine: function() {
-
     if(this.state.secondLine) {
       return (
         <Typist className="text2"

@@ -15,7 +15,7 @@ var SayHi = React.createClass({
         <div className="flexLeft">
           <div className="contact flexRow">
             <img className="symbol" src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg"/>
-            <span>arjundutta91@gmail.com</span>
+            <a href="mailto:arjundutta91@gmail.com">arjundutta91@gmail.com</a>
           </div>
           <div className="contact flexRow">
             <img className="symbol" src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png"/>

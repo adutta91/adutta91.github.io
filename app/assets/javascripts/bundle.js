@@ -20467,7 +20467,7 @@
 	          onTypingDone: function () {
 	            window.setTimeout(secondLineCallback, 1500);
 	          } },
-	        'My name is Arjun and I\'m a web developer.',
+	        'My name is Arjun and I\'m a software engineer.',
 	        React.createElement('br', null),
 	        React.createElement('br', null),
 	        'Nice to meet you!'

@@ -61,7 +61,7 @@
 	var detailOptions = __webpack_require__(203);
 	
 	// TRANSITIONS
-	var ReactCSSTransitionGroup = __webpack_require__(221);
+	var ReactCSSTransitionGroup = __webpack_require__(223);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -28203,8 +28203,8 @@
 	var React = __webpack_require__(1);
 	
 	var AboutMe = __webpack_require__(204);
-	var MyProjects = __webpack_require__(211);
-	var SayHi = __webpack_require__(220);
+	var MyProjects = __webpack_require__(213);
+	var SayHi = __webpack_require__(222);
 	
 	module.exports = {
 	  "ABOUTME": React.createElement(AboutMe, { key: 'aboutMe' }),
@@ -28346,7 +28346,7 @@
 	var History = __webpack_require__(208);
 	var Education = __webpack_require__(209);
 	var Intro = __webpack_require__(210);
-	var Skills = __webpack_require__(229);
+	var Skills = __webpack_require__(211);
 	
 	module.exports = {
 	  "VALUES": React.createElement(Values, { key: 'values' }),
@@ -28620,11 +28620,70 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Carousel = __webpack_require__(212);
 	
-	var Impulse = __webpack_require__(217);
-	var Echo = __webpack_require__(218);
-	var Cellular = __webpack_require__(219);
+	var SkillList = __webpack_require__(212);
+	
+	var Skills = React.createClass({
+	  displayName: 'Skills',
+	
+	
+	  getSkills: function (type) {
+	    return SkillList[type].map(function (skill) {
+	      return React.createElement(
+	        'li',
+	        null,
+	        skill
+	      );
+	    });
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'aboutFocus' },
+	      React.createElement(
+	        'ul',
+	        null,
+	        this.getSkills("TECHNICAL")
+	      ),
+	      React.createElement(
+	        'ul',
+	        null,
+	        this.getSkills("RECREATIONAL")
+	      ),
+	      React.createElement(
+	        'ul',
+	        null,
+	        this.getSkills("LANGUAGE")
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = Skills;
+
+/***/ },
+/* 212 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  TECHNICAL: ["JavaScript", "ReactJS", "Flux", "Ruby", "Rails", "HTML/CSS", "AJAX", "jQuery", "SQL", "PostgreSQL", "Git", "Heroku", "TDD", "RSpec", "Pair Programming", "MVC Architecture", "RESTful Web Services", "Cloudinary", "Research", "SPSS", "C++", "Chrome Extensions", "Excel"],
+	
+	  RECREATIONAL: ["Creative Writing", "Acoustic Guitar", "Skiing", "Backpacking", "Soccer", "Rock Climbing", "Traveling"],
+	
+	  LANGUAGE: ["English", "Spanish"]
+	};
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Carousel = __webpack_require__(214);
+	
+	var Impulse = __webpack_require__(219);
+	var Echo = __webpack_require__(220);
+	var Cellular = __webpack_require__(221);
 	
 	var MyProjects = React.createClass({
 	  displayName: 'MyProjects',
@@ -28648,18 +28707,18 @@
 	module.exports = MyProjects;
 
 /***/ },
-/* 212 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Carousel = __webpack_require__(213);
+	var Carousel = __webpack_require__(215);
 	
 	module.exports = Carousel;
 
 
 /***/ },
-/* 213 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28680,11 +28739,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _kwReactTweenState = __webpack_require__(214);
+	var _kwReactTweenState = __webpack_require__(216);
 	
 	var _kwReactTweenState2 = _interopRequireDefault(_kwReactTweenState);
 	
-	var _decorators = __webpack_require__(215);
+	var _decorators = __webpack_require__(217);
 	
 	var _decorators2 = _interopRequireDefault(_decorators);
 	
@@ -28692,7 +28751,7 @@
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
-	var _exenv = __webpack_require__(216);
+	var _exenv = __webpack_require__(218);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -29592,7 +29651,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 214 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -30355,7 +30414,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 215 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30496,7 +30555,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 216 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -30542,7 +30601,7 @@
 
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30625,7 +30684,7 @@
 	module.exports = Impulse;
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30696,7 +30755,7 @@
 	module.exports = Echo;
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30767,7 +30826,7 @@
 	module.exports = Cellular;
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -30837,13 +30896,13 @@
 	module.exports = SayHi;
 
 /***/ },
-/* 221 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(222);
+	module.exports = __webpack_require__(224);
 
 /***/ },
-/* 222 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30863,8 +30922,8 @@
 	
 	var React = __webpack_require__(2);
 	
-	var ReactTransitionGroup = __webpack_require__(223);
-	var ReactCSSTransitionGroupChild = __webpack_require__(225);
+	var ReactTransitionGroup = __webpack_require__(225);
+	var ReactCSSTransitionGroupChild = __webpack_require__(227);
 	
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -30935,7 +30994,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 223 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30954,7 +31013,7 @@
 	var _assign = __webpack_require__(4);
 	
 	var React = __webpack_require__(2);
-	var ReactTransitionChildMapping = __webpack_require__(224);
+	var ReactTransitionChildMapping = __webpack_require__(226);
 	
 	var emptyFunction = __webpack_require__(11);
 	
@@ -31151,7 +31210,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 224 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31253,7 +31312,7 @@
 	module.exports = ReactTransitionChildMapping;
 
 /***/ },
-/* 225 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31272,8 +31331,8 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(39);
 	
-	var CSSCore = __webpack_require__(226);
-	var ReactTransitionEvents = __webpack_require__(227);
+	var CSSCore = __webpack_require__(228);
+	var ReactTransitionEvents = __webpack_require__(229);
 	
 	var onlyChild = __webpack_require__(37);
 	
@@ -31418,7 +31477,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -31545,7 +31604,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31621,27 +31680,6 @@
 	};
 	
 	module.exports = ReactTransitionEvents;
-
-/***/ },
-/* 228 */,
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var Skills = React.createClass({
-	  displayName: 'Skills',
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      'Skillz'
-	    );
-	  }
-	});
-	
-	module.exports = Skills;
 
 /***/ }
 /******/ ]);

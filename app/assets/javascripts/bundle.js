@@ -28324,6 +28324,11 @@
 	        'div',
 	        { className: this.getClassName("EDUCATION"), onClick: this._onClick },
 	        'Education'
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: this.getClassName("SKILLS"), onClick: this._onClick },
+	        'Skills'
 	      )
 	    );
 	  }
@@ -28341,12 +28346,14 @@
 	var History = __webpack_require__(208);
 	var Education = __webpack_require__(209);
 	var Intro = __webpack_require__(210);
+	var Skills = __webpack_require__(229);
 	
 	module.exports = {
 	  "VALUES": React.createElement(Values, { key: 'values' }),
 	  "HISTORY": React.createElement(History, { key: 'history' }),
 	  "EDUCATION": React.createElement(Education, { key: 'education' }),
 	  "INTRO": React.createElement(Intro, { key: 'intro' }),
+	  "SKILLS": React.createElement(Skills, { key: 'skills' }),
 	  "": React.createElement('div', null)
 	};
 
@@ -31614,6 +31621,27 @@
 	};
 	
 	module.exports = ReactTransitionEvents;
+
+/***/ },
+/* 228 */,
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Skills = React.createClass({
+	  displayName: 'Skills',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'Skillz'
+	    );
+	  }
+	});
+	
+	module.exports = Skills;
 
 /***/ }
 /******/ ]);

@@ -28631,7 +28631,7 @@
 	    return SkillList[type].map(function (skill) {
 	      return React.createElement(
 	        'li',
-	        null,
+	        { className: 'listItem' },
 	        skill
 	      );
 	    });
@@ -28643,17 +28643,17 @@
 	      { className: 'aboutFocus' },
 	      React.createElement(
 	        'ul',
-	        null,
+	        { className: 'flexRow wrap' },
 	        this.getSkills("TECHNICAL")
 	      ),
 	      React.createElement(
 	        'ul',
-	        null,
+	        { className: 'flexRow wrap' },
 	        this.getSkills("RECREATIONAL")
 	      ),
 	      React.createElement(
 	        'ul',
-	        null,
+	        { className: 'flexRow wrap' },
 	        this.getSkills("LANGUAGE")
 	      )
 	    );

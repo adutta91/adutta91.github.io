@@ -56,6 +56,10 @@ p {
   align-items: center;
 }
 
+.flexRow.wrap {
+  flex-wrap: wrap;
+}
+
 .flexLeft {
   position: absolute;
   left: 120px;

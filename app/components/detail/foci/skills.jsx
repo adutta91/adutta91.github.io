@@ -6,16 +6,16 @@ var Skills = React.createClass({
 
   getSkills: function(type) {
     return SkillList[type].map(function(skill) {
-      return (<li>{skill}</li>)
+      return (<li className="listItem">{skill}</li>)
     });
   },
 
   render: function() {
     return (
       <div className="aboutFocus">
-        <ul>{this.getSkills("TECHNICAL")}</ul>
-        <ul>{this.getSkills("RECREATIONAL")}</ul>
-        <ul>{this.getSkills("LANGUAGE")}</ul>
+        <ul className="flexRow wrap">{this.getSkills("TECHNICAL")}</ul>
+        <ul className="flexRow wrap">{this.getSkills("RECREATIONAL")}</ul>
+        <ul className="flexRow wrap">{this.getSkills("LANGUAGE")}</ul>
       </div>
     )
   }

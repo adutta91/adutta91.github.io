@@ -122,6 +122,15 @@
   margin: 10px 0;
 }
 
+.listItem {
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px 8px;
+  background: #007ab9;
+  color: white;
+}
+
 
 /* FADEIN TRANSITION */
 

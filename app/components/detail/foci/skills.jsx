@@ -10,12 +10,21 @@ var Skills = React.createClass({
     });
   },
 
+  getList: function(type) {
+    return (
+      <ul className="flexRow wrap">{this.getSkills(type)}</ul>
+    )
+  },
+
   render: function() {
     return (
       <div className="aboutFocus">
-        <ul className="flexRow wrap">{this.getSkills("TECHNICAL")}</ul>
-        <ul className="flexRow wrap">{this.getSkills("RECREATIONAL")}</ul>
-        <ul className="flexRow wrap">{this.getSkills("LANGUAGE")}</ul>
+        <h4>Technologies & Skills</h4>
+        {this.getList("TECHNICAL")}
+        <h4>Recreational</h4>
+        {this.getList("RECREATIONAL")}
+        <h4>Languages</h4>
+        {this.getList("LANGUAGE")}
       </div>
     )
   }

@@ -5,6 +5,7 @@ html {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 a {
@@ -18,6 +19,10 @@ a:hover {
 
 p {
   margin: 0 0 10px 0;
+}
+
+h4 {
+  text-align: center;
 }
 
 .round {
@@ -58,6 +63,7 @@ p {
 
 .flexRow.wrap {
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .flexLeft {

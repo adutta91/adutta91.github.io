@@ -28637,25 +28637,36 @@
 	    });
 	  },
 	
+	  getList: function (type) {
+	    return React.createElement(
+	      'ul',
+	      { className: 'flexRow wrap' },
+	      this.getSkills(type)
+	    );
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      { className: 'aboutFocus' },
 	      React.createElement(
-	        'ul',
-	        { className: 'flexRow wrap' },
-	        this.getSkills("TECHNICAL")
+	        'h4',
+	        null,
+	        'Technologies & Skills'
 	      ),
+	      this.getList("TECHNICAL"),
 	      React.createElement(
-	        'ul',
-	        { className: 'flexRow wrap' },
-	        this.getSkills("RECREATIONAL")
+	        'h4',
+	        null,
+	        'Recreational'
 	      ),
+	      this.getList("RECREATIONAL"),
 	      React.createElement(
-	        'ul',
-	        { className: 'flexRow wrap' },
-	        this.getSkills("LANGUAGE")
-	      )
+	        'h4',
+	        null,
+	        'Languages'
+	      ),
+	      this.getList("LANGUAGE")
 	    );
 	  }
 	});

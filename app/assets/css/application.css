@@ -18,6 +18,8 @@ a:hover {
 }
 
 p {
+  text-align: justify;
+  width: 100%;
   margin: 15px 0;
 }
 

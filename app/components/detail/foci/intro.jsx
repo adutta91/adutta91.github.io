@@ -5,7 +5,7 @@ var Intro = React.createClass({
   render: function() {
 
     return (
-      <div className="aboutFocus flexColumn">
+      <div className="aboutFocus">
         <div className="introGreeting">
          <img className="icon large round"
               src="app/assets/images/me.jpg"/>
@@ -16,25 +16,30 @@ var Intro = React.createClass({
            <span className="handwriting">{"<- That's me!"}</span>
          </Typist>
         </div>
+        <p>
         Thanks for visiting - I hope you're doing well! :)
-        <br/><br/>
+        </p>
+        <p>
         A little about me:
-        <br/>
+        </p>
+        <p>
         I'm a reader, writer, skier, coffee enthusiast, guitarist, gamer, hiker, etc, etc...
-        <br/><br/>
+        </p>
+        <p>
         I'm guessing you came here to see what I'm up to, what I do, what I'm like...
         There are a bunch of things that interest me (see above), there are ways to
         see what I'm up to (see my projects), but I'm really struggling with how to
         convey my personality. Best I can do is ask you to call me and find out
         for yourself!
-        <br/><br/>
+        </p>
+        <p>
         But I know that's not always feasible. So instead I've just provided some
         info that I think is relevant, for your viewing pleasure!
-        <br/><br/>
+        </p>
+        <p>
         Anyhow, I really appreciate you dropping by, I hope you have an awesome
         day, and I hope to hear from you!
-        <br/>
-        <br/>
+        </p>
         <Typist avgTypingSpeed={50}
                 startDelay={4000}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>

@@ -55,6 +55,8 @@
 
 .aboutFocus {
   width: 400px;
+  height: 550px;
+  overflow: scroll;
   padding-left: 15px;
   border-left: 1px solid black;
   position: absolute;
@@ -119,6 +121,7 @@
 
 .valueImg {
   width: 96px;
+  height: 96px;
   margin: 0 15px;
 }
 

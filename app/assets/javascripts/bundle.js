@@ -28579,7 +28579,7 @@
 	
 	    return React.createElement(
 	      'div',
-	      { className: 'aboutFocus flexColumn' },
+	      { className: 'aboutFocus' },
 	      React.createElement(
 	        'div',
 	        { className: 'introGreeting' },
@@ -28598,23 +28598,36 @@
 	          )
 	        )
 	      ),
-	      'Thanks for visiting - I hope you\'re doing well! :)',
-	      React.createElement('br', null),
-	      React.createElement('br', null),
-	      'A little about me:',
-	      React.createElement('br', null),
-	      'I\'m a reader, writer, skier, coffee enthusiast, guitarist, gamer, hiker, etc, etc...',
-	      React.createElement('br', null),
-	      React.createElement('br', null),
-	      'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and find out for yourself!',
-	      React.createElement('br', null),
-	      React.createElement('br', null),
-	      'But I know that\'s not always feasible. So instead I\'ve just provided some info that I think is relevant, for your viewing pleasure!',
-	      React.createElement('br', null),
-	      React.createElement('br', null),
-	      'Anyhow, I really appreciate you dropping by, I hope you have an awesome day, and I hope to hear from you!',
-	      React.createElement('br', null),
-	      React.createElement('br', null),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Thanks for visiting - I hope you\'re doing well! :)'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'A little about me:'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'I\'m a reader, writer, skier, coffee enthusiast, guitarist, gamer, hiker, etc, etc...'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'I\'m guessing you came here to see what I\'m up to, what I do, what I\'m like... There are a bunch of things that interest me (see above), there are ways to see what I\'m up to (see my projects), but I\'m really struggling with how to convey my personality. Best I can do is ask you to call me and find out for yourself!'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'But I know that\'s not always feasible. So instead I\'ve just provided some info that I think is relevant, for your viewing pleasure!'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Anyhow, I really appreciate you dropping by, I hope you have an awesome day, and I hope to hear from you!'
+	      ),
 	      React.createElement(
 	        Typist,
 	        { avgTypingSpeed: 50,

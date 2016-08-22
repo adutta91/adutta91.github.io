@@ -109,6 +109,10 @@ h2, h4 {
   transition: .5s;
 }
 
+.icon.small {
+  margin: 0;
+}
+
 .icon:hover {
   cursor: pointer;
   transform: scale(1.2);

@@ -44,8 +44,14 @@ var Impulse = React.createClass({
           to keep re-entering your search, etc. It's also on the Chrome Web Store!
           <br/><br/>
           <div className="projectLinks">
-            <a onClick={this.githubLink}>github</a>
-            <a onClick={this.liveLink}>live</a>
+            <img
+              src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png"
+              onClick={this.githubLink}
+              className="small icon"/>
+            <img
+              src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png"
+              onClick={this.liveLink}
+              className="small icon"/>
           </div>
         </span>
         <p>

@@ -28531,12 +28531,6 @@
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
-	          React.createElement(
-	            "strong",
-	            null,
-	            "2010"
-	          ),
-	          React.createElement("br", null),
 	          "The Thacher School is a boarding school located in Southern California. Students complete a rigorous academic curriculum as well as learn responsibility, maturity and the value of lasting friendships and the great outdoors."
 	        ),
 	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/thacher.png" })
@@ -28547,12 +28541,6 @@
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
-	          React.createElement(
-	            "strong",
-	            null,
-	            "2015"
-	          ),
-	          React.createElement("br", null),
 	          "Tufts University, located in Medford, MA, was where I really explored more in depth the various interests I had been developing through high school. I ended up studying Psychology, only discovering my love for Computer Science during my last year there.",
 	          React.createElement("br", null),
 	          "(B.S. Cognitive & Brain Science, Cum Laude, GPA: 3.63)"
@@ -28565,12 +28553,6 @@
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
-	          React.createElement(
-	            "strong",
-	            null,
-	            "2016"
-	          ),
-	          React.createElement("br", null),
 	          "App Academy is a competitive Web Development bootcamp in San Francisco with a ",
 	          '<',
 	          " 5% acceptance rate. Graduates put in about 1000 hours of coding, and learn to navigate and build full stack web applications. It is an amazing space filled with brilliant, enthusiastic people, and I learned an incredible amount there, deepening my interest in Web Development."

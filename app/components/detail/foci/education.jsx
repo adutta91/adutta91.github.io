@@ -7,8 +7,6 @@ var Education = React.createClass({
       <div className="aboutFocus flexColumn">
         <div className="flexRow">
           <div className="valueText education left">
-            <strong>2010</strong>
-            <br/>
             The Thacher School is a boarding school located in Southern California.
             Students complete a rigorous academic curriculum as well as learn
             responsibility, maturity and the value of lasting friendships and
@@ -19,8 +17,6 @@ var Education = React.createClass({
 
         <div className="flexRow">
           <div className="valueText education left">
-          <strong>2015</strong>
-          <br/>
             Tufts University, located in Medford, MA, was where I really explored
             more in depth the various interests I had been developing through high
             school. I ended up studying Psychology, only discovering my love for
@@ -33,8 +29,6 @@ var Education = React.createClass({
 
         <div className="flexRow">
           <div className="valueText education left">
-            <strong>2016</strong>
-            <br/>
             App Academy is a competitive Web Development bootcamp in San Francisco
             with a {'<'} 5% acceptance rate. Graduates put in about 1000 hours of coding,
             and learn to navigate and build full stack web applications. It is an

@@ -17,7 +17,7 @@ var History = React.createClass({
           up earning a degree in Cognitive & Brain Sciences and did some pretty
           interesting research for a bit.
         </p>
-        <p className="valueText">
+        <p className="center valueText">
           <strong>BUT THEN I DISCOVERED COMP SCI</strong>
         </p>
         <p className="valueText">

@@ -28466,7 +28466,7 @@
 	      ),
 	      React.createElement(
 	        "p",
-	        { className: "valueText" },
+	        { className: "center valueText" },
 	        React.createElement(
 	          "strong",
 	          null,

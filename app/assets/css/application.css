@@ -29,6 +29,14 @@ h2, h4 {
   margin: 10px;
 }
 
+strong {
+  text-align: center;
+}
+
+p.center {
+  text-align: center;
+}
+
 .round {
   border-radius: 50%;
 }
@@ -56,7 +64,7 @@ h2, h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .flexRow {

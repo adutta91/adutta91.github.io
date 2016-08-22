@@ -23,7 +23,7 @@ var Echo = React.createClass({
              src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723475/echo.png"
              onClick={this.liveLink}/>
         <h2 className="projectTitle">Echo</h2>
-        <p className="projectDesc">
+        <span className="projectDesc">
           Echo was a solo project that I built with Rails and React. It's a single
           page music sharing and exploration app, allowing users to: create accounts,
           upload music, save music to their profile, and listen to music that other
@@ -35,7 +35,7 @@ var Echo = React.createClass({
             <a onClick={this.githubLink}>github</a>
             <a onClick={this.liveLink}>live</a>
           </div>
-        </p>
+        </span>
         <p>
           <span className="subHeader">Technologies: </span><span className="subText">ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku</span>
         </p>

@@ -23,7 +23,7 @@ var Cellular = React.createClass({
              src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466723532/Cellular.png"
              onClick={this.liveLink}/>
         <h2 className="projectTitle">Cellular</h2>
-        <p className="projectDesc">
+        <span className="projectDesc">
           Cellular was one of my first solo projects, and I had a lot of fun
           making this simple browser game. I used the canvas DOM element to draw
           little circles, the player controls one circle with the mouse (the player
@@ -37,7 +37,7 @@ var Cellular = React.createClass({
             <a onClick={this.githubLink}>github</a>
             <a onClick={this.liveLink}>live</a>
           </div>
-        </p>
+        </span>
         <p>
           <span className="subHeader">Technologies: </span><span className="subText">Javascript - OOP - CSS/HTML</span>
         </p>

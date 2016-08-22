@@ -110,10 +110,9 @@
 	      this.getText(),
 	      React.createElement(
 	        ReactCSSTransitionGroup,
-	        { transitionName: 'example', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
+	        { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
 	        this.getDetail()
-	      ),
-	      React.createElement(LinksFooter, null)
+	      )
 	    );
 	  }
 	});
@@ -20426,7 +20425,12 @@
 	// UTIL
 	var DetailUtil = __webpack_require__(170);
 	
+	// COMPONENTS
 	var SkipButton = __webpack_require__(176);
+	var LinksFooter = __webpack_require__(180);
+	
+	// TRANSITIONS
+	var ReactCSSTransitionGroup = __webpack_require__(223);
 	
 	var AnimatedText = React.createClass({
 	  displayName: 'AnimatedText',
@@ -20436,7 +20440,8 @@
 	    return {
 	      firstLine: false,
 	      secondLine: false,
-	      skipButton: true
+	      skipButton: true,
+	      footer: false
 	    };
 	  },
 	
@@ -20462,7 +20467,7 @@
 	      return React.createElement(
 	        Typist,
 	        { className: 'text',
-	          avgTypingSpeed: 50,
+	          avgTypingSpeed: 10,
 	          startDelay: 750,
 	          onTypingDone: function () {
 	            window.setTimeout(secondLineCallback, 1500);
@@ -20482,7 +20487,7 @@
 	      return React.createElement(
 	        Typist,
 	        { className: 'text2',
-	          avgTypingSpeed: 50,
+	          avgTypingSpeed: 70,
 	          startDelay: 750,
 	          onTypingDone: this.endTyping
 	        },
@@ -20544,7 +20549,26 @@
 	  },
 	
 	  endTyping: function () {
-	    this.setState({ skipButton: false });
+	    this.setState({
+	      skipButton: false,
+	      footer: true
+	    });
+	  },
+	
+	  getFooter: function () {
+	    if (this.state.footer) {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          ReactCSSTransitionGroup,
+	          { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
+	          React.createElement(LinksFooter, null)
+	        )
+	      );
+	    } else {
+	      return React.createElement('div', null);
+	    }
 	  },
 	
 	  render: function () {
@@ -20556,7 +20580,7 @@
 	      React.createElement(
 	        Typist,
 	        { className: 'text',
-	          avgTypingSpeed: 60,
+	          avgTypingSpeed: 10,
 	          startDelay: 1000,
 	          onTypingDone: function () {
 	            window.setTimeout(firstLine, 750);
@@ -20569,7 +20593,8 @@
 	        )
 	      ),
 	      this.getFirstLine(),
-	      this.getSecondLine()
+	      this.getSecondLine(),
+	      this.getFooter()
 	    );
 	  }
 	});
@@ -21488,6 +21513,11 @@
 	
 	var DetailUtil = __webpack_require__(170);
 	
+	var LinksFooter = __webpack_require__(180);
+	
+	// TRANSITIONS
+	var ReactCSSTransitionGroup = __webpack_require__(223);
+	
 	var StaticText = React.createClass({
 	  displayName: 'StaticText',
 	
@@ -21559,6 +21589,11 @@
 	          ),
 	          '?'
 	        )
+	      ),
+	      React.createElement(
+	        ReactCSSTransitionGroup,
+	        { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
+	        React.createElement(LinksFooter, null)
 	      )
 	    );
 	  }
@@ -28700,13 +28735,21 @@
 	  displayName: 'MyProjects',
 	
 	  mixins: [Carousel.ControllerMixin],
+	  getInitialState() {
+	    return { slideIndex: 0 };
+	  },
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      { className: 'detailPane' },
 	      React.createElement(
 	        Carousel,
-	        null,
+	        {
+	          ref: 'carousel',
+	          className: 'carousel',
+	          data: this.setCarouselData.bind(this, 'carousel'),
+	          slideIndex: this.state.slideIndex,
+	          afterSlide: newSlideIndex => this.setState({ slideIndex: newSlideIndex }) },
 	        React.createElement(Impulse, null),
 	        React.createElement(Echo, null),
 	        React.createElement(Cellular, null)
@@ -30648,7 +30691,7 @@
 	        'Impulse'
 	      ),
 	      React.createElement(
-	        'p',
+	        'span',
 	        { className: 'projectDesc' },
 	        'Impulse was a collaborative project with my friend',
 	        React.createElement(
@@ -30725,7 +30768,7 @@
 	        'Echo'
 	      ),
 	      React.createElement(
-	        'p',
+	        'span',
 	        { className: 'projectDesc' },
 	        'Echo was a solo project that I built with Rails and React. It\'s a single page music sharing and exploration app, allowing users to: create accounts, upload music, save music to their profile, and listen to music that other people have uploaded. I had a lot of fun playing around with this project, and have thought through many improvements that I plan to implement down the line.',
 	        React.createElement('br', null),
@@ -30796,7 +30839,7 @@
 	        'Cellular'
 	      ),
 	      React.createElement(
-	        'p',
+	        'span',
 	        { className: 'projectDesc' },
 	        'Cellular was one of my first solo projects, and I had a lot of fun making this simple browser game. I used the canvas DOM element to draw little circles, the player controls one circle with the mouse (the player cell follows the cursor\'s position), and attempts to \'consume\' cells that are smaller than it. There\'s also a \'rival\' that will try to eat you if it is larger than you, otherwise it will eat the smaller neutral cells until it is large enough to take you on. It was fun tinkering with the AI behavior. The whole project was a study in class inheritance and OOP.',
 	        React.createElement('br', null),

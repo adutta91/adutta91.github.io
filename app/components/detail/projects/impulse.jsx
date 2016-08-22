@@ -32,7 +32,7 @@ var Impulse = React.createClass({
              src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png"
              onClick={this.liveLink}/>
         <h2 className="projectTitle">Impulse</h2>
-        <p className="projectDesc">
+        <span className="projectDesc">
           Impulse was a collaborative project with my friend
           <a onClick={this.mattLink}> Matt</a>. The basic idea is a new-tab
           override on the Chrome browser. That means that everytime you open a
@@ -47,7 +47,7 @@ var Impulse = React.createClass({
             <a onClick={this.githubLink}>github</a>
             <a onClick={this.liveLink}>live</a>
           </div>
-        </p>
+        </span>
         <p>
           <span className="subHeader">Technologies: </span><span className="subText">ReactJS - AJAX - jQuery - CSS/HTML</span>
         </p>

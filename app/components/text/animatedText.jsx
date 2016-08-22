@@ -4,7 +4,12 @@ var Typist = require('react-typist');
 // UTIL
 var DetailUtil = require('../../util/detailUtil');
 
+// COMPONENTS
 var SkipButton = require('./skipButton');
+var LinksFooter = require('../links/linksFooter');
+
+// TRANSITIONS
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var AnimatedText = React.createClass({
 
@@ -12,7 +17,8 @@ var AnimatedText = React.createClass({
     return ({
       firstLine: false,
       secondLine: false,
-      skipButton: true
+      skipButton: true,
+      footer: false
     });
   },
 
@@ -37,7 +43,7 @@ var AnimatedText = React.createClass({
     if(this.state.firstLine) {
       return (
         <Typist className="text"
-                avgTypingSpeed={50}
+                avgTypingSpeed={10}
                 startDelay={750}
                 onTypingDone={function() { window.setTimeout(secondLineCallback, 1500); }}>
           My name is Arjun and I'm a software engineer.
@@ -54,7 +60,7 @@ var AnimatedText = React.createClass({
     if(this.state.secondLine) {
       return (
         <Typist className="text2"
-                avgTypingSpeed={50}
+                avgTypingSpeed={70}
                 startDelay={750}
                 onTypingDone={this.endTyping}
                 >
@@ -83,7 +89,26 @@ var AnimatedText = React.createClass({
   },
 
   endTyping: function() {
-    this.setState({ skipButton: false });
+    this.setState({
+      skipButton: false,
+      footer: true
+    });
+  },
+
+  getFooter: function() {
+    if (this.state.footer) {
+      return (
+        <div>
+          <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+            <LinksFooter />
+          </ReactCSSTransitionGroup>
+        </div>
+      )
+    } else {
+      return (
+        <div/>
+      )
+    }
   },
 
   render: function() {
@@ -92,7 +117,7 @@ var AnimatedText = React.createClass({
       <div>
         { this.getSkipButton() }
         <Typist className="text"
-                avgTypingSpeed={60}
+                avgTypingSpeed={10}
                 startDelay={1000}
                 onTypingDone={function (){ window.setTimeout(firstLine, 750) }}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 750}}>
@@ -100,6 +125,7 @@ var AnimatedText = React.createClass({
         </Typist>
         {this.getFirstLine()}
         {this.getSecondLine()}
+        {this.getFooter()}
       </div>
     )
   }

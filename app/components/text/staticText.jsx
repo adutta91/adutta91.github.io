@@ -2,6 +2,11 @@ var React = require('react');
 
 var DetailUtil = require('../../util/detailUtil');
 
+var LinksFooter = require('../links/linksFooter');
+
+// TRANSITIONS
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 var StaticText = React.createClass({
 
   setDetail: function(e) {
@@ -27,6 +32,9 @@ var StaticText = React.createClass({
           <br/>
           <span className="option"> > or just <span className="link" onClick={this.setDetail}>say hi</span>?</span>
         </div>
+        <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          <LinksFooter />
+        </ReactCSSTransitionGroup>
       </div>
     )
   }

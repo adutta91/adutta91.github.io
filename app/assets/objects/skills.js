@@ -30,6 +30,7 @@ module.exports = {
     "Acoustic Guitar",
     "Skiing",
     "Backpacking",
+    "Gaming",
     "Soccer",
     "Rock Climbing",
     "Traveling"

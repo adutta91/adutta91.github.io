@@ -6,7 +6,7 @@ var Skills = React.createClass({
 
   getSkills: function(type) {
     return SkillList[type].map(function(skill) {
-      return (<li className="listItem">{skill}</li>)
+      return (<li key={skill} className="listItem">{skill}</li>)
     });
   },
 

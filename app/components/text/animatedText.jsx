@@ -31,10 +31,12 @@ var AnimatedText = React.createClass({
   },
 
   firstLine: function() {
+    // TODO: add a check to make sure that the environment is appropriate to call this
     this.setState({firstLine: true, secondLine: false});
   },
 
   secondLine: function() {
+    // TODO: add a check to make sure that the environment is appropriate to call this
     this.setState({firstLine: false, secondLine: true});
   },
 

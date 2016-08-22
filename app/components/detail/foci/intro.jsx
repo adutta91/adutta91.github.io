@@ -2,8 +2,12 @@ var React = require('react');
 var Typist = require('react-typist');
 
 var Intro = React.createClass({
-  render: function() {
 
+  typingDone: function() {
+    // TODO: add a check to make sure that the environment is appropriate to call this
+  },
+
+  render: function() {
     return (
       <div className="aboutFocus">
         <div className="introGreeting">
@@ -12,6 +16,7 @@ var Intro = React.createClass({
          <Typist className="handwriting"
                  avgTypingSpeed={50}
                  startDelay={750}
+                 onTypingDone={this.typingDone}
                  cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
            <span className="handwriting">{"<- That's me!"}</span>
          </Typist>
@@ -42,6 +47,7 @@ var Intro = React.createClass({
         </p>
         <Typist avgTypingSpeed={50}
                 startDelay={4000}
+                onTypingDone={this.typingDone}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
           <span className="handwriting signature">- Arjun Dutta</span>
         </Typist>

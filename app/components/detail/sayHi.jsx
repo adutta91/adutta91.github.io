@@ -3,7 +3,7 @@ var React = require('react');
 var SayHi = React.createClass({
   render: function() {
     return (
-      <div className="detailPane flexColumn">
+      <div className="detailPane">
         <div className="contactGreeting">
           Hi there! Below are some ways that you can best contact me! (phone and
           email preferred).

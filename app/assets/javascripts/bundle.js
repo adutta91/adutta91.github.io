@@ -30880,7 +30880,7 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "detailPane flexColumn" },
+	      { className: "detailPane" },
 	      React.createElement(
 	        "div",
 	        { className: "contactGreeting" },

@@ -36,9 +36,10 @@
 
 .aboutButton:hover {
   cursor: pointer;
-  background-color: rgba(0, 122, 185, 0.5);
+  background-color: #007ab9;
   transition: 1s;
   font-size: 18px;
+  color: white;
 }
 
 .aboutButton.selected {

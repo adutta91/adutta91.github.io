@@ -30594,6 +30594,11 @@
 	  getInitialState() {
 	    return { slideIndex: 0 };
 	  },
+	
+	  newSlide: function (idx) {
+	    this.setState({ slideIndex: idx });
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
@@ -30605,7 +30610,7 @@
 	          className: 'carousel',
 	          data: this.setCarouselData.bind(this, 'carousel'),
 	          slideIndex: this.state.slideIndex,
-	          afterSlide: newSlideIndex => this.setState({ slideIndex: newSlideIndex }) },
+	          afterSlide: this.newSlide },
 	        React.createElement(Impulse, null),
 	        React.createElement(Echo, null),
 	        React.createElement(Cellular, null)

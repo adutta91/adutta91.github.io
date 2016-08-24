@@ -11,6 +11,11 @@ var MyProjects = React.createClass({
   getInitialState() {
     return { slideIndex: 0 };
   },
+
+  newSlide: function(idx) {
+    this.setState({ slideIndex: idx});
+  },
+
   render: function() {
     return (
       <div className="detailPane">
@@ -19,7 +24,7 @@ var MyProjects = React.createClass({
            className='carousel'
            data={this.setCarouselData.bind(this, 'carousel')}
            slideIndex={this.state.slideIndex}
-           afterSlide={newSlideIndex => this.setState({ slideIndex: newSlideIndex })}>
+           afterSlide={this.newSlide}>
            <Impulse />
            <Echo />
            <Cellular />

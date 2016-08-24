@@ -1,25 +1,27 @@
 {
   "name": "arjun_portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Arjun Dutta's portfolio",
   "main": "typeAnimation.js",
   "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.13.2",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
     "babel-preset-react": "^6.5.0",
     "flux": "^2.1.1",
     "hover.css": "^2.0.2",
     "jquery": "^3.0.0",
     "jquery.type-char-animation": "^2.0.1",
     "nuka-carousel": "^2.0.1",
-    "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
-    "react-dom": "^15.1.0",
     "react-typist": "^0.3.0",
     "webpack": "^1.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

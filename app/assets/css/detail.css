@@ -130,7 +130,7 @@
 
 .valueImg {
   width: 96px;
-  height: 96px;
+  height: auto;
   margin: 0 15px;
 }
 

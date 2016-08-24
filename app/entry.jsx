@@ -63,10 +63,13 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="container">
-        { this.getText() }
-        <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-          {this.getDetail()}
-        </ReactCSSTransitionGroup>
+        <div className="contentWrapper">
+          { this.getText() }
+          { this.getDetail() }
+          <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          </ReactCSSTransitionGroup>
+        </div>
+        <LinksFooter />
       </div>
     )
   }

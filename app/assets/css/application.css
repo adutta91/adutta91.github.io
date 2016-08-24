@@ -41,6 +41,10 @@ p.center {
   border-radius: 50%;
 }
 
+.flex {
+  display: flex;
+}
+
 .left {
   display: flex;
   justify-content: flex-start;
@@ -53,11 +57,6 @@ p.center {
 
 .handwriting {
   font-family: 'Indie Flower', cursive;
-}
-
-.signature {
-  position: absolute;
-  right: 0;
 }
 
 .flexColumn {
@@ -79,9 +78,6 @@ p.center {
 }
 
 .flexLeft {
-  position: absolute;
-  left: 120px;
-  top: 150px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -89,19 +85,29 @@ p.center {
 
 .container {
   text-align: left;
-  width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: scroll;
+  min-height: 700px;
+  min-width: 1250px;
+  padding: 0 80px 0 0;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.textWrapper {
+  width: 750px;
 }
 
 .linksFooter {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 300px;
-  margin: 0 auto;
-  bottom: 0px;
-  left: 50%;
-  right: 50%;
+  justify-content: center;
+  width: 100%;
   transition: 1s;
 }
 

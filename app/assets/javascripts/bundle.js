@@ -107,12 +107,14 @@
 	    return React.createElement(
 	      'div',
 	      { className: 'container' },
-	      this.getText(),
 	      React.createElement(
-	        ReactCSSTransitionGroup,
-	        { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
-	        this.getDetail()
-	      )
+	        'div',
+	        { className: 'contentWrapper' },
+	        this.getText(),
+	        this.getDetail(),
+	        React.createElement(ReactCSSTransitionGroup, { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 })
+	      ),
+	      React.createElement(LinksFooter, null)
 	    );
 	  }
 	});
@@ -21594,7 +21596,7 @@
 	    var firstLine = this.firstLine;
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'textWrapper' },
 	      this.getSkipButton(),
 	      React.createElement(
 	        Typist,
@@ -21612,8 +21614,7 @@
 	        )
 	      ),
 	      this.getFirstLine(),
-	      this.getSecondLine(),
-	      this.getFooter()
+	      this.getSecondLine()
 	    );
 	  }
 	});
@@ -23502,7 +23503,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'textWrapper' },
 	      React.createElement(
 	        'div',
 	        { className: 'text' },
@@ -23558,11 +23559,6 @@
 	          ),
 	          '?'
 	        )
-	      ),
-	      React.createElement(
-	        ReactCSSTransitionGroup,
-	        { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
-	        React.createElement(LinksFooter, null)
 	      )
 	    );
 	  }
@@ -30147,14 +30143,18 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { key: 'aboutPane', className: 'detailPane' },
+	      { className: 'detailPane flexColumn' },
 	      React.createElement(
 	        'div',
 	        { key: 'aboutTitle', className: 'detailTitle' },
 	        'About Me'
 	      ),
-	      React.createElement(AboutButtonsIndex, { key: 'aboutIndex' }),
-	      this.getFocus()
+	      React.createElement(
+	        'div',
+	        { key: 'aboutPane', className: 'flex' },
+	        React.createElement(AboutButtonsIndex, { key: 'aboutIndex' }),
+	        this.getFocus()
+	      )
 	    );
 	  }
 	});
@@ -32744,51 +32744,55 @@
 	      { className: "detailPane" },
 	      React.createElement(
 	        "div",
-	        { className: "contactGreeting" },
-	        "Hi there! Below are some ways that you can best contact me! (phone and email preferred).",
-	        React.createElement("br", null),
-	        React.createElement("br", null),
-	        "Slightly less reliable methods could be to wander the streets of San Francisco, scan the slopes during the ski season, or search for the coffee shops with the comfiest couches..."
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "flexLeft" },
+	        { className: "flexColumn" },
 	        React.createElement(
 	          "div",
-	          { className: "contact flexRow" },
-	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg" }),
-	          React.createElement(
-	            "a",
-	            { href: "mailto:arjundutta91@gmail.com" },
-	            "arjundutta91@gmail.com"
-	          )
+	          { className: "contactGreeting" },
+	          "Hi there! Below are some ways that you can best contact me! (phone and email preferred).",
+	          React.createElement("br", null),
+	          React.createElement("br", null),
+	          "Slightly less reliable methods could be to wander the streets of San Francisco, scan the slopes during the ski season, or search for the coffee shops with the comfiest couches..."
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "contact flexRow" },
-	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png" }),
-	          React.createElement(
-	            "span",
-	            null,
-	            "(408) 458-6077"
-	          )
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "contact flexRow" },
-	          React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/mail.png" }),
+	          { className: "flexLeft" },
 	          React.createElement(
 	            "div",
-	            { className: "flexColumn" },
+	            { className: "contact flexRow" },
+	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg" }),
+	            React.createElement(
+	              "a",
+	              { href: "mailto:arjundutta91@gmail.com" },
+	              "arjundutta91@gmail.com"
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "contact flexRow" },
+	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png" }),
+	            React.createElement(
+	              "span",
+	              null,
+	              "(408) 458-6077"
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "contact flexRow" },
+	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/mail.png" }),
 	            React.createElement(
 	              "div",
-	              null,
-	              "1413 Pitman Ave"
-	            ),
-	            React.createElement(
-	              "div",
-	              null,
-	              "Palo Alto, CA 94103"
+	              { className: "flexColumn" },
+	              React.createElement(
+	                "div",
+	                null,
+	                "1413 Pitman Ave"
+	              ),
+	              React.createElement(
+	                "div",
+	                null,
+	                "Palo Alto, CA 94103"
+	              )
 	            )
 	          )
 	        )

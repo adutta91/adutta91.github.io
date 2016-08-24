@@ -19,7 +19,7 @@ var StaticText = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="textWrapper">
         <div className="text">
           <span className="greeting">Hello!</span>
         </div>
@@ -32,9 +32,6 @@ var StaticText = React.createClass({
           <br/>
           <span className="option"> > or just <span className="link" onClick={this.setDetail}>say hi</span>?</span>
         </div>
-        <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-          <LinksFooter />
-        </ReactCSSTransitionGroup>
       </div>
     )
   }

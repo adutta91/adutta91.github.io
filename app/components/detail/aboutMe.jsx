@@ -35,10 +35,12 @@ var AboutMe = React.createClass({
 
   render: function() {
     return (
-      <div key="aboutPane" className="detailPane">
+      <div className="detailPane flexColumn">
         <div key="aboutTitle" className="detailTitle">About Me</div>
-        <AboutButtonsIndex key="aboutIndex"/>
-        {this.getFocus()}
+        <div key="aboutPane" className="flex">
+          <AboutButtonsIndex key="aboutIndex"/>
+          {this.getFocus()}
+        </div>
       </div>
     );
   }

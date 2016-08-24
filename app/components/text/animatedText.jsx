@@ -116,7 +116,7 @@ var AnimatedText = React.createClass({
   render: function() {
     var firstLine = this.firstLine;
     return (
-      <div>
+      <div className="textWrapper">
         { this.getSkipButton() }
         <Typist className="text"
                 avgTypingSpeed={10}
@@ -127,7 +127,6 @@ var AnimatedText = React.createClass({
         </Typist>
         {this.getFirstLine()}
         {this.getSecondLine()}
-        {this.getFooter()}
       </div>
     )
   }

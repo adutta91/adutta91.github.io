@@ -47,6 +47,10 @@
   transition: .5s;
 }
 
+.signature {
+  right: 0;
+}
+
 /* Cursor styling */
 
 .Typist .Cursor--blinking {

@@ -43,7 +43,7 @@ var Echo = React.createClass({
           </div>
         </span>
         <p>
-          <span className="subHeader">Technologies: </span><span className="subText">ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku</span>
+          <span className="subHeader">Technologies: </span><span className="subText">ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku - REST Web Services</span>
         </p>
       </div>
     )

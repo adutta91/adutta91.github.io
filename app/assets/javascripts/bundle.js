@@ -32656,7 +32656,7 @@
 	        React.createElement(
 	          'span',
 	          { className: 'subText' },
-	          'ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku - REST Web Services'
+	          'ReactJS - Ruby - Rails - PostgreSQL - AJAX - jQuery - CSS/HTML - Heroku - RESTful Web Services'
 	        )
 	      )
 	    );

@@ -3,15 +3,19 @@ var Typist = require('react-typist');
 
 var Intro = React.createClass({
 
-  typingDone: function() {
-    // TODO: add a check to make sure that the environment is appropriate to call this
+  onClick: function() {
+    window.open(
+      'https://www.facebook.com/arjun.dutta.71',
+      '_blank'
+    )
   },
 
   render: function() {
     return (
       <div id="intro" className="aboutFocus">
         <div className="introGreeting">
-         <img className="icon large round"
+         <img onClick={this.onClick}
+              className="icon large round"
               src="app/assets/images/me.jpg"/>
         </div>
         <p>

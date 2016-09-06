@@ -30431,8 +30431,8 @@
 	  displayName: 'Intro',
 	
 	
-	  typingDone: function () {
-	    // TODO: add a check to make sure that the environment is appropriate to call this
+	  onClick: function () {
+	    window.open('https://www.facebook.com/arjun.dutta.71', '_blank');
 	  },
 	
 	  render: function () {
@@ -30442,7 +30442,8 @@
 	      React.createElement(
 	        'div',
 	        { className: 'introGreeting' },
-	        React.createElement('img', { className: 'icon large round',
+	        React.createElement('img', { onClick: this.onClick,
+	          className: 'icon large round',
 	          src: 'app/assets/images/me.jpg' })
 	      ),
 	      React.createElement(

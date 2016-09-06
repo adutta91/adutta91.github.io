@@ -44,13 +44,13 @@ var AnimatedText = React.createClass({
     var secondLineCallback = this.secondLine;
     if(this.state.firstLine) {
       return (
-        <Typist className="text"
+        <Typist className="greetingText text"
                 avgTypingSpeed={10}
                 startDelay={750}
                 onTypingDone={function() { window.setTimeout(secondLineCallback, 1500); }}>
-          My name is Arjun and I'm a software engineer.
-          <br/><br/>
-          Nice to meet you!
+              My name is Arjun and I'm a software engineer.
+              <br/><br/>
+              Nice to meet you!
         </Typist>
       );
     } else {
@@ -64,8 +64,7 @@ var AnimatedText = React.createClass({
         <Typist className="text2"
                 avgTypingSpeed={70}
                 startDelay={750}
-                onTypingDone={this.endTyping}
-                >
+                onTypingDone={this.endTyping}>
             <span>What would you like to do?</span>
             <br/> <br/>
             <span className="option"> > learn more <span className="link" onClick={this.setDetail}>about me</span>?</span>
@@ -116,14 +115,14 @@ var AnimatedText = React.createClass({
   render: function() {
     var firstLine = this.firstLine;
     return (
-      <div className="textWrapper">
+      <div id="textWrapper">
         { this.getSkipButton() }
         <Typist className="text"
                 avgTypingSpeed={10}
                 startDelay={1000}
                 onTypingDone={function (){ window.setTimeout(firstLine, 750) }}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 750}}>
-          <span className="greeting">Hello!</span>
+          <span id="greeting">Hello!</span>
         </Typist>
         {this.getFirstLine()}
         {this.getSecondLine()}

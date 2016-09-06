@@ -4,7 +4,7 @@ var SayHi = React.createClass({
   render: function() {
     return (
       <div className="detailPane">
-        <div className="flexColumn">
+        <div className="flex column">
           <div className="contactGreeting">
             Hi there! Below are some ways that you can best contact me! (phone and
             email preferred).
@@ -13,18 +13,18 @@ var SayHi = React.createClass({
             scan the slopes during the ski season, or search for the coffee shops
             with the comfiest couches...
           </div>
-          <div className="flexLeft">
-            <div className="contact flexRow">
+          <div id="contactInfo" className="flex column left">
+            <div className="contact flex">
               <img className="symbol" src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg"/>
               <a href="mailto:arjundutta91@gmail.com">arjundutta91@gmail.com</a>
             </div>
-            <div className="contact flexRow">
+            <div className="contact flex">
               <img className="symbol" src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png"/>
               <span>(408) 458-6077</span>
             </div>
-            <div className="contact flexRow">
+            <div className="contact flex">
               <img className="symbol" src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/mail.png"/>
-              <div className="flexColumn">
+              <div className="flex column">
                 <div>1413 Pitman Ave</div>
                 <div>Palo Alto, CA 94103</div>
               </div>

@@ -9,17 +9,10 @@ var Intro = React.createClass({
 
   render: function() {
     return (
-      <div className="aboutFocus">
+      <div id="intro" className="aboutFocus">
         <div className="introGreeting">
          <img className="icon large round"
               src="app/assets/images/me.jpg"/>
-         <Typist className="handwriting"
-                 avgTypingSpeed={50}
-                 startDelay={750}
-                 onTypingDone={this.typingDone}
-                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
-           <span className="handwriting">{"<- That's me!"}</span>
-         </Typist>
         </div>
         <p>
         Thanks for visiting - I hope you're doing well! :)
@@ -46,7 +39,7 @@ var Intro = React.createClass({
         day, and I hope to hear from you!
         </p>
         <Typist avgTypingSpeed={50}
-                startDelay={4000}
+                startDelay={2000}
                 onTypingDone={this.typingDone}
                 cursor={{hideWhenDone: true, hideWhenDoneDelay: 250}}>
           <span className="handwriting signature">- Arjun Dutta</span>

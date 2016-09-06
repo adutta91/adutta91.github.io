@@ -12,13 +12,13 @@ var Skills = React.createClass({
 
   getList: function(type) {
     return (
-      <ul className="flexRow wrap">{this.getSkills(type)}</ul>
+      <ul className="flex wrap">{this.getSkills(type)}</ul>
     )
   },
 
   render: function() {
     return (
-      <div className="aboutFocus">
+      <div className="aboutFocus vScroll">
         <h4>Technologies & Skills</h4>
         {this.getList("TECHNICAL")}
         <h4>Recreational</h4>

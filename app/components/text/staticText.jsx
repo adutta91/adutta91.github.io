@@ -19,9 +19,9 @@ var StaticText = React.createClass({
 
   render: function() {
     return (
-      <div className="textWrapper">
+      <div id="textWrapper">
         <div className="text">
-          <span className="greeting">Hello!</span>
+          <span id="greeting">Hello!</span>
         </div>
         <div className="text2">
           <span>What would you like to do?</span>

@@ -3,7 +3,7 @@ var React = require('react');
 var Values = React.createClass({
   render: function() {
     return (
-      <div className="aboutFocus">
+      <div className="aboutFocus vScroll">
         <div className="valueTitle left">Be nice</div>
         <div className="valueText left">
           It seems like a straightforward thing, but there are times when it's

@@ -3,7 +3,7 @@ var React = require('react');
 var History = React.createClass({
   render: function() {
     return (
-      <div className="aboutFocus flexColumn">
+      <div className="aboutFocus vScroll">
         <p className="valueText">
           There's not much to say, really. I've been blessed by a pretty
           awesome life so far - amazing family, the best of friends. I've lived

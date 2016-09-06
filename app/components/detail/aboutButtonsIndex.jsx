@@ -29,7 +29,7 @@ var AboutButtonsIndex = React.createClass({
 
   render: function() {
     return (
-      <div className="aboutButtonIndex">
+      <div className="aboutButtonIndex flex column">
         <div className={this.getClassName("VALUES")} onClick={this._onClick}>Values</div>
         <div className={this.getClassName("HISTORY")} onClick={this._onClick}>History</div>
         <div className={this.getClassName("EDUCATION")} onClick={this._onClick}>Education</div>

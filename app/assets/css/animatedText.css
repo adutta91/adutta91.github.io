@@ -1,22 +1,28 @@
 
-.text {
-  font-size: 50px;
-  margin: 100px auto;
+#greeting {
+  font-size: 8vh;
   width: 80%;
+  margin: 100px auto;
   transition: 1s;
+}
+
+.text {
+  font-size: 6vh;
+  margin-left: 5vw;
+  margin-bottom: 5vw;
+  margin-top: 8vw;
+  transition: 1s;
+}
+
+.greetingText {
+  width: 80vw;
+  margin-left: 5vw;
+  line-height: 8vh;
 }
 
 .text2 {
-  font-size: 40px;
-  margin: 100px auto;
-  width: 80%;
-  transition: 1s;
-}
-
-.greeting {
-  font-size: 60px;
-  width: 80%;
-  margin: 100px auto;
+  font-size: 4vh;
+  margin-left: 5vw;
   transition: 1s;
 }
 
@@ -34,8 +40,9 @@
 }
 
 .option {
-  margin-left: 40px;
-  line-height: 75px;
+  margin-left: 5vw;
+  line-height: 10vh;
+  align-self: flex-start;
 }
 
 .skip {

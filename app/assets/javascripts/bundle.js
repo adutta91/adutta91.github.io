@@ -106,10 +106,10 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'container' },
+	      { id: 'app' },
 	      React.createElement(
 	        'div',
-	        { className: 'contentWrapper' },
+	        { id: 'contentWrapper' },
 	        this.getText(),
 	        this.getDetail(),
 	        React.createElement(ReactCSSTransitionGroup, { transitionName: 'transition', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 })
@@ -21487,7 +21487,7 @@
 	    if (this.state.firstLine) {
 	      return React.createElement(
 	        Typist,
-	        { className: 'text',
+	        { className: 'greetingText text',
 	          avgTypingSpeed: 10,
 	          startDelay: 750,
 	          onTypingDone: function () {
@@ -21510,8 +21510,7 @@
 	        { className: 'text2',
 	          avgTypingSpeed: 70,
 	          startDelay: 750,
-	          onTypingDone: this.endTyping
-	        },
+	          onTypingDone: this.endTyping },
 	        React.createElement(
 	          'span',
 	          null,
@@ -21596,7 +21595,7 @@
 	    var firstLine = this.firstLine;
 	    return React.createElement(
 	      'div',
-	      { className: 'textWrapper' },
+	      { id: 'textWrapper' },
 	      this.getSkipButton(),
 	      React.createElement(
 	        Typist,
@@ -21609,7 +21608,7 @@
 	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 750 } },
 	        React.createElement(
 	          'span',
-	          { className: 'greeting' },
+	          { id: 'greeting' },
 	          'Hello!'
 	        )
 	      ),
@@ -23503,13 +23502,13 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'textWrapper' },
+	      { id: 'textWrapper' },
 	      React.createElement(
 	        'div',
 	        { className: 'text' },
 	        React.createElement(
 	          'span',
-	          { className: 'greeting' },
+	          { id: 'greeting' },
 	          'Hello!'
 	        )
 	      ),
@@ -30143,7 +30142,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'detailPane flexColumn' },
+	      { className: 'detailPane flex column vScroll' },
 	      React.createElement(
 	        'div',
 	        { key: 'aboutTitle', className: 'detailTitle' },
@@ -30151,7 +30150,7 @@
 	      ),
 	      React.createElement(
 	        'div',
-	        { key: 'aboutPane', className: 'flex' },
+	        { id: 'aboutMeDisplay', key: 'aboutPane', className: 'flex' },
 	        React.createElement(AboutButtonsIndex, { key: 'aboutIndex' }),
 	        this.getFocus()
 	      )
@@ -30199,7 +30198,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'aboutButtonIndex' },
+	      { className: 'aboutButtonIndex flex column' },
 	      React.createElement(
 	        'div',
 	        { className: this.getClassName("VALUES"), onClick: this._onClick },
@@ -30259,7 +30258,7 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus" },
+	      { className: "aboutFocus vScroll" },
 	      React.createElement(
 	        "div",
 	        { className: "valueTitle left" },
@@ -30308,7 +30307,7 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus flexColumn" },
+	      { className: "aboutFocus vScroll" },
 	      React.createElement(
 	        "p",
 	        { className: "valueText" },
@@ -30379,40 +30378,41 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      { className: "aboutFocus flexColumn" },
+	      { id: "educationDisplay", className: "aboutFocus vScroll" },
 	      React.createElement(
 	        "div",
-	        { className: "flexRow" },
+	        { className: "institution flex" },
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/thacher.png" }),
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
 	          "The Thacher School is a boarding school located in Southern California. Students complete a rigorous academic curriculum as well as learn responsibility, maturity and the value of lasting friendships and the great outdoors."
-	        ),
-	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/thacher.png" })
+	        )
 	      ),
 	      React.createElement(
 	        "div",
-	        { className: "flexRow" },
+	        { className: "institution flex" },
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/tufts.jpg" }),
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
 	          "Tufts University, located in Medford, MA, was where I really explored more in depth the various interests I had been developing through high school. I ended up studying Psychology, only discovering my love for Computer Science during my last year there.",
 	          React.createElement("br", null),
+	          React.createElement("br", null),
 	          "(B.S. Cognitive & Brain Science, Cum Laude, GPA: 3.63)"
-	        ),
-	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/tufts.jpg" })
+	        )
 	      ),
 	      React.createElement(
 	        "div",
-	        { className: "flexRow" },
+	        { className: "institution flex" },
+	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/app_academy.png" }),
 	        React.createElement(
 	          "div",
 	          { className: "valueText education left" },
 	          "App Academy is a competitive Web Development bootcamp in San Francisco with a ",
 	          '<',
 	          " 5% acceptance rate. Graduates put in about 1000 hours of coding, and learn to navigate and build full stack web applications. It is an amazing space filled with brilliant, enthusiastic people, and I learned an incredible amount there, deepening my interest in Web Development."
-	        ),
-	        React.createElement("img", { className: "valueImg", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466747928/portfolio/app_academy.png" })
+	        )
 	      )
 	    );
 	  }
@@ -30438,25 +30438,12 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'aboutFocus' },
+	      { id: 'intro', className: 'aboutFocus' },
 	      React.createElement(
 	        'div',
 	        { className: 'introGreeting' },
 	        React.createElement('img', { className: 'icon large round',
-	          src: 'app/assets/images/me.jpg' }),
-	        React.createElement(
-	          Typist,
-	          { className: 'handwriting',
-	            avgTypingSpeed: 50,
-	            startDelay: 750,
-	            onTypingDone: this.typingDone,
-	            cursor: { hideWhenDone: true, hideWhenDoneDelay: 250 } },
-	          React.createElement(
-	            'span',
-	            { className: 'handwriting' },
-	            "<- That's me!"
-	          )
-	        )
+	          src: 'app/assets/images/me.jpg' })
 	      ),
 	      React.createElement(
 	        'p',
@@ -30491,7 +30478,7 @@
 	      React.createElement(
 	        Typist,
 	        { avgTypingSpeed: 50,
-	          startDelay: 4000,
+	          startDelay: 2000,
 	          onTypingDone: this.typingDone,
 	          cursor: { hideWhenDone: true, hideWhenDoneDelay: 250 } },
 	        React.createElement(
@@ -30531,7 +30518,7 @@
 	  getList: function (type) {
 	    return React.createElement(
 	      'ul',
-	      { className: 'flexRow wrap' },
+	      { className: 'flex wrap' },
 	      this.getSkills(type)
 	    );
 	  },
@@ -30539,7 +30526,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'aboutFocus' },
+	      { className: 'aboutFocus vScroll' },
 	      React.createElement(
 	        'h4',
 	        null,
@@ -32569,11 +32556,11 @@
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
 	            onClick: this.githubLink,
-	            className: 'small icon' }),
+	            className: 'icon' }),
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
 	            onClick: this.liveLink,
-	            className: 'small icon' })
+	            className: 'icon' })
 	        )
 	      ),
 	      React.createElement(
@@ -32638,11 +32625,11 @@
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
 	            onClick: this.githubLink,
-	            className: 'small icon' }),
+	            className: 'icon' }),
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
 	            onClick: this.liveLink,
-	            className: 'small icon' })
+	            className: 'icon' })
 	        )
 	      ),
 	      React.createElement(
@@ -32707,11 +32694,11 @@
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
 	            onClick: this.githubLink,
-	            className: 'small icon' }),
+	            className: 'icon' }),
 	          React.createElement('img', {
 	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
 	            onClick: this.liveLink,
-	            className: 'small icon' })
+	            className: 'icon' })
 	        )
 	      ),
 	      React.createElement(
@@ -32749,7 +32736,7 @@
 	      { className: "detailPane" },
 	      React.createElement(
 	        "div",
-	        { className: "flexColumn" },
+	        { className: "flex column" },
 	        React.createElement(
 	          "div",
 	          { className: "contactGreeting" },
@@ -32760,10 +32747,10 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "flexLeft" },
+	          { id: "contactInfo", className: "flex column left" },
 	          React.createElement(
 	            "div",
-	            { className: "contact flexRow" },
+	            { className: "contact flex" },
 	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/atsign.jpg" }),
 	            React.createElement(
 	              "a",
@@ -32773,7 +32760,7 @@
 	          ),
 	          React.createElement(
 	            "div",
-	            { className: "contact flexRow" },
+	            { className: "contact flex" },
 	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/phone.png" }),
 	            React.createElement(
 	              "span",
@@ -32783,11 +32770,11 @@
 	          ),
 	          React.createElement(
 	            "div",
-	            { className: "contact flexRow" },
+	            { className: "contact flex" },
 	            React.createElement("img", { className: "symbol", src: "http://res.cloudinary.com/dzyfczxnr/image/upload/v1466717141/portfolio/mail.png" }),
 	            React.createElement(
 	              "div",
-	              { className: "flexColumn" },
+	              { className: "flex column" },
 	              React.createElement(
 	                "div",
 	                null,

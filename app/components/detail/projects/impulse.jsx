@@ -47,11 +47,11 @@ var Impulse = React.createClass({
             <img
               src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png"
               onClick={this.githubLink}
-              className="small icon"/>
+              className="icon"/>
             <img
               src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png"
               onClick={this.liveLink}
-              className="small icon"/>
+              className="icon"/>
           </div>
         </span>
         <p>

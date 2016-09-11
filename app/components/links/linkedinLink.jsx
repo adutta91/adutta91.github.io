@@ -5,7 +5,7 @@ var LinkedinLink = React.createClass({
   _onClick: function() {
     window.open(
       'https://linkedin.com/in/arjundutta91',
-      '_blank' 
+      '_blank'
     );
   },
 
@@ -14,7 +14,7 @@ var LinkedinLink = React.createClass({
       <div>
         <img
           className="icon"
-          src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/linkedin.png"
+          src="app/assets/images/linkedin.png"
           onClick={this._onClick}
         />
       </div>

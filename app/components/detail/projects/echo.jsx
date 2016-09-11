@@ -33,11 +33,11 @@ var Echo = React.createClass({
           <br/><br/>
           <div className="projectLinks">
             <img
-              src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png"
+              src="app/assets/images/github.png"
               onClick={this.githubLink}
               className="icon"/>
             <img
-              src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png"
+              src="app/assets/images/web.png"
               onClick={this.liveLink}
               className="icon"/>
           </div>

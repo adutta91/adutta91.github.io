@@ -5,7 +5,7 @@ var GithubLink = React.createClass({
   _onClick: function() {
     window.open(
       'https://github.com/adutta91',
-      '_blank' 
+      '_blank'
     );
   },
 
@@ -14,7 +14,7 @@ var GithubLink = React.createClass({
       <div>
         <img
           className="icon"
-          src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png"
+          src="app/assets/images/github.png"
           onClick={this._onClick}
         />
       </div>

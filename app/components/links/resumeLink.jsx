@@ -14,7 +14,7 @@ var ResumeLink = React.createClass({
       <div>
         <img
           className="icon"
-          src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1466490680/portfolio/resume.png"
+          src="app/assets/images/resume.png"
           onClick={this._onClick}
         />
       </div>

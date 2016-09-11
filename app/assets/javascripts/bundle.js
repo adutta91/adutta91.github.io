@@ -22571,7 +22571,7 @@
 	      null,
 	      React.createElement('img', {
 	        className: 'icon',
-	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
+	        src: 'app/assets/images/github.png',
 	        onClick: this._onClick
 	      })
 	    );
@@ -22600,7 +22600,7 @@
 	      null,
 	      React.createElement('img', {
 	        className: 'icon',
-	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/linkedin.png',
+	        src: 'app/assets/images/linkedin.png',
 	        onClick: this._onClick
 	      })
 	    );
@@ -22629,7 +22629,7 @@
 	      null,
 	      React.createElement('img', {
 	        className: 'icon',
-	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466490680/portfolio/resume.png',
+	        src: 'app/assets/images/resume.png',
 	        onClick: this._onClick
 	      })
 	    );
@@ -32555,11 +32555,11 @@
 	          'div',
 	          { className: 'projectLinks' },
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
+	            src: 'app/assets/images/github.png',
 	            onClick: this.githubLink,
 	            className: 'icon' }),
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
+	            src: 'app/assets/images/web.png',
 	            onClick: this.liveLink,
 	            className: 'icon' })
 	        )
@@ -32624,11 +32624,11 @@
 	          'div',
 	          { className: 'projectLinks' },
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
+	            src: 'app/assets/images/github.png',
 	            onClick: this.githubLink,
 	            className: 'icon' }),
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
+	            src: 'app/assets/images/web.png',
 	            onClick: this.liveLink,
 	            className: 'icon' })
 	        )
@@ -32693,11 +32693,11 @@
 	          'div',
 	          { className: 'projectLinks' },
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1466453609/portfolio/github.png',
+	            src: 'app/assets/images/github.png',
 	            onClick: this.githubLink,
 	            className: 'icon' }),
 	          React.createElement('img', {
-	            src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/v1471894149/portfolio/web.png',
+	            src: 'app/assets/images/web.png',
 	            onClick: this.liveLink,
 	            className: 'icon' })
 	        )

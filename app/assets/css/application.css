@@ -1,6 +1,7 @@
 html {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  overflow: scroll;
 }
 
 ul {
@@ -43,7 +44,6 @@ p.center {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: scroll;
   height: 100vh;
   width: 100vw;
 }

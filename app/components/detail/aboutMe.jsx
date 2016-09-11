@@ -35,7 +35,7 @@ var AboutMe = React.createClass({
 
   render: function() {
     return (
-      <div className="detailPane flex column vScroll">
+      <div className="detailPane flex column">
         <div key="aboutTitle" className="detailTitle">About Me</div>
         <div id="aboutMeDisplay" key="aboutPane" className="flex">
           <AboutButtonsIndex key="aboutIndex"/>

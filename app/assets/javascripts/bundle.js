@@ -30142,7 +30142,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'detailPane flex column vScroll' },
+	      { className: 'detailPane flex column' },
 	      React.createElement(
 	        'div',
 	        { key: 'aboutTitle', className: 'detailTitle' },

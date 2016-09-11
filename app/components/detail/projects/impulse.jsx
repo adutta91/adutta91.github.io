@@ -29,7 +29,7 @@ var Impulse = React.createClass({
     return (
       <div className="projectInfo">
         <img className="projectImage"
-             src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_crop,h_1500,w_2800/v1466725669/impulse_ss.png"
+             src="http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_841/v1466725669/impulse_ss.png"
              onClick={this.liveLink}/>
         <h2 className="projectTitle">Impulse</h2>
         <span className="projectDesc">

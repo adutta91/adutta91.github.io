@@ -1,6 +1,7 @@
 var React = require('react');
 var Carousel = require('nuka-carousel');
 
+var EacPortfolio = require('./projects/eacPortfolio');
 var Impulse = require('./projects/impulse');
 var Echo = require('./projects/echo');
 var Cellular = require('./projects/cellular');
@@ -25,6 +26,7 @@ var MyProjects = React.createClass({
            data={this.setCarouselData.bind(this, 'carousel')}
            slideIndex={this.state.slideIndex}
            afterSlide={this.newSlide}>
+           <EacPortfolio />
            <Impulse />
            <Echo />
            <Cellular />

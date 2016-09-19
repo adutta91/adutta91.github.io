@@ -137,6 +137,7 @@ p.center {
 
 .subText {
   padding: 10px;
+  line-height: 2.5vh;
 }
 
 .button {

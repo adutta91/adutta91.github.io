@@ -1,0 +1,31 @@
+
+.projectInfo {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.projectImage {
+  width: 100%;
+}
+
+.projectImage:hover {
+  cursor: pointer;
+}
+
+.projectTitle {
+  text-align: center;
+}
+
+.projectLinks {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.projectDesc {
+  text-align: justify;
+  line-height: 2.5vh;
+}

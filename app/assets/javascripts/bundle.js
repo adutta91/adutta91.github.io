@@ -32832,7 +32832,7 @@
 	      React.createElement(
 	        'span',
 	        { className: 'projectDesc' },
-	        'A portfolio page built for a global-health focused professional built with ReactJS and a backend with Rails/PostgreSQL. Features include: interactive globe displaying projects, scroll-sensitive header, "secret" project management dashboard for project creation, editing, and management, Google Map Geolocation for creating map markers from addresses or city names. I built the site in communication with the client, taking into consideration her desires to create a site according to her vision. I also built a method for her to manage the site data without needing web development experience.',
+	        'A portfolio page built for a global-health focused professional built with ReactJS and a backend with Rails/PostgreSQL. Features include: interactive globe displaying projects, scroll-sensitive header, "secret" project management dashboard for project creation, editing, and management, and Google Map Geolocation for creating map markers from addresses or city names. I built the site in communication with the client, taking into consideration her desires to create a site according to her vision. I also built a method for her to manage the site data without needing web development experience.',
 	        React.createElement('br', null),
 	        React.createElement('br', null),
 	        React.createElement(

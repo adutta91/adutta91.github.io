@@ -25,7 +25,7 @@ var EacPortfolio = React.createClass({
              onClick={this.liveLink}/>
         <h2 className="projectTitle">Portfolio</h2>
         <span className="projectDesc">
-          A portfolio page built for a global-health focused professional built
+          A portfolio page built for a global health focused professional built
           with ReactJS and a backend with Rails/PostgreSQL. Features include:
           interactive globe displaying projects, scroll-sensitive header, "secret"
           project management dashboard for project creation, editing, and management,

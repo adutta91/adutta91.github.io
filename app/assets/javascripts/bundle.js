@@ -30089,7 +30089,7 @@
 	
 	var AboutMe = __webpack_require__(215);
 	var MyProjects = __webpack_require__(224);
-	var SayHi = __webpack_require__(233);
+	var SayHi = __webpack_require__(234);
 	
 	module.exports = {
 	  "ABOUTME": React.createElement(AboutMe, { key: 'aboutMe' }),
@@ -30571,10 +30571,10 @@
 	var React = __webpack_require__(1);
 	var Carousel = __webpack_require__(225);
 	
-	var EacPortfolio = __webpack_require__(234);
-	var Impulse = __webpack_require__(230);
-	var Echo = __webpack_require__(231);
-	var Cellular = __webpack_require__(232);
+	var EacPortfolio = __webpack_require__(230);
+	var Impulse = __webpack_require__(231);
+	var Echo = __webpack_require__(232);
+	var Cellular = __webpack_require__(233);
 	
 	var MyProjects = React.createClass({
 	  displayName: 'MyProjects',
@@ -32510,6 +32510,76 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var EacPortfolio = React.createClass({
+	  displayName: 'EacPortfolio',
+	
+	
+	  liveLink: function (event) {
+	    event.preventDefault();
+	    window.open('http://eacportfolio.herokuapp.com', '_blank');
+	  },
+	
+	  githubLink: function (event) {
+	    event.preventDefault();
+	    window.open('https://github.com/adutta91/emily_portfolio', '_blank');
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'projectInfo' },
+	      React.createElement('img', { className: 'projectImage',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_841/v1474310336/portfolio/eacPortfolio.png',
+	        onClick: this.liveLink }),
+	      React.createElement(
+	        'h2',
+	        { className: 'projectTitle' },
+	        'Portfolio'
+	      ),
+	      React.createElement(
+	        'span',
+	        { className: 'projectDesc' },
+	        'A portfolio page built for a global health focused professional built with ReactJS and a backend with Rails/PostgreSQL. Features include: interactive globe displaying projects, scroll-sensitive header, "secret" project management dashboard for project creation, editing, and management, and Google Map Geolocation for creating map markers from addresses or city names. I built the site in communication with the client, taking into consideration her desires to create a site according to her vision. I also built a method for her to manage the site data without needing web development experience.',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'div',
+	          { className: 'projectLinks' },
+	          React.createElement('img', {
+	            src: 'app/assets/images/github.png',
+	            onClick: this.githubLink,
+	            className: 'icon' }),
+	          React.createElement('img', {
+	            src: 'app/assets/images/web.png',
+	            onClick: this.liveLink,
+	            className: 'icon' })
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        React.createElement(
+	          'span',
+	          { className: 'subHeader' },
+	          'Technologies: '
+	        ),
+	        React.createElement(
+	          'span',
+	          { className: 'subText' },
+	          'ReactJS - Rails - AJAX - jQuery - CSS/HTML - WebGL - Google Geolocation API - PostgreSQL'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = EacPortfolio;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
 	var Impulse = React.createClass({
 	  displayName: 'Impulse',
 	
@@ -32587,7 +32657,7 @@
 	module.exports = Impulse;
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -32656,7 +32726,7 @@
 	module.exports = Echo;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -32725,7 +32795,7 @@
 	module.exports = Cellular;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -32797,76 +32867,6 @@
 	});
 	
 	module.exports = SayHi;
-
-/***/ },
-/* 234 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	var EacPortfolio = React.createClass({
-	  displayName: 'EacPortfolio',
-	
-	
-	  liveLink: function (event) {
-	    event.preventDefault();
-	    window.open('http://eacportfolio.herokuapp.com', '_blank');
-	  },
-	
-	  githubLink: function (event) {
-	    event.preventDefault();
-	    window.open('https://github.com/adutta91/emily_portfolio', '_blank');
-	  },
-	
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      { className: 'projectInfo' },
-	      React.createElement('img', { className: 'projectImage',
-	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_841/v1474310336/portfolio/eacPortfolio.png',
-	        onClick: this.liveLink }),
-	      React.createElement(
-	        'h2',
-	        { className: 'projectTitle' },
-	        'Portfolio'
-	      ),
-	      React.createElement(
-	        'span',
-	        { className: 'projectDesc' },
-	        'A portfolio page built for a global-health focused professional built with ReactJS and a backend with Rails/PostgreSQL. Features include: interactive globe displaying projects, scroll-sensitive header, "secret" project management dashboard for project creation, editing, and management, and Google Map Geolocation for creating map markers from addresses or city names. I built the site in communication with the client, taking into consideration her desires to create a site according to her vision. I also built a method for her to manage the site data without needing web development experience.',
-	        React.createElement('br', null),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'div',
-	          { className: 'projectLinks' },
-	          React.createElement('img', {
-	            src: 'app/assets/images/github.png',
-	            onClick: this.githubLink,
-	            className: 'icon' }),
-	          React.createElement('img', {
-	            src: 'app/assets/images/web.png',
-	            onClick: this.liveLink,
-	            className: 'icon' })
-	        )
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        React.createElement(
-	          'span',
-	          { className: 'subHeader' },
-	          'Technologies: '
-	        ),
-	        React.createElement(
-	          'span',
-	          { className: 'subText' },
-	          'ReactJS - Rails - AJAX - jQuery - CSS/HTML - WebGL - Google Geolocation API - PostgreSQL'
-	        )
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = EacPortfolio;
 
 /***/ }
 /******/ ]);

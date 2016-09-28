@@ -30089,7 +30089,7 @@
 	
 	var AboutMe = __webpack_require__(215);
 	var MyProjects = __webpack_require__(224);
-	var SayHi = __webpack_require__(234);
+	var SayHi = __webpack_require__(235);
 	
 	module.exports = {
 	  "ABOUTME": React.createElement(AboutMe, { key: 'aboutMe' }),
@@ -30572,9 +30572,10 @@
 	var Carousel = __webpack_require__(225);
 	
 	var EacPortfolio = __webpack_require__(230);
-	var Impulse = __webpack_require__(231);
-	var Echo = __webpack_require__(232);
-	var Cellular = __webpack_require__(233);
+	var MyPortfolio = __webpack_require__(231);
+	var Impulse = __webpack_require__(232);
+	var Echo = __webpack_require__(233);
+	var Cellular = __webpack_require__(234);
 	
 	var MyProjects = React.createClass({
 	  displayName: 'MyProjects',
@@ -30601,6 +30602,7 @@
 	          slideIndex: this.state.slideIndex,
 	          afterSlide: this.newSlide },
 	        React.createElement(EacPortfolio, null),
+	        React.createElement(MyPortfolio, null),
 	        React.createElement(Impulse, null),
 	        React.createElement(Echo, null),
 	        React.createElement(Cellular, null)
@@ -32580,6 +32582,67 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var myPortfolio = React.createClass({
+	  displayName: 'myPortfolio',
+	
+	
+	  githubLink: function (event) {
+	    event.preventDefault();
+	    window.open('https://github.com/adutta91/adutta91.github.io', '_blank');
+	  },
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'projectInfo' },
+	      React.createElement('img', { className: 'projectImage',
+	        src: 'http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_841/v1475099477/portfolio/Screen_Shot_2016-09-28_at_2.50.28_PM.png',
+	        onClick: this.liveLink }),
+	      React.createElement(
+	        'h2',
+	        { className: 'projectTitle' },
+	        'Portfolio'
+	      ),
+	      React.createElement(
+	        'span',
+	        { className: 'projectDesc' },
+	        'A portfolio site I built in attempt to convey more about myself and give brief descriptions on my more presentable projects. This is a bit of a meta-description, since if you\'re reading this now, you\'re already here! The entire site is built with ReactJS, and presents an interactive interface. It\'s a single-page site that is intuitive to navigate and all relevant links and information can be accessed with 1-3 clicks. The site should accomodate all major browsers and screen sizes. I had a lot of fun making, tweaking, and maintaining this!',
+	        React.createElement('br', null),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'div',
+	          { className: 'projectLinks' },
+	          React.createElement('img', {
+	            src: 'app/assets/images/github.png',
+	            onClick: this.githubLink,
+	            className: 'icon' })
+	        )
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        React.createElement(
+	          'span',
+	          { className: 'subHeader' },
+	          'Technologies: '
+	        ),
+	        React.createElement(
+	          'span',
+	          { className: 'subText' },
+	          'ReactJS - JavaScript - CSS/HTML'
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = myPortfolio;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
 	var Impulse = React.createClass({
 	  displayName: 'Impulse',
 	
@@ -32657,7 +32720,7 @@
 	module.exports = Impulse;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -32726,7 +32789,7 @@
 	module.exports = Echo;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -32795,7 +32858,7 @@
 	module.exports = Cellular;
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);

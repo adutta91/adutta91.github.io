@@ -2,6 +2,7 @@ var React = require('react');
 var Carousel = require('nuka-carousel');
 
 var EacPortfolio = require('./projects/eacPortfolio');
+var MyPortfolio = require('./projects/myPortfolio');
 var Impulse = require('./projects/impulse');
 var Echo = require('./projects/echo');
 var Cellular = require('./projects/cellular');
@@ -27,6 +28,7 @@ var MyProjects = React.createClass({
            slideIndex={this.state.slideIndex}
            afterSlide={this.newSlide}>
            <EacPortfolio />
+           <MyPortfolio />
            <Impulse />
            <Echo />
            <Cellular />
